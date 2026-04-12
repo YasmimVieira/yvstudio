@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* ── Design token overrides (must be global — luster uses CSS custom properties) ── */
+:root {
+  --dc-surface:                #060e20;
+  --dc-surface-container-low:  #091328;
+  --dc-surface-container-high: #141f38;
+  --dc-primary:                #a3a6ff;
+  --dc-primary-dim:            #6063ee;
+  --dc-on-surface:             #dee5ff;
+  --dc-on-surface-variant:     #a3aac4;
+  --dc-font-display:           'Manrope', sans-serif;
+  --dc-font-body:              'Inter', sans-serif;
+}
+
+/* ── Global reset ────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--dc-surface);
+  color: var(--dc-on-surface);
+  font-family: var(--dc-font-body);
+  -webkit-font-smoothing: antialiased;
+}
