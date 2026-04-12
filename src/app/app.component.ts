@@ -1,9 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  standalone: true,
+  imports: [LandingPageComponent],
+  template: `<app-landing-page></app-landing-page>`,
 })
 export class AppComponent {}

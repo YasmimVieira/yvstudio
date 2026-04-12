@@ -1,0 +1,233 @@
+<nav class="lp-nav" [class.is-open]="menuOpen()">
+  <div class="lp-nav__inner">
+    <a href="/" class="lp-nav__logo" (click)="closeMenu()">YVSTUDIO</a>
+
+    <div class="lp-nav__links" role="list">
+      <a href="#sobre" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'sobre'" (click)="closeMenu()">O que somos</a>
+      <a href="#projetos" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'projetos'" (click)="closeMenu()">Projetos</a>
+      <a href="#contatos" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'contatos'" (click)="closeMenu()">Contatos</a>
+    </div>
+
+    <button
+      class="lp-nav__hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-nav"
+      aria-label="Abrir menu de navegação">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="lp-nav__mobile" id="mobile-nav" aria-label="Navegação mobile">
+    <a href="#sobre" class="lp-nav__mobile-link" (click)="closeMenu()">O que somos</a>
+    <a href="#projetos" class="lp-nav__mobile-link" (click)="closeMenu()">Projetos</a>
+    <a href="#contatos" class="lp-nav__mobile-link" (click)="closeMenu()">Contatos</a>
+  </nav>
+</nav>
+
+<section id="hero" class="lp-hero">
+  <div class="lp-hero__glow" aria-hidden="true"></div>
+  <div class="lp-inner">
+    <h1 class="lp-hero__title">
+      YV<br>
+      <span class="lp-hero__title-gradient">STUDIO</span>
+    </h1>
+    <p class="lp-hero__subtitle">Softwares minimalistas e sofisticados</p>
+    <a href="#projetos" class="lp-cta">Explorar projetos</a>
+    <a href="#sobre" class="lp-hero__scroll-cue" aria-label="Rolar para o conteúdo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<section id="sobre" class="lp-section lp-sobre">
+  <div class="lp-inner">
+    <header class="lp-sobre__header">
+      <p class="lp-meta">SOBRE NÓS</p>
+      <h2 class="lp-section__title">O QUE SOMOS</h2>
+    </header>
+    <div class="lp-sobre__body">
+      <p class="lp-body-text">
+        No YV Studio, não construímos apenas sites; curamos experiências digitais.
+        Nascemos da intersecção entre o rigor técnico da engenharia e a fluidez do
+        design de alto padrão. Nossa missão é elevar a presença digital de marcas
+        que não aceitam o comum, entregando interfaces que são, ao mesmo tempo,
+        obras de arte visuais e máquinas de performance impecável.
+      </p>
+      <blockquote class="lp-sobre__quote">
+        Simplicidade é o último grau da sofisticação.
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<section id="projetos" class="lp-section lp-works">
+  <div class="lp-inner">
+    <header class="lp-section__header">
+      <div>
+        <p class="lp-meta">NOSSO PORTFÓLIO</p>
+        <h2 class="lp-section__title">PROJETOS</h2>
+      </div>
+    </header>
+
+    <div class="lp-works__grid">
+      <luster-card variant="default" padding="none" hoverable>
+        <article class="lp-work-card">
+          <div class="lp-work-card__image lp-work-card__image--vittacore">
+            <span class="lp-label lp-label--accent lp-work-card__tag">SAAS · PRODUTO</span>
+            <luster-badge variant="warning" size="sm" class="lp-work-card__status-badge">Em construção</luster-badge>
+            <div class="lp-work-card__dashboard" aria-hidden="true">
+              <div class="lp-dash-grid">
+                <div class="lp-dash-cell lp-dash-cell--wide"></div>
+                <div class="lp-dash-cell"></div>
+                <div class="lp-dash-cell"></div>
+                <div class="lp-dash-cell lp-dash-cell--wide"></div>
+                <div class="lp-dash-cell lp-dash-cell--tall"></div>
+                <div class="lp-dash-cell"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lp-work-card__info">
+            <h3 class="lp-work-card__title">KazaPlan</h3>
+            <p class="lp-meta">Design de produto &amp; desenvolvimento · 2026</p>
+          </div>
+        </article>
+      </luster-card>
+
+      <luster-card variant="default" padding="none" hoverable>
+        <a href="https://lusterui.dev" target="_blank" rel="noopener noreferrer" class="lp-work-card">
+          <div class="lp-work-card__image lp-work-card__image--luster">
+            <div class="lp-work-card__glass-blocks" aria-hidden="true">
+              <div class="lp-glass-block lp-glass-block--1"></div>
+              <div class="lp-glass-block lp-glass-block--2"></div>
+              <div class="lp-glass-block lp-glass-block--3"></div>
+            </div>
+            <span class="lp-work-card__brand" aria-hidden="true">LUSTER</span>
+          </div>
+          <div class="lp-work-card__info">
+            <h3 class="lp-work-card__title">Luster DS</h3>
+            <p class="lp-meta">Arquitetura de design system · 2026</p>
+          </div>
+        </a>
+      </luster-card>
+
+      <luster-card variant="default" padding="none" hoverable>
+        <article class="lp-work-card">
+          <div class="lp-work-card__image lp-work-card__image--lp">
+            <div class="lp-lp-preview" aria-hidden="true">
+              <div class="lp-lp-preview__bar lp-lp-preview__bar--nav"></div>
+              <div class="lp-lp-preview__bar lp-lp-preview__bar--hero"></div>
+              <div class="lp-lp-preview__row">
+                <div class="lp-lp-preview__block"></div>
+                <div class="lp-lp-preview__block"></div>
+                <div class="lp-lp-preview__block"></div>
+              </div>
+              <div class="lp-lp-preview__bar"></div>
+              <div class="lp-lp-preview__bar lp-lp-preview__bar--short"></div>
+            </div>
+          </div>
+          <div class="lp-work-card__info">
+            <h3 class="lp-work-card__title">Landing Pages</h3>
+            <p class="lp-meta">Templates e páginas personalizadas · 2026</p>
+          </div>
+        </article>
+      </luster-card>
+    </div>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<section id="ecosystem" class="lp-section lp-ecosystem">
+  <div class="lp-inner">
+    <p class="lp-meta lp-ecosystem__meta">O ECOSSISTEMA</p>
+    <h2 class="lp-section__title lp-section__title--center">CONEXÕES ESTRATÉGICAS</h2>
+
+    <figure class="lp-graph" aria-label="Diagrama do ecossistema YV Studio">
+      <svg class="lp-graph__svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <line x1="400" y1="200" x2="130" y2="100" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 7" stroke-opacity="0.45"/>
+        <line x1="400" y1="200" x2="670" y2="100" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 7" stroke-opacity="0.45"/>
+        <line x1="400" y1="200" x2="130" y2="300" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 7" stroke-opacity="0.45"/>
+        <line x1="400" y1="200" x2="670" y2="300" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 7" stroke-opacity="0.45"/>
+      </svg>
+
+      <div class="lp-graph__node lp-graph__node--center">
+        <div class="lp-graph__node-box lp-graph__node-box--double">YVSTUDIO</div>
+      </div>
+
+      <div class="lp-graph__node lp-graph__node--tl">
+        <p class="lp-graph__node-label">UM TIPO DE</p>
+        <div class="lp-graph__node-box">MÍDIA SOCIAL</div>
+      </div>
+
+      <div class="lp-graph__node lp-graph__node--tr">
+        <p class="lp-graph__node-label">UMA SUITE</p>
+        <div class="lp-graph__node-box">LUSTER</div>
+      </div>
+
+      <div class="lp-graph__node lp-graph__node--bl">
+        <p class="lp-graph__node-label">UM TIPO DE</p>
+        <div class="lp-graph__node-box">E-COMMERCE</div>
+      </div>
+
+      <div class="lp-graph__node lp-graph__node--br">
+        <p class="lp-graph__node-label">UM CLIENTE</p>
+        <div class="lp-graph__node-box">KAZAPLAN</div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<section id="contatos" class="lp-section lp-contatos">
+  <div class="lp-inner">
+    <header class="lp-section__header">
+      <div>
+        <p class="lp-meta">VAMOS CONVERSAR</p>
+        <h2 class="lp-section__title">CONTATOS</h2>
+      </div>
+    </header>
+
+    <div class="lp-contatos__grid">
+      <a href="https://linkedin.com/in/YasmimVieira" target="_blank" rel="noopener noreferrer" class="lp-contact-card">
+        <p class="lp-label lp-label--accent lp-contact-card__platform">LinkedIn</p>
+        <p class="lp-contact-card__handle">YasmimVieira</p>
+        <span class="lp-contact-card__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="https://instagram.com/yvstudiodev" target="_blank" rel="noopener noreferrer" class="lp-contact-card">
+        <p class="lp-label lp-label--accent lp-contact-card__platform">Instagram</p>
+        <!-- <p class="lp-contact-card__handle">@yvstudiodev</p> -->
+        <span class="lp-contact-card__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="https://github.com/YasmimVieira" target="_blank" rel="noopener noreferrer" class="lp-contact-card">
+        <p class="lp-label lp-label--accent lp-contact-card__platform">GitHub</p>
+        <p class="lp-contact-card__handle">YasmimVieira</p>
+        <span class="lp-contact-card__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="https://wa.me/5511970385786?text=Vim%20pelo%20seu%20site" target="_blank" rel="noopener noreferrer" class="lp-contact-card">
+        <p class="lp-label lp-label--accent lp-contact-card__platform">WhatsApp</p>
+        <p class="lp-contact-card__handle">+55 (11) 97038-5786</p>
+        <span class="lp-contact-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <div class="lp-inner lp-footer__inner">
+    <a href="/" class="lp-footer__logo">YVSTUDIO</a>
+    <small class="lp-meta">&copy; MMXXVI YVSTUDIO — TODOS OS DIREITOS RESERVADOS</small>
+  </div>
+</footer>

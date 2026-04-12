@@ -1,0 +1,18 @@
+<luster-card variant="default" padding="none">
+  <article class="lp-template-card lp-template-card--{{ variant }}">
+    <div class="lp-template-card__preview">
+      <ng-content></ng-content>
+    </div>
+    <div class="lp-template-card__body">
+      <div class="lp-template-card__meta">
+        <p class="lp-meta">FRAMER TEMPLATE</p>
+        <h3 class="lp-template-card__name">{{ name }}</h3>
+        <p class="lp-body-text">{{ description }}</p>
+      </div>
+      <div class="lp-template-card__actions">
+        <luster-button variant="primary" size="md">PURCHASE</luster-button>
+        <luster-button variant="secondary" size="md">DEMO</luster-button>
+      </div>
+    </div>
+  </article>
+</luster-card>

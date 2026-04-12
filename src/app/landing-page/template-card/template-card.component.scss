@@ -1,0 +1,126 @@
+.lp-template-card {
+  display: flex;
+  flex-direction: column;
+
+  &__preview {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &--aion .lp-template-card__preview { height: 320px; }
+  &--clinic .lp-template-card__preview { height: 260px; }
+
+  &__body {
+    padding: 1.75rem;
+    background: var(--luster-night);
+    border-top: 1px solid var(--luster-divider);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--luster-off-white);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.875rem;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.lp-aion-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(170deg, #080808 0%, #0c0c0c 40%, #080808 100%);
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  &__frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 200px;
+    border: 1px solid rgba(245, 245, 245, 0.08);
+    background: rgba(245, 245, 245, 0.02);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(245, 245, 245, 0.05);
+    }
+
+    &::after {
+      content: 'AION';
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--luster-font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: rgba(245, 245, 245, 0.15);
+    }
+  }
+}
+
+.lp-clinic-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #060606 0%, #0a0a0a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  &__circle {
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgba(245, 245, 245, 0.12);
+    border-radius: 50%;
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 120px;
+
+    span {
+      display: block;
+      height: 1px;
+      background: rgba(245, 245, 245, 0.08);
+
+      &:nth-child(1) { width: 100%; }
+      &:nth-child(2) { width: 75%; }
+      &:nth-child(3) { width: 50%; }
+    }
+  }
+}
