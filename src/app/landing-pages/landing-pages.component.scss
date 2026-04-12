@@ -1,0 +1,40 @@
+.lp-gallery {
+  &__header {
+    padding: 12rem 0 5rem;
+
+    @media (max-width: 768px) {
+      padding: 8rem 0 3.5rem;
+    }
+  }
+
+  &__eyebrow {
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+
+  &__sub {
+    margin-top: 1.25rem;
+    max-width: 480px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 580px) {
+      grid-template-columns: 1fr;
+      padding-top: 3rem;
+      padding-bottom: 5rem;
+    }
+  }
+}

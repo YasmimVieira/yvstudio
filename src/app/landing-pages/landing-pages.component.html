@@ -1,0 +1,104 @@
+<nav class="lp-nav" [class.is-open]="menuOpen()">
+  <div class="lp-nav__inner">
+    <a routerLink="/" class="lp-nav__logo" (click)="closeMenu()">YVSTUDIO</a>
+
+    <div class="lp-nav__links" role="list">
+      <a routerLink="/" role="listitem" class="lp-nav__link" (click)="closeMenu()">← Início</a>
+    </div>
+
+    <button
+      class="lp-nav__hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="lp-nav__mobile" aria-label="Navegação mobile">
+    <a routerLink="/" class="lp-nav__mobile-link" (click)="closeMenu()">← Início</a>
+  </nav>
+</nav>
+
+<header class="lp-gallery__header">
+  <div class="lp-inner">
+    <p class="lp-meta lp-gallery__eyebrow">Landing Pages · Templates</p>
+    <h1 class="lp-section__title lp-gallery__title">PÁGINAS</h1>
+    <p class="lp-body-text lp-gallery__sub">
+      Designs editoriais construídos para converter e impressionar.
+    </p>
+  </div>
+</header>
+
+<hr class="lp-divider">
+
+<main>
+  <section class="lp-gallery__grid lp-inner" aria-label="Catálogo de landing pages">
+    <app-page-card
+      title="The Annual Neapolitan Pilgrimage"
+      category="Gastronomia · Eventos"
+      description="Uma jornada editorial pela arte da pizza napolitana. Design editorial e tipografia italiana para eventos gastronômicos de alto padrão."
+      status="available"
+      link="/landing-pages/neapolitan-pilgrimage">
+      <div class="lp-np-preview" aria-hidden="true">
+        <div class="lp-np-preview__header">
+          <div class="lp-np-preview__logo-dot"></div>
+          <div class="lp-np-preview__nav-links">
+            <div class="lp-np-preview__nav-dot"></div>
+            <div class="lp-np-preview__nav-dot"></div>
+            <div class="lp-np-preview__nav-dot"></div>
+          </div>
+        </div>
+        <div class="lp-np-preview__body">
+          <div class="lp-np-preview__text-col">
+            <div class="lp-np-preview__eyebrow"></div>
+            <div class="lp-np-preview__title-line"></div>
+            <div class="lp-np-preview__title-line"></div>
+            <div class="lp-np-preview__title-line"></div>
+            <div class="lp-np-preview__body-lines">
+              <div class="lp-np-preview__body-line"></div>
+              <div class="lp-np-preview__body-line"></div>
+              <div class="lp-np-preview__body-line"></div>
+            </div>
+            <div class="lp-np-preview__cta-bar"></div>
+          </div>
+          <div class="lp-np-preview__image-col"></div>
+        </div>
+      </div>
+    </app-page-card>
+
+    <app-page-card
+      title="Agency / Portfolio"
+      category="Agência · Portfólio"
+      description="Identidade visual para estúdios criativos e agências digitais. Foco em apresentação de trabalhos e captação de clientes."
+      status="coming-soon">
+      <div class="lp-agency-preview" aria-hidden="true">
+        <div class="lp-agency-preview__circle"></div>
+        <div class="lp-agency-preview__lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </app-page-card>
+
+    <app-page-card
+      title="Product Launch"
+      category="Produto · SaaS"
+      description="Conversão e urgência para lançamentos de produtos digitais. Estrutura otimizada para capturar leads e gerar vendas."
+      status="coming-soon">
+      <div class="lp-product-preview" aria-hidden="true">
+        <div class="lp-product-preview__badge">LAUNCH</div>
+      </div>
+    </app-page-card>
+  </section>
+</main>
+
+<footer class="lp-footer">
+  <div class="lp-inner lp-footer__inner">
+    <a routerLink="/" class="lp-footer__logo">YVSTUDIO</a>
+    <small class="lp-meta">&copy; MMXXVI YVSTUDIO — TODOS OS DIREITOS RESERVADOS</small>
+  </div>
+</footer>

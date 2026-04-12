@@ -1,0 +1,205 @@
+<!-- ── Navigation ────────────────────────────────────────────── -->
+<nav class="np-nav" [class.is-open]="menuOpen()">
+  <div class="np-nav__inner">
+    <a routerLink="/landing-pages" class="np-nav__back" (click)="closeMenu()">← Gallery</a>
+
+    <a href="#" class="np-nav__logo">The Artisanal Messenger</a>
+
+    <div class="np-nav__links" role="list">
+      <a href="#heritage" role="listitem" class="np-nav__link" (click)="closeMenu()">Heritage</a>
+      <a href="#maestro"  role="listitem" class="np-nav__link" (click)="closeMenu()">Maestro</a>
+      <a href="#reserve"  role="listitem" class="np-nav__link np-nav__link--cta" (click)="closeMenu()">Reserve</a>
+    </div>
+
+    <button
+      class="np-nav__hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="np-nav__mobile" aria-label="Mobile navigation">
+    <a href="#heritage" class="np-nav__mobile-link" (click)="closeMenu()">Heritage</a>
+    <a href="#maestro"  class="np-nav__mobile-link" (click)="closeMenu()">Maestro</a>
+    <a href="#reserve"  class="np-nav__mobile-link" (click)="closeMenu()">Reserve</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="np-hero">
+  <div class="np-hero__inner">
+    <div class="np-hero__content">
+      <p class="np-eyebrow np-hero__eyebrow">Naples · 2026</p>
+      <h1 class="np-hero__title">
+        The Annual<br>
+        <em>Neapolitan</em><br>
+        Pilgrimage.
+      </h1>
+      <p class="np-hero__body">
+        An intimate journey through the ancient art of Neapolitan
+        pizza-making. Twelve seats. Seven maestros. Three days of
+        fire, flour, and revelation.
+      </p>
+      <a href="#reserve" class="np-cta np-hero__cta">Reserve your seat</a>
+    </div>
+
+    <figure class="np-hero__visual" aria-label="Wood-fired oven">
+      <div class="np-hero__oven"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Heritage ──────────────────────────────────────────────── -->
+<section id="heritage" class="np-section np-heritage">
+  <div class="np-heritage__inner">
+    <div class="np-heritage__text">
+      <p class="np-eyebrow">Two Thousand Years</p>
+      <h2 class="np-section__title">
+        The Heritage<br>
+        <em>of the Craft.</em>
+      </h2>
+      <p class="np-body">
+        Neapolitan pizza is not a recipe — it is a living tradition
+        passed down through generations of artisans who dedicated
+        their lives to the perfect dough, the precise fire, and the
+        singular moment when flour, water, salt, and time become
+        something transcendent.
+      </p>
+      <p class="np-body">
+        We travel to Naples to sit at the feet of those masters,
+        to learn with our hands, and to carry their knowledge
+        back into the world.
+      </p>
+    </div>
+
+    <div class="np-heritage__images" aria-hidden="true">
+      <figure class="np-img np-img--dough"></figure>
+      <figure class="np-img np-img--pizza"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── Maestro ───────────────────────────────────────────────── -->
+<section id="maestro" class="np-section np-maestro">
+  <div class="np-maestro__inner">
+    <figure class="np-maestro__photo np-img--chef" aria-label="Maestro Enzo Rossi"></figure>
+
+    <div class="np-maestro__bio">
+      <p class="np-eyebrow">Your guide</p>
+      <h2 class="np-maestro__name">
+        Maestro<br>
+        <em>Enzo Rossi.</em>
+      </h2>
+      <blockquote class="np-maestro__quote">
+        "Pizza is not food. It is memory, patience, fire, and
+        devotion — in that order."
+      </blockquote>
+      <p class="np-body">
+        Born in the Quartieri Spagnoli, Enzo Rossi spent forty years
+        perfecting his craft in the wood-fired ovens of Naples before
+        deciding to teach. He has since initiated over three hundred
+        students from forty-two countries into the sacred geometry
+        of the Neapolitan pie.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Timeline ──────────────────────────────────────────────── -->
+<section class="np-section np-timeline">
+  <div class="np-inner">
+    <p class="np-eyebrow np-eyebrow--center">The Journey</p>
+    <h2 class="np-section__title np-section__title--italic">
+      <em>The Pilgrimage.</em>
+    </h2>
+
+    <ol class="np-timeline__steps" aria-label="Pilgrimage itinerary">
+      <li class="np-step">
+        <div class="np-step__marker" aria-hidden="true">
+          <span class="np-step__day">Day 01</span>
+          <div class="np-step__line"></div>
+        </div>
+        <div class="np-step__content">
+          <h3 class="np-step__title">Sourcing and Smoking</h3>
+          <p class="np-body">
+            We begin at the market — selecting San Marzano tomatoes,
+            00 flour from the mills, and fresh mozzarella di bufala
+            from the Caserta countryside.
+          </p>
+        </div>
+      </li>
+
+      <li class="np-step">
+        <div class="np-step__marker" aria-hidden="true">
+          <span class="np-step__day">Day 02</span>
+          <div class="np-step__line"></div>
+        </div>
+        <div class="np-step__content">
+          <h3 class="np-step__title">Fire and Fermentation</h3>
+          <p class="np-body">
+            The dough is prepared at dawn. By midday, the oven
+            reaches 485 °C. By evening, you will have made
+            your first true Neapolitan pizza.
+          </p>
+        </div>
+      </li>
+
+      <li class="np-step np-step--last">
+        <div class="np-step__marker" aria-hidden="true">
+          <span class="np-step__day">Day 03</span>
+        </div>
+        <div class="np-step__content">
+          <h3 class="np-step__title">First Final Banquet</h3>
+          <p class="np-body">
+            The final evening is a long table dinner in a
+            centuries-old cantina. You cook. The maestro watches.
+            The city bears witness.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ── City Gallery ───────────────────────────────────────────── -->
+<section class="np-gallery" aria-label="Glimpses of Naples">
+  <div class="np-gallery__inner">
+    <p class="np-eyebrow np-eyebrow--light">Ancient City</p>
+    <h2 class="np-gallery__title">
+      <em>Glimpses of the<br>Ancient City.</em>
+    </h2>
+
+    <div class="np-gallery__grid" aria-hidden="true">
+      <figure class="np-gallery__img np-gallery__img--1"></figure>
+      <figure class="np-gallery__img np-gallery__img--2"></figure>
+      <figure class="np-gallery__img np-gallery__img--3"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────────── -->
+<section id="reserve" class="np-cta-section">
+  <div class="np-inner np-cta-section__inner">
+    <h2 class="np-cta-section__title">
+      Twelve Seats.<br>
+      <em>Infinity Knowledge.</em>
+    </h2>
+    <p class="np-cta-section__sub">
+      Applications open. Three days. One city. No shortcuts.
+    </p>
+    <a href="#" class="np-cta-btn">Reserve your position</a>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer class="np-footer">
+  <div class="np-inner np-footer__inner">
+    <span class="np-footer__logo">The Artisanal Messenger</span>
+    <small class="np-footer__copy">&copy; MMXXVI · All rights reserved</small>
+    <a routerLink="/landing-pages" class="np-footer__back">← Back to Gallery</a>
+  </div>
+</footer>

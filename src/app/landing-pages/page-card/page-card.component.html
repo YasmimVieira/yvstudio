@@ -1,0 +1,22 @@
+<luster-card variant="default" padding="none" [attr.hoverable]="status === 'available' ? '' : null">
+  <article class="lp-page-card lp-page-card--{{ status }}">
+    <div class="lp-page-card__preview">
+      @if (status === 'coming-soon') {
+        <luster-badge variant="warning" size="sm" class="lp-page-card__badge">Em breve</luster-badge>
+      }
+      <ng-content />
+    </div>
+
+    <div class="lp-page-card__body">
+      <div class="lp-page-card__meta">
+        <p class="lp-meta">{{ category }}</p>
+        <h3 class="lp-page-card__title">{{ title }}</h3>
+        <p class="lp-body-text">{{ description }}</p>
+      </div>
+
+      @if (status === 'available') {
+        <a [routerLink]="link" class="lp-cta lp-page-card__cta">Visualizar →</a>
+      }
+    </div>
+  </article>
+</luster-card>
