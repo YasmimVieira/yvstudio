@@ -1,0 +1,313 @@
+<!-- ── Nav ───────────────────────────────────────────────────── -->
+<nav class="kp-nav" [class.is-open]="menuOpen()">
+  <div class="kp-nav__inner">
+    <a routerLink="/landing-pages" class="kp-nav__back">← Gallery</a>
+    <a href="#" class="kp-nav__logo">Kaza Plan</a>
+
+    <div class="kp-nav__links" role="list">
+      <a href="#dores"     role="listitem" class="kp-nav__link" (click)="closeMenu()">Benefícios</a>
+      <a href="#funcional" role="listitem" class="kp-nav__link" (click)="closeMenu()">Funcionalidades</a>
+      <a href="#precos"    role="listitem" class="kp-nav__link" (click)="closeMenu()">Preços</a>
+    </div>
+
+    <a href="#precos" class="kp-btn kp-btn--outline">Ver Demonstração</a>
+
+    <button class="kp-nav__hamburger" (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="kp-nav__mobile" aria-label="Menu mobile">
+    <a href="#dores"     class="kp-nav__mobile-link" (click)="closeMenu()">Benefícios</a>
+    <a href="#funcional" class="kp-nav__mobile-link" (click)="closeMenu()">Funcionalidades</a>
+    <a href="#precos"    class="kp-nav__mobile-link" (click)="closeMenu()">Preços</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="kp-hero">
+  <div class="kp-hero__inner">
+    <div class="kp-hero__content">
+      <span class="kp-hero__tag">Inteligência Artificial</span>
+      <h1 class="kp-hero__title">
+        Acabe com o <em>limbo</em><br>
+        na comunicação<br>
+        da sua obra
+      </h1>
+      <p class="kp-hero__sub">
+        A plataforma inteligente entre imobiliárias, incorporadoras e
+        clientes finais. Compartilhe updates do WhatsApp e acompanhe
+        todas as etapas da sua obra em tempo real.
+      </p>
+      <div class="kp-hero__actions">
+        <a href="#precos"    class="kp-btn kp-btn--gold">Começar Agora</a>
+        <a href="#funcional" class="kp-btn kp-btn--ghost">Ver Demonstração</a>
+      </div>
+    </div>
+
+    <figure class="kp-hero__visual" aria-label="Dashboard KazaPlan" aria-hidden="true">
+      <div class="kp-mock">
+        <div class="kp-mock__header">
+          <span class="kp-mock__title">Residencial Buena Vista</span>
+          <span class="kp-mock__dot"></span>
+        </div>
+        <div class="kp-mock__progress">
+          <div class="kp-mock__progress-label">
+            <span>Fundação</span><span>74%</span>
+          </div>
+          <div class="kp-mock__bar"><div class="kp-mock__fill" style="width:74%"></div></div>
+        </div>
+        <div class="kp-mock__progress">
+          <div class="kp-mock__progress-label">
+            <span>Estrutura</span><span>42%</span>
+          </div>
+          <div class="kp-mock__bar"><div class="kp-mock__fill" style="width:42%"></div></div>
+        </div>
+        <div class="kp-mock__cards">
+          <div class="kp-mock__card">
+            <p class="kp-mock__card-label">Unidades</p>
+            <p class="kp-mock__card-val">48</p>
+          </div>
+          <div class="kp-mock__card">
+            <p class="kp-mock__card-label">Entrega</p>
+            <p class="kp-mock__card-val">Dez 26</p>
+          </div>
+          <div class="kp-mock__card">
+            <p class="kp-mock__card-label">Leads</p>
+            <p class="kp-mock__card-val">127</p>
+          </div>
+        </div>
+        <div class="kp-mock__chat">
+          <div class="kp-mock__bubble kp-mock__bubble--in">Qual o status da minha unidade?</div>
+          <div class="kp-mock__bubble kp-mock__bubble--out">Olá! Sua unidade 12B está na etapa de acabamento — 74% concluído. ✓</div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<!-- ── Pain ──────────────────────────────────────────────────── -->
+<section id="dores" class="kp-section kp-pain">
+  <div class="lp-inner">
+    <header class="kp-pain__header">
+      <p class="kp-eyebrow kp-scroll-anim">O Admin da Obra</p>
+      <h2 class="kp-title kp-scroll-anim">Onde a informação se perde,<br>o lucro escorre.</h2>
+      <p class="kp-sub kp-scroll-anim">
+        WhatsApp caótico, áudios incontáveis e clientes ansiosos. O resultado
+        é sempre o mesmo: retrabalho e reputação comprometidos.
+      </p>
+    </header>
+
+    <div class="kp-pain__grid">
+      <luster-card variant="default" padding="none">
+        <div class="kp-pain__card">
+          <span class="kp-pain__icon">📱</span>
+          <p class="kp-pain__name">WhatsApp</p>
+          <p class="kp-pain__text">Compradores perguntando as mesmas coisas, infinitamente. Todo dia, toda hora.</p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="kp-pain__card">
+          <span class="kp-pain__icon">⚠</span>
+          <p class="kp-pain__name">Desinformação</p>
+          <p class="kp-pain__text">Clientes descobrem atrasos pelas redes sociais antes de você comunicar.</p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="kp-pain__card">
+          <span class="kp-pain__icon">↩</span>
+          <p class="kp-pain__name">Retrabalho</p>
+          <p class="kp-pain__text">Follow-up manual consome horas da equipe que deveriam ser usadas em vendas.</p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="kp-pain__card">
+          <span class="kp-pain__icon">✗</span>
+          <p class="kp-pain__name">Falha na Entrega</p>
+          <p class="kp-pain__text">Sem rastreio formal, o "combinado" não chega ao cliente no prazo correto.</p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="kp-pain__card">
+          <span class="kp-pain__icon">⊘</span>
+          <p class="kp-pain__name">Sem Histórico</p>
+          <p class="kp-pain__text">Conversas importantes perdem-se em grupos e caixas de entrada desorganizadas.</p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="kp-pain__card">
+          <span class="kp-pain__icon">↘</span>
+          <p class="kp-pain__name">Reputação em Risco</p>
+          <p class="kp-pain__text">Um cliente mal atendido contamina indicações — seu ativo mais valioso.</p>
+        </div>
+      </luster-card>
+    </div>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<!-- ── Features ──────────────────────────────────────────────── -->
+<section id="funcional" class="kp-section kp-features">
+  <div class="lp-inner">
+    <header class="kp-features__header">
+      <p class="kp-eyebrow kp-scroll-anim">O Novo Padrão de Entrega</p>
+      <h2 class="kp-title kp-scroll-anim">Tecnologia que o cliente<br><em>sente</em> na pele.</h2>
+    </header>
+
+    <div class="kp-features__grid">
+      <luster-card variant="default" padding="none" hoverable>
+        <div class="kp-feat-card">
+          <div class="kp-feat-card__icon">⊕</div>
+          <h3 class="kp-feat-card__title">Chatbot Integrado</h3>
+          <p class="kp-feat-card__body">
+            Responde automaticamente no WhatsApp com status da obra, prazo e documentos —
+            sem uma só mensagem manual da sua equipe.
+          </p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none" hoverable>
+        <div class="kp-feat-card">
+          <div class="kp-feat-card__icon">◈</div>
+          <h3 class="kp-feat-card__title">Line do Cliente</h3>
+          <p class="kp-feat-card__body">
+            Portal exclusivo por unidade com fotos, etapas e documentação.
+            Cada comprador acessa sua própria linha do tempo da obra.
+          </p>
+        </div>
+      </luster-card>
+
+      <luster-card variant="default" padding="none" hoverable>
+        <div class="kp-feat-card">
+          <div class="kp-feat-card__icon">◎</div>
+          <h3 class="kp-feat-card__title">Follow-up Automático</h3>
+          <p class="kp-feat-card__body">
+            Sequências de mensagens programadas para leads, contratos
+            e entregas. Zero esforço, zero esquecimento.
+          </p>
+        </div>
+      </luster-card>
+    </div>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<!-- ── Experience ────────────────────────────────────────────── -->
+<section class="kp-section kp-exp">
+  <div class="kp-exp__inner">
+    <div class="kp-exp__text">
+      <p class="kp-eyebrow kp-scroll-anim">Experiência do Cliente</p>
+      <h2 class="kp-exp__title kp-scroll-anim">
+        A experiência do seu<br>
+        cliente <em>elevada.</em>
+      </h2>
+
+      <ul class="kp-feat-list">
+        <li class="kp-feat-item">
+          <span class="kp-feat-item__check">✓</span>
+          <div>
+            <p class="kp-feat-item__name">Transparência Total</p>
+            <p class="kp-feat-item__desc">O comprador vê exatamente o que acontece na obra, quando acontece.</p>
+          </div>
+        </li>
+        <li class="kp-feat-item">
+          <span class="kp-feat-item__check">✓</span>
+          <div>
+            <p class="kp-feat-item__name">Status em Tempo Real</p>
+            <p class="kp-feat-item__desc">Atualizações de etapa enviadas automaticamente assim que o gestor registra progresso.</p>
+          </div>
+        </li>
+        <li class="kp-feat-item">
+          <span class="kp-feat-item__check">✓</span>
+          <div>
+            <p class="kp-feat-item__name">Branding do Lote</p>
+            <p class="kp-feat-item__desc">Portal com a identidade visual da incorporadora — não da plataforma.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <figure class="kp-phone" aria-label="App KazaPlan no celular" aria-hidden="true">
+      <div class="kp-phone__screen">
+        <div class="kp-phone__top-bar"></div>
+        <div class="kp-phone__msg kp-phone__msg--in">Qual o andamento da obra?</div>
+        <div class="kp-phone__msg kp-phone__msg--out">Fundação: 74% ✓<br>Previsão de estrutura: Mar 26</div>
+        <div class="kp-phone__msg kp-phone__msg--in">Tem fotos atualizadas?</div>
+        <div class="kp-phone__msg kp-phone__msg--out">Sim! Acesse seu portal: kazaplan.io/obra/12B</div>
+        <div class="kp-phone__status">
+          <span class="kp-phone__dot"></span>
+          KazaPlan · Resposta automática
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<!-- ── Pricing ────────────────────────────────────────────────── -->
+<section id="precos" class="kp-section kp-pricing">
+  <div class="lp-inner">
+    <header class="kp-pricing__header">
+      <p class="kp-eyebrow kp-scroll-anim">Investimento em Precisão</p>
+      <h2 class="kp-title kp-scroll-anim">Planos sem surpresas.</h2>
+      <p class="kp-sub kp-scroll-anim">Escolha o modelo que se encaixa no tamanho do seu negócio.</p>
+    </header>
+
+    <div class="kp-pricing__grid">
+      <!-- Plano por Projeto -->
+      <luster-card variant="default" padding="none">
+        <div class="kp-plan">
+          <p class="kp-plan__label">Plano por Projeto</p>
+          <div class="kp-plan__price">R$ <strong>29</strong><sub>/mês</sub></div>
+          <p class="kp-plan__period">por obra ativa</p>
+          <ul class="kp-plan__features">
+            <li class="kp-plan__feature">Lista da Obra</li>
+            <li class="kp-plan__feature">Tabela de Áreas</li>
+            <li class="kp-plan__feature">Portal do Cliente</li>
+            <li class="kp-plan__feature">Atualizações manuais</li>
+          </ul>
+          <a href="#" class="kp-btn kp-btn--outline kp-btn--full">Solicitar Agora</a>
+        </div>
+      </luster-card>
+
+      <!-- Plano Pro -->
+      <luster-card variant="default" padding="none">
+        <div class="kp-plan kp-plan--featured">
+          <div class="kp-plan__badge-row">
+            <p class="kp-plan__label">Plano Pro</p>
+            <luster-badge variant="warning" size="sm">Mais Popular</luster-badge>
+          </div>
+          <div class="kp-plan__price">R$ <strong>347</strong><sub>/mês</sub></div>
+          <p class="kp-plan__period">projetos ilimitados</p>
+          <ul class="kp-plan__features">
+            <li class="kp-plan__feature">Projetos Ilimitados</li>
+            <li class="kp-plan__feature">Chatbot Operado</li>
+            <li class="kp-plan__feature">Follow-up Agendado</li>
+            <li class="kp-plan__feature">Suporte Prioritário</li>
+          </ul>
+          <a href="#" class="kp-btn kp-btn--gold kp-btn--full">Solicitar Agora</a>
+        </div>
+      </luster-card>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer class="kp-footer">
+  <div class="lp-inner kp-footer__inner">
+    <a href="#" class="kp-footer__logo">KAZAPLAN</a>
+    <small class="kp-footer__copy">&copy; MMXXVI KAZAPLAN — TODOS OS DIREITOS RESERVADOS</small>
+    <a routerLink="/landing-pages" class="kp-footer__back">← Gallery</a>
+  </div>
+</footer>

@@ -16,4 +16,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./landing-pages/neapolitan/neapolitan.component').then(m => m.NeapolitanComponent),
   },
+  {
+    path: 'landing-pages/kazaplan',
+    loadComponent: () =>
+      import('./landing-pages/kazaplan/kazaplan.component').then(m => m.KazaPlanComponent),
+  },
 ];
