@@ -59,11 +59,16 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   private initScrollAnimations(gsap: any, ScrollTrigger: any): void {
 
     // Hero entrance (runs immediately on load)
+    gsap.set('.lp-hero__title',      { y: 80, opacity: 0 });
+    gsap.set('.lp-hero__subtitle',   { y: 30, opacity: 0 });
+    gsap.set('.lp-cta',              { y: 30, opacity: 0 });
+    gsap.set('.lp-hero__scroll-cue', { opacity: 0 });
+
     gsap.timeline({ defaults: { ease: 'power3.out' } })
-      .from('.lp-hero__title',       { y: 80, opacity: 0, duration: 1.2 })
-      .from('.lp-hero__subtitle',    { y: 30, opacity: 0, duration: 0.8 }, '-=0.7')
-      .from('.lp-cta',               { y: 30, opacity: 0, duration: 0.8 }, '-=0.5')
-      .from('.lp-hero__scroll-cue',  { opacity: 0, duration: 0.6 }, '-=0.2');
+      .to('.lp-hero__title',       { y: 0, opacity: 1, duration: 1.2 })
+      .to('.lp-hero__subtitle',    { y: 0, opacity: 1, duration: 0.8 }, '-=0.7')
+      .to('.lp-cta',               { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+      .to('.lp-hero__scroll-cue',  { opacity: 1, duration: 0.6 }, '-=0.2');
 
     // Dividers — expand from left
     (gsap.utils.toArray('.lp-divider') as Element[]).forEach((el: Element) => {
