@@ -1,0 +1,180 @@
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<nav class="vl-nav" [class.is-open]="menuOpen()">
+  <div class="vl-nav__inner">
+    <a routerLink="/landing-pages" class="vl-nav__back">← Galeria</a>
+    <a href="#" class="vl-nav__logo">MONROE.LEGAL</a>
+    <div class="vl-nav__links" role="list">
+      <a href="#atuacao" role="listitem" class="vl-nav__link" (click)="closeMenu()">Atuação</a>
+      <a href="#equipe"  role="listitem" class="vl-nav__link" (click)="closeMenu()">Equipe</a>
+      <a href="#consulta" role="listitem" class="vl-nav__link vl-nav__link--cta" (click)="closeMenu()">Consultar</a>
+    </div>
+    <button class="vl-nav__hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="vl-nav__mobile" aria-label="Menu mobile">
+    <a href="#atuacao"  class="vl-nav__mobile-link" (click)="closeMenu()">Atuação</a>
+    <a href="#equipe"   class="vl-nav__mobile-link" (click)="closeMenu()">Equipe</a>
+    <a href="#consulta" class="vl-nav__mobile-link" (click)="closeMenu()">Consultar</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="vl-hero">
+  <div class="vl-hero__deco" aria-hidden="true">
+    <div class="vl-scales">
+      <div class="vl-scales__beam"></div>
+      <div class="vl-scales__post"></div>
+      <div class="vl-scales__pan vl-scales__pan--left"></div>
+      <div class="vl-scales__pan vl-scales__pan--right"></div>
+    </div>
+  </div>
+  <div class="vl-inner vl-hero__inner">
+    <div class="vl-hero__content">
+      <p class="vl-hero__tag">Litigância Estratégica · São Paulo</p>
+      <h1 class="vl-hero__title">
+        Estratégia<br>
+        <em>Implacável.</em>
+      </h1>
+      <p class="vl-hero__sub">
+        Não somos um escritório de advocacia.<br>
+        Somos uma máquina de resultados.
+      </p>
+      <a href="#consulta" class="vl-btn vl-hero__cta">Requisitar consulta</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Manifesto ─────────────────────────────────────────────── -->
+<section class="vl-pillars">
+  <div class="vl-inner vl-pillars__grid">
+    <div class="vl-pillar vl-pillar--headline">
+      <h2 class="vl-pillar__big">Não aceitamos<br>acordos passivos.</h2>
+    </div>
+    <div class="vl-pillar">
+      <p class="vl-pillar__label">Tolerância Zero</p>
+      <p class="vl-pillar__body">Cada processo é tratado com máxima agressividade jurídica. Mediação é o último recurso, jamais o primeiro.</p>
+    </div>
+    <div class="vl-pillar">
+      <p class="vl-pillar__label">Decisão Absoluta</p>
+      <p class="vl-pillar__body">Nossa equipe não descansa enquanto o cliente não tiver a sentença que merece. Isso não é slogan — é protocolo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Callout ───────────────────────────────────────────────── -->
+<div class="vl-inner">
+  <aside class="vl-callout">
+    <div class="vl-callout__icon" aria-hidden="true">⚖</div>
+    <div>
+      <h3 class="vl-callout__title">Precisão Cirúrgica</h3>
+      <p class="vl-callout__body">Nossa abordagem combina análise profunda de jurisprudência, mapeamento de riscos e estratégias ofensivas calibradas para cada jurisdição. Cada movimento é calculado. Cada argumento, testado. Sem margem para erro.</p>
+    </div>
+  </aside>
+</div>
+
+<!-- ── Domains ───────────────────────────────────────────────── -->
+<section id="atuacao" class="vl-domains">
+  <div class="vl-inner">
+    <p class="vl-eyebrow">Especialidades</p>
+    <h2 class="vl-section-title">Domínios<br><em>de Poder.</em></h2>
+    <div class="vl-domains__grid">
+      <div class="vl-domain">
+        <span class="vl-domain__num">01</span>
+        <h3 class="vl-domain__name">M&amp;A Estrutural</h3>
+        <p class="vl-domain__desc">Fusões, aquisições e reestruturações corporativas de alto valor com blindagem jurídica total.</p>
+      </div>
+      <div class="vl-domain">
+        <span class="vl-domain__num">02</span>
+        <h3 class="vl-domain__name">Crime Empresarial</h3>
+        <p class="vl-domain__desc">Defesa penal em crimes de colarinho branco, compliance e investigações corporativas.</p>
+      </div>
+      <div class="vl-domain">
+        <span class="vl-domain__num">03</span>
+        <h3 class="vl-domain__name">Blindagem Patrimonial</h3>
+        <p class="vl-domain__desc">Estruturação de holdings, proteção de ativos e planejamento sucessório de alta complexidade.</p>
+      </div>
+      <div class="vl-domain">
+        <span class="vl-domain__num">04</span>
+        <h3 class="vl-domain__name">Arbitragem Global</h3>
+        <p class="vl-domain__desc">Disputas internacionais em câmaras arbitrais do Brasil, EUA e Europa.</p>
+      </div>
+      <div class="vl-domain">
+        <span class="vl-domain__num">05</span>
+        <h3 class="vl-domain__name">Propriedade Intelectual</h3>
+        <p class="vl-domain__desc">Patentes, marcas e litigância por concorrência desleal em escala nacional e internacional.</p>
+      </div>
+      <div class="vl-domain">
+        <span class="vl-domain__num">06</span>
+        <h3 class="vl-domain__name">Estratégia Tributária</h3>
+        <p class="vl-domain__desc">Planejamento fiscal agressivo, contencioso tributário e recuperação de créditos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ─────────────────────────────────────────────────── -->
+<section class="vl-stats">
+  <div class="vl-inner vl-stats__inner">
+    <div class="vl-stat">
+      <span class="vl-stat__num">R$14B+</span>
+      <span class="vl-stat__label">em ativos defendidos</span>
+    </div>
+    <div class="vl-stat">
+      <span class="vl-stat__num">98%</span>
+      <span class="vl-stat__label">taxa de êxito em litígios</span>
+    </div>
+    <div class="vl-stat">
+      <span class="vl-stat__num">42</span>
+      <span class="vl-stat__label">países com atuação</span>
+    </div>
+    <div class="vl-stat">
+      <span class="vl-stat__num">0</span>
+      <span class="vl-stat__label">acordos no silêncio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Team ──────────────────────────────────────────────────── -->
+<section id="equipe" class="vl-team">
+  <div class="vl-inner">
+    <p class="vl-eyebrow">Os responsáveis pelos seus resultados</p>
+    <h2 class="vl-section-title">A Arquitetura<br><em>do Comando.</em></h2>
+    <div class="vl-team__grid">
+      <div class="vl-partner">
+        <div class="vl-partner__photo vl-partner__photo--marcus" role="img" aria-label="Marcus V. Stone"></div>
+        <div class="vl-partner__info">
+          <h3 class="vl-partner__name">Marcus V. Stone</h3>
+          <p class="vl-partner__role">Sócio Fundador · Litigância &amp; Penal Empresarial</p>
+          <p class="vl-partner__bio">30 anos de carreira, 1.200+ processos de alto valor, ex-procurador federal. A cada audiência, uma sentença. A cada recurso, uma vitória.</p>
+        </div>
+      </div>
+      <div class="vl-partner">
+        <div class="vl-partner__photo vl-partner__photo--elena" role="img" aria-label="Elena Kasirov"></div>
+        <div class="vl-partner__info">
+          <h3 class="vl-partner__name">Elena Kasirov</h3>
+          <p class="vl-partner__role">Sócia · Arbitragem Internacional &amp; M&amp;A</p>
+          <p class="vl-partner__bio">LL.M. em Harvard, 15 anos em câmaras arbitrais internacionais. Negociadora implacável, litigante precisa. Seus clientes nunca perdem o que importa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────────── -->
+<section id="consulta" class="vl-cta">
+  <div class="vl-inner vl-cta__inner">
+    <h2 class="vl-cta__title">Requisitar<br><em>Consulta.</em></h2>
+    <p class="vl-cta__sub">Primeira análise sem custo. Resposta em até 24 horas. Sem burocracia.</p>
+    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="vl-btn vl-cta__btn">Iniciar contato →</a>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer class="vl-footer">
+  <div class="vl-inner vl-footer__inner">
+    <span class="vl-footer__logo">MONROE.LEGAL</span>
+    <small class="vl-footer__copy">© MMXXVI · Monroe &amp; Stone Advocacia · Todos os direitos reservados</small>
+    <a routerLink="/landing-pages" class="vl-footer__back">← Galeria</a>
+  </div>
+</footer>

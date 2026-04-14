@@ -4,6 +4,7 @@
 
     <div class="lp-nav__links" role="list">
       <a href="#sobre" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'sobre'" (click)="closeMenu()">O que somos</a>
+      <a href="#produtos" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'produtos'" (click)="closeMenu()">Produtos</a>
       <a href="#projetos" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'projetos'" (click)="closeMenu()">Projetos</a>
       <a href="#contatos" role="listitem" class="lp-nav__link" [class.lp-nav__link--active]="activeSection() === 'contatos'" (click)="closeMenu()">Contatos</a>
     </div>
@@ -22,6 +23,7 @@
 
   <nav class="lp-nav__mobile" id="mobile-nav" aria-label="Navegação mobile">
     <a href="#sobre" class="lp-nav__mobile-link" (click)="closeMenu()">O que somos</a>
+    <a href="#produtos" class="lp-nav__mobile-link" (click)="closeMenu()">Produtos</a>
     <a href="#projetos" class="lp-nav__mobile-link" (click)="closeMenu()">Projetos</a>
     <a href="#contatos" class="lp-nav__mobile-link" (click)="closeMenu()">Contatos</a>
   </nav>
@@ -100,16 +102,16 @@
 
 <hr class="lp-divider">
 
-<section id="projetos" class="lp-section lp-works">
+<section id="produtos" class="lp-section lp-works">
   <div class="lp-inner">
     <header class="lp-section__header">
       <div>
-        <p class="lp-meta">NOSSO PORTFÓLIO</p>
-        <h2 class="lp-section__title">PROJETOS</h2>
+        <p class="lp-meta">O QUE CONSTRUÍMOS</p>
+        <h2 class="lp-section__title">PRODUTOS</h2>
       </div>
     </header>
 
-    <div class="lp-works__grid">
+    <div class="lp-works__grid lp-works__grid--duo">
       <luster-card variant="default" padding="none" hoverable>
         <a routerLink="/landing-pages/kazaplan" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--vittacore">
@@ -149,10 +151,51 @@
           </div>
         </a>
       </luster-card>
+    </div>
+  </div>
+</section>
 
+<hr class="lp-divider">
+
+<section id="projetos" class="lp-section lp-works">
+  <div class="lp-inner">
+    <header class="lp-section__header">
+      <div>
+        <p class="lp-meta">LANDING PAGES</p>
+        <h2 class="lp-section__title">PROJETOS</h2>
+      </div>
+    </header>
+
+    <div class="lp-works__grid">
       <luster-card variant="default" padding="none" hoverable>
-        <a routerLink="/landing-pages" class="lp-work-card">
+        <a routerLink="/landing-pages/neapolitan-pilgrimage" class="lp-work-card">
+          <div class="lp-work-card__image lp-work-card__image--neapolitan">
+            <span class="lp-label lp-label--muted lp-work-card__tag">LANDING PAGE · GASTRONOMIA</span>
+            <div class="lp-work-card__np-preview" aria-hidden="true">
+              <div class="lp-np-mini__header"></div>
+              <div class="lp-np-mini__body">
+                <div class="lp-np-mini__col">
+                  <div class="lp-np-mini__line lp-np-mini__line--accent"></div>
+                  <div class="lp-np-mini__line"></div>
+                  <div class="lp-np-mini__line lp-np-mini__line--mid"></div>
+                  <div class="lp-np-mini__cta"></div>
+                </div>
+                <div class="lp-np-mini__image"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lp-work-card__info">
+            <h3 class="lp-work-card__title">Neapolitan Pilgrimage</h3>
+            <p class="lp-meta">Landing page editorial · 2026</p>
+          </div>
+        </a>
+      </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="lp-work-card lp-work-card--coming-soon">
           <div class="lp-work-card__image lp-work-card__image--lp">
+            <span class="lp-label lp-label--muted lp-work-card__tag">LANDING PAGE · AGÊNCIA</span>
+            <luster-badge variant="warning" size="sm" class="lp-work-card__status-badge">Em breve</luster-badge>
             <div class="lp-lp-preview" aria-hidden="true">
               <div class="lp-lp-preview__bar lp-lp-preview__bar--nav"></div>
               <div class="lp-lp-preview__bar lp-lp-preview__bar--hero"></div>
@@ -166,11 +209,38 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Landing Pages</h3>
-            <p class="lp-meta">Templates e páginas personalizadas · 2026</p>
+            <h3 class="lp-work-card__title">Agency / Portfolio</h3>
+            <p class="lp-meta">Landing page para agências · 2026</p>
           </div>
-        </a>
+        </div>
       </luster-card>
+
+      <luster-card variant="default" padding="none">
+        <div class="lp-work-card lp-work-card--coming-soon">
+          <div class="lp-work-card__image lp-work-card__image--vittacore">
+            <span class="lp-label lp-label--accent lp-work-card__tag">LANDING PAGE · SAAS</span>
+            <luster-badge variant="warning" size="sm" class="lp-work-card__status-badge">Em breve</luster-badge>
+            <div class="lp-work-card__dashboard" aria-hidden="true">
+              <div class="lp-dash-grid">
+                <div class="lp-dash-cell lp-dash-cell--wide"></div>
+                <div class="lp-dash-cell"></div>
+                <div class="lp-dash-cell"></div>
+                <div class="lp-dash-cell lp-dash-cell--wide"></div>
+                <div class="lp-dash-cell lp-dash-cell--tall"></div>
+                <div class="lp-dash-cell"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lp-work-card__info">
+            <h3 class="lp-work-card__title">Product Launch</h3>
+            <p class="lp-meta">Landing page para lançamentos · 2026</p>
+          </div>
+        </div>
+      </luster-card>
+    </div>
+
+    <div class="lp-works__footer">
+      <a routerLink="/landing-pages" class="lp-works__ver-mais">Ver todos os projetos →</a>
     </div>
   </div>
 </section>
@@ -195,8 +265,8 @@
       </div>
 
       <div class="lp-graph__node lp-graph__node--tl">
-        <p class="lp-graph__node-label">UM TIPO DE</p>
-        <div class="lp-graph__node-box">MÍDIA SOCIAL</div>
+        <p class="lp-graph__node-label">PENSANDO EM</p>
+        <div class="lp-graph__node-box">DESIGN</div>
       </div>
 
       <div class="lp-graph__node lp-graph__node--tr">
@@ -205,12 +275,12 @@
       </div>
 
       <div class="lp-graph__node lp-graph__node--bl">
-        <p class="lp-graph__node-label">UM TIPO DE</p>
-        <div class="lp-graph__node-box">E-COMMERCE</div>
+        <p class="lp-graph__node-label">TODOS OS TIPOS DE</p>
+        <div class="lp-graph__node-box">LANDING PAGES</div>
       </div>
 
       <div class="lp-graph__node lp-graph__node--br">
-        <p class="lp-graph__node-label">UM CLIENTE</p>
+        <p class="lp-graph__node-label">SAAS PARA CONSTRUTORAS</p>
         <div class="lp-graph__node-box">KAZAPLAN</div>
       </div>
     </figure>

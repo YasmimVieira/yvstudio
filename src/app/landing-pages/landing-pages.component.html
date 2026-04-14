@@ -35,64 +35,164 @@
 <hr class="lp-divider">
 
 <main>
+  <!-- Filter chips -->
+  <div class="lp-gallery__filters lp-inner" role="group" aria-label="Filtrar por segmento">
+    @for (f of filters; track f.id) {
+      <button
+        class="lp-filter-chip"
+        [class.lp-filter-chip--active]="activeFilter() === f.id"
+        (click)="setFilter(f.id)"
+        [attr.aria-pressed]="activeFilter() === f.id">
+        {{ f.label }}
+      </button>
+    }
+  </div>
+
   <section class="lp-gallery__grid lp-inner" aria-label="Catálogo de landing pages">
-    <app-page-card
-      title="The Annual Neapolitan Pilgrimage"
-      category="Gastronomia · Eventos"
-      description="Uma jornada editorial pela arte da pizza napolitana. Design editorial e tipografia italiana para eventos gastronômicos de alto padrão."
-      status="available"
-      link="/landing-pages/neapolitan-pilgrimage">
-      <div class="lp-np-preview" aria-hidden="true">
-        <div class="lp-np-preview__header">
-          <div class="lp-np-preview__logo-dot"></div>
-          <div class="lp-np-preview__nav-links">
-            <div class="lp-np-preview__nav-dot"></div>
-            <div class="lp-np-preview__nav-dot"></div>
-            <div class="lp-np-preview__nav-dot"></div>
-          </div>
-        </div>
-        <div class="lp-np-preview__body">
-          <div class="lp-np-preview__text-col">
-            <div class="lp-np-preview__eyebrow"></div>
-            <div class="lp-np-preview__title-line"></div>
-            <div class="lp-np-preview__title-line"></div>
-            <div class="lp-np-preview__title-line"></div>
-            <div class="lp-np-preview__body-lines">
-              <div class="lp-np-preview__body-line"></div>
-              <div class="lp-np-preview__body-line"></div>
-              <div class="lp-np-preview__body-line"></div>
+
+    @if (isVisible('outros')) {
+      <app-page-card
+        title="The Annual Neapolitan Pilgrimage"
+        category="Gastronomia · Eventos"
+        description="Uma jornada editorial pela arte da pizza napolitana. Design editorial e tipografia italiana para eventos gastronômicos de alto padrão."
+        status="available"
+        link="/landing-pages/neapolitan-pilgrimage">
+        <div class="lp-np-preview" aria-hidden="true">
+          <div class="lp-np-preview__header">
+            <div class="lp-np-preview__logo-dot"></div>
+            <div class="lp-np-preview__nav-links">
+              <div class="lp-np-preview__nav-dot"></div>
+              <div class="lp-np-preview__nav-dot"></div>
+              <div class="lp-np-preview__nav-dot"></div>
             </div>
-            <div class="lp-np-preview__cta-bar"></div>
           </div>
-          <div class="lp-np-preview__image-col"></div>
+          <div class="lp-np-preview__body">
+            <div class="lp-np-preview__text-col">
+              <div class="lp-np-preview__eyebrow"></div>
+              <div class="lp-np-preview__title-line"></div>
+              <div class="lp-np-preview__title-line"></div>
+              <div class="lp-np-preview__title-line"></div>
+              <div class="lp-np-preview__body-lines">
+                <div class="lp-np-preview__body-line"></div>
+                <div class="lp-np-preview__body-line"></div>
+                <div class="lp-np-preview__body-line"></div>
+              </div>
+              <div class="lp-np-preview__cta-bar"></div>
+            </div>
+            <div class="lp-np-preview__image-col"></div>
+          </div>
         </div>
-      </div>
-    </app-page-card>
+      </app-page-card>
+    }
 
-    <app-page-card
-      title="Agency / Portfolio"
-      category="Agência · Portfólio"
-      description="Identidade visual para estúdios criativos e agências digitais. Foco em apresentação de trabalhos e captação de clientes."
-      status="coming-soon">
-      <div class="lp-agency-preview" aria-hidden="true">
-        <div class="lp-agency-preview__circle"></div>
-        <div class="lp-agency-preview__lines">
-          <span></span>
-          <span></span>
-          <span></span>
+    @if (isVisible('outros')) {
+      <app-page-card
+        title="Agency / Portfolio"
+        category="Agência · Portfólio"
+        description="Identidade visual para estúdios criativos e agências digitais. Foco em apresentação de trabalhos e captação de clientes."
+        status="coming-soon">
+        <div class="lp-agency-preview" aria-hidden="true">
+          <div class="lp-agency-preview__circle"></div>
+          <div class="lp-agency-preview__lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </div>
-    </app-page-card>
+      </app-page-card>
+    }
 
-    <app-page-card
-      title="Product Launch"
-      category="Produto · SaaS"
-      description="Conversão e urgência para lançamentos de produtos digitais. Estrutura otimizada para capturar leads e gerar vendas."
-      status="coming-soon">
-      <div class="lp-product-preview" aria-hidden="true">
-        <div class="lp-product-preview__badge">LAUNCH</div>
-      </div>
-    </app-page-card>
+    @if (isVisible('vendas')) {
+      <app-page-card
+        title="Product Launch"
+        category="Produto · SaaS · Vendas"
+        description="Conversão e urgência para lançamentos de produtos digitais. Estrutura otimizada para capturar leads e gerar vendas."
+        status="coming-soon">
+        <div class="lp-product-preview" aria-hidden="true">
+          <div class="lp-product-preview__badge">LAUNCH</div>
+        </div>
+      </app-page-card>
+    }
+
+    @if (isVisible('vendas')) {
+      <app-page-card
+        title="Marketing & Conversão"
+        category="Marketing · Vendas"
+        description="Landing page focada em geração de leads, campanhas pagas e funis de vendas. Alta performance para anúncios e tráfego pago."
+        status="coming-soon">
+        <div class="lp-marketing-preview" aria-hidden="true">
+          <div class="lp-marketing-preview__bar lp-marketing-preview__bar--1"></div>
+          <div class="lp-marketing-preview__bar lp-marketing-preview__bar--2"></div>
+          <div class="lp-marketing-preview__bar lp-marketing-preview__bar--3"></div>
+          <div class="lp-marketing-preview__dot"></div>
+        </div>
+      </app-page-card>
+    }
+
+    @if (isVisible('advocacia')) {
+      <app-page-card
+        title="Monroe & Stone Legal"
+        category="Litigância · Advocacia"
+        description="Identidade agressiva para escritórios de litígio de alto valor. Design sombrio com acento dourado, tipografia impactante e retórica implacável."
+        status="available"
+        link="/landing-pages/vantage-legal">
+        <div class="lp-vl-preview" aria-hidden="true">
+          <div class="lp-vl-preview__nav"></div>
+          <div class="lp-vl-preview__body">
+            <div class="lp-vl-preview__tag"></div>
+            <div class="lp-vl-preview__title"></div>
+            <div class="lp-vl-preview__title lp-vl-preview__title--gold"></div>
+            <div class="lp-vl-preview__sub"></div>
+            <div class="lp-vl-preview__btn"></div>
+          </div>
+        </div>
+      </app-page-card>
+    }
+
+    @if (isVisible('advocacia')) {
+      <app-page-card
+        title="Apex Law Group"
+        category="M&A · Advocacia Empresarial"
+        description="Identidade sofisticada para bancas de direito corporativo. Tipografia serif, grid estruturado e paleta navy/aço que transmite autoridade e precisão."
+        status="available"
+        link="/landing-pages/apex-law">
+        <div class="lp-apex-preview" aria-hidden="true">
+          <div class="lp-apex-preview__nav"></div>
+          <div class="lp-apex-preview__body">
+            <div class="lp-apex-preview__eyebrow"></div>
+            <div class="lp-apex-preview__title"></div>
+            <div class="lp-apex-preview__title lp-apex-preview__title--italic"></div>
+            <div class="lp-apex-preview__sub"></div>
+            <div class="lp-apex-preview__sub lp-apex-preview__sub--short"></div>
+            <div class="lp-apex-preview__actions">
+              <div class="lp-apex-preview__btn lp-apex-preview__btn--filled"></div>
+              <div class="lp-apex-preview__btn"></div>
+            </div>
+          </div>
+          <div class="lp-apex-preview__badge"></div>
+        </div>
+      </app-page-card>
+    }
+
+    @if (isVisible('consultorios')) {
+      <app-page-card
+        title="Consultório & Clínica"
+        category="Saúde · Consultórios"
+        description="Design limpo e humanizado para médicos, dentistas e profissionais de saúde. Transmite cuidado e acolhimento desde o primeiro acesso."
+        status="coming-soon">
+        <div class="lp-clinic-preview" aria-hidden="true">
+          <div class="lp-clinic-preview__cross">
+            <div class="lp-clinic-preview__cross-h"></div>
+            <div class="lp-clinic-preview__cross-v"></div>
+          </div>
+          <div class="lp-clinic-preview__lines">
+            <div class="lp-clinic-preview__line"></div>
+            <div class="lp-clinic-preview__line lp-clinic-preview__line--short"></div>
+          </div>
+        </div>
+      </app-page-card>
+    }
+
   </section>
 </main>
 

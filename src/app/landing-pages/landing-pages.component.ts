@@ -11,6 +11,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PageCardComponent } from './page-card/page-card.component';
 
+export type PageFilter = 'todos' | 'advocacia' | 'consultorios' | 'vendas' | 'outros';
+
 @Component({
   selector: 'app-landing-pages',
   standalone: true,
@@ -21,6 +23,15 @@ import { PageCardComponent } from './page-card/page-card.component';
 })
 export class LandingPagesComponent implements AfterViewInit, OnDestroy {
   menuOpen = signal(false);
+  activeFilter = signal<PageFilter>('todos');
+
+  readonly filters: { id: PageFilter; label: string }[] = [
+    { id: 'todos',        label: 'Todos'              },
+    { id: 'advocacia',    label: 'Advocacia'          },
+    { id: 'consultorios', label: 'Consultórios'       },
+    { id: 'vendas',       label: 'Vendas & Marketing' },
+    { id: 'outros',       label: 'Outros'             },
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
@@ -30,6 +41,14 @@ export class LandingPagesComponent implements AfterViewInit, OnDestroy {
 
   closeMenu(): void {
     this.menuOpen.set(false);
+  }
+
+  setFilter(id: PageFilter): void {
+    this.activeFilter.set(id);
+  }
+
+  isVisible(tag: PageFilter): boolean {
+    return this.activeFilter() === 'todos' || this.activeFilter() === tag;
   }
 
   async ngAfterViewInit(): Promise<void> {

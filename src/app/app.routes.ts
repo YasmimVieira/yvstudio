@@ -21,4 +21,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./landing-pages/kazaplan/kazaplan.component').then(m => m.KazaPlanComponent),
   },
+  {
+    path: 'landing-pages/vantage-legal',
+    loadComponent: () =>
+      import('./landing-pages/vantage-legal/vantage-legal.component').then(m => m.VantageLegalComponent),
+  },
+  {
+    path: 'landing-pages/apex-law',
+    loadComponent: () =>
+      import('./landing-pages/apex-law/apex-law.component').then(m => m.ApexLawComponent),
+  },
 ];

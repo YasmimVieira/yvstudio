@@ -241,3 +241,303 @@
     background: rgba(0, 229, 255, 0.04);
   }
 }
+
+// ── Marketing preview ─────────────────────────────────────────
+.lp-marketing-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #0d0500 0%, #1a0a00 50%, #1f1000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 120, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 120, 0, 0.03) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  &__bar {
+    position: relative;
+    z-index: 1;
+    height: 10px;
+    background: rgba(255, 120, 0, 0.5);
+    border-radius: 2px;
+
+    &--1 { width: 100px; }
+    &--2 { width: 70px;  opacity: 0.7; }
+    &--3 { width: 45px;  opacity: 0.45; }
+  }
+
+  &__dot {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.75rem;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 120, 0, 0.4);
+    border-radius: 50%;
+    background: rgba(255, 120, 0, 0.06);
+  }
+}
+
+// ── Law / Advocacia preview ───────────────────────────────────
+.lp-law-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #0a0a08 0%, #111108 50%, #0d0d0a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+
+  &__columns {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  &__col {
+    width: 14px;
+    height: 60px;
+    background: rgba(200, 185, 140, 0.18);
+    border: 1px solid rgba(200, 185, 140, 0.12);
+    border-bottom: none;
+
+    &--mid {
+      height: 80px;
+      background: rgba(200, 185, 140, 0.25);
+      border-color: rgba(200, 185, 140, 0.2);
+    }
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__line {
+    height: 2px;
+    width: 80px;
+    background: rgba(200, 185, 140, 0.2);
+
+    &--short { width: 50px; }
+  }
+}
+
+// ── Vantage Legal preview (dark gold) ────────────────────────
+.lp-vl-preview {
+  width: 100%;
+  height: 100%;
+  background: #080808;
+  background-image: repeating-linear-gradient(
+    -55deg, transparent 0, transparent 20px,
+    rgba(201, 168, 75, 0.04) 20px, rgba(201, 168, 75, 0.04) 21px
+  );
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__nav {
+    height: 22px;
+    background: rgba(8, 8, 8, 0.97);
+    border-bottom: 1px solid rgba(201, 168, 75, 0.18);
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  &__tag {
+    height: 4px;
+    width: 55%;
+    background: rgba(201, 168, 75, 0.45);
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    height: 14px;
+    width: 80%;
+    background: rgba(232, 228, 220, 0.5);
+
+    &--gold {
+      width: 65%;
+      background: rgba(201, 168, 75, 0.65);
+    }
+  }
+
+  &__sub {
+    height: 4px;
+    width: 70%;
+    background: rgba(232, 228, 220, 0.15);
+    margin-top: 4px;
+  }
+
+  &__btn {
+    height: 12px;
+    width: 42%;
+    background: rgba(201, 168, 75, 0.55);
+    margin-top: 8px;
+  }
+}
+
+// ── Apex Law preview (dark navy) ──────────────────────────────
+.lp-apex-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #0b0d14 0%, #0e1520 50%, #080d18 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 160, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 160, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  &__nav {
+    height: 22px;
+    background: rgba(11, 13, 20, 0.97);
+    border-bottom: 1px solid rgba(74, 127, 160, 0.18);
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  &__body {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__eyebrow {
+    height: 4px;
+    width: 45%;
+    background: rgba(74, 127, 160, 0.5);
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    height: 11px;
+    width: 75%;
+    background: rgba(226, 233, 240, 0.5);
+
+    &--italic { width: 60%; background: rgba(74, 127, 160, 0.45); }
+  }
+
+  &__sub {
+    height: 4px;
+    width: 65%;
+    background: rgba(226, 233, 240, 0.15);
+    margin-top: 3px;
+    &--short { width: 48%; }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  &__btn {
+    height: 10px;
+    width: 48px;
+    border: 1px solid rgba(74, 127, 160, 0.3);
+
+    &--filled { background: rgba(74, 127, 160, 0.45); border-color: transparent; }
+  }
+
+  &__badge {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(74, 127, 160, 0.25);
+    background: rgba(74, 127, 160, 0.04);
+  }
+}
+
+// ── Clinic / Consultório preview ──────────────────────────────
+.lp-clinic-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #f8fafb 0%, #eef3f6 50%, #f4f8fa 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+
+  &__cross {
+    position: relative;
+    width: 44px;
+    height: 44px;
+  }
+
+  &__cross-h {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    margin-top: -5px;
+    background: rgba(20, 100, 140, 0.25);
+    border-radius: 2px;
+  }
+
+  &__cross-v {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    margin-left: -5px;
+    background: rgba(20, 100, 140, 0.25);
+    border-radius: 2px;
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__line {
+    height: 3px;
+    width: 70px;
+    background: rgba(20, 100, 140, 0.15);
+    border-radius: 1px;
+
+    &--short { width: 44px; }
+  }
+}

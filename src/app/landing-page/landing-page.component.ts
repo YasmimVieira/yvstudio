@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   menuOpen = signal(false);
   activeSection = signal('');
 
-  private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'sobre', 'hero'];
+  private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'produtos', 'sobre', 'hero'];
   private heroMouseHandlers: (() => void)[] = [];
 
   constructor(

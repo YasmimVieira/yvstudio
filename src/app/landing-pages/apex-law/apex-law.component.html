@@ -1,0 +1,249 @@
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<nav class="ap-nav" [class.is-open]="menuOpen()">
+  <div class="ap-nav__inner">
+    <a routerLink="/landing-pages" class="ap-nav__back">← Galeria</a>
+    <a href="#" class="ap-nav__logo">
+      <span class="ap-nav__logo-apex">APEX</span>
+      <span class="ap-nav__logo-law">LAW GROUP</span>
+    </a>
+    <div class="ap-nav__links" role="list">
+      <a href="#areas"    role="listitem" class="ap-nav__link" (click)="closeMenu()">Atuação</a>
+      <a href="#parceiros" role="listitem" class="ap-nav__link" (click)="closeMenu()">Sócios</a>
+      <a href="#contato"  role="listitem" class="ap-nav__link ap-nav__link--cta" (click)="closeMenu()">Contato</a>
+    </div>
+    <button class="ap-nav__hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="ap-nav__mobile" aria-label="Menu mobile">
+    <a href="#areas"     class="ap-nav__mobile-link" (click)="closeMenu()">Atuação</a>
+    <a href="#parceiros" class="ap-nav__mobile-link" (click)="closeMenu()">Sócios</a>
+    <a href="#contato"   class="ap-nav__mobile-link" (click)="closeMenu()">Contato</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="ap-hero">
+  <div class="ap-inner ap-hero__inner">
+    <div class="ap-hero__content">
+      <p class="ap-hero__eyebrow">Advocacia Empresarial de Alta Performance</p>
+      <h1 class="ap-hero__title">
+        Direito que<br>
+        <em>move mercados.</em>
+      </h1>
+      <p class="ap-hero__body">
+        Fusões bilionárias, litígios estratégicos e estruturação de patrimônio.
+        Há 25 anos assessorando as empresas e famílias que definem o cenário econômico brasileiro.
+      </p>
+      <div class="ap-hero__actions">
+        <a href="#contato" class="ap-btn ap-btn--primary">Falar com um sócio</a>
+        <a href="#areas" class="ap-btn ap-btn--ghost">Nossas áreas</a>
+      </div>
+    </div>
+    <div class="ap-hero__badge" aria-hidden="true">
+      <div class="ap-badge">
+        <span class="ap-badge__line">TIER 1</span>
+        <span class="ap-badge__rank">Chambers<br>Brasil 2026</span>
+      </div>
+    </div>
+  </div>
+  <div class="ap-hero__bar" aria-hidden="true"></div>
+</section>
+
+<!-- ── About ─────────────────────────────────────────────────── -->
+<section class="ap-about">
+  <div class="ap-inner ap-about__inner">
+    <div class="ap-about__text">
+      <p class="ap-eyebrow">Nossa Filosofia</p>
+      <h2 class="ap-section-title">
+        Excelência jurídica<br>sem concessões.
+      </h2>
+      <p class="ap-body">
+        O Apex Law Group foi fundado com uma premissa simples: oferecer a qualidade
+        jurídica das maiores bancas internacionais com o conhecimento íntimo do
+        mercado brasileiro. Nossos sócios vêm de bancos de investimento, reguladores
+        e da academia — e trazem consigo perspectivas que advogados convencionais
+        simplesmente não têm.
+      </p>
+      <p class="ap-body">
+        Não trabalhamos com volume. Trabalhamos com precisão, alocando o melhor
+        da nossa equipe em cada mandato, sem exceção.
+      </p>
+    </div>
+    <div class="ap-about__metrics">
+      <div class="ap-about__metric">
+        <span class="ap-about__metric-num">25+</span>
+        <span class="ap-about__metric-label">Anos de mercado</span>
+      </div>
+      <div class="ap-about__metric">
+        <span class="ap-about__metric-num">R$40B+</span>
+        <span class="ap-about__metric-label">em transações assessoradas</span>
+      </div>
+      <div class="ap-about__metric">
+        <span class="ap-about__metric-num">18</span>
+        <span class="ap-about__metric-label">Sócios especialistas</span>
+      </div>
+      <div class="ap-about__metric">
+        <span class="ap-about__metric-num">96%</span>
+        <span class="ap-about__metric-label">clientes retornam</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Practice Areas ────────────────────────────────────────── -->
+<section id="areas" class="ap-areas">
+  <div class="ap-inner">
+    <p class="ap-eyebrow">O que fazemos</p>
+    <h2 class="ap-section-title">Áreas de Prática</h2>
+    <ul class="ap-areas__list" role="list">
+      <li class="ap-area">
+        <div class="ap-area__head">
+          <span class="ap-area__num">01</span>
+          <h3 class="ap-area__name">Fusões &amp; Aquisições</h3>
+        </div>
+        <p class="ap-area__desc">Due diligence, estruturação e negociação de transações de M&A nacionais e cross-border, do buy-side ao sell-side.</p>
+      </li>
+      <li class="ap-area">
+        <div class="ap-area__head">
+          <span class="ap-area__num">02</span>
+          <h3 class="ap-area__name">Mercado de Capitais</h3>
+        </div>
+        <p class="ap-area__desc">IPOs, follow-ons, emissões de debêntures e estruturação de fundos. Assessoria completa a emissores e coordenadores.</p>
+      </li>
+      <li class="ap-area">
+        <div class="ap-area__head">
+          <span class="ap-area__num">03</span>
+          <h3 class="ap-area__name">Direito Regulatório</h3>
+        </div>
+        <p class="ap-area__desc">Licenciamentos, compliance setorial e relações com agências reguladoras nos setores financeiro, energético e de saúde.</p>
+      </li>
+      <li class="ap-area">
+        <div class="ap-area__head">
+          <span class="ap-area__num">04</span>
+          <h3 class="ap-area__name">Contencioso Estratégico</h3>
+        </div>
+        <p class="ap-area__desc">Arbitragem, litígios complexos e disputas societárias. Representação em todas as instâncias nacionais e cortes internacionais.</p>
+      </li>
+      <li class="ap-area">
+        <div class="ap-area__head">
+          <span class="ap-area__num">05</span>
+          <h3 class="ap-area__name">Private Equity &amp; Venture</h3>
+        </div>
+        <p class="ap-area__desc">Estruturação de fundos, investimentos em startups e assessoria a LPs e GPs em todas as fases do ciclo de investimento.</p>
+      </li>
+      <li class="ap-area">
+        <div class="ap-area__head">
+          <span class="ap-area__num">06</span>
+          <h3 class="ap-area__name">Planejamento Patrimonial</h3>
+        </div>
+        <p class="ap-area__desc">Holdings familiares, proteção de ativos, planejamento sucessório e estruturação offshore para patrimônios de alta complexidade.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── Track Record ───────────────────────────────────────────── -->
+<section class="ap-track">
+  <div class="ap-inner ap-track__inner">
+    <p class="ap-eyebrow">Histórico</p>
+    <h2 class="ap-section-title ap-section-title--light">Resultados que<br><em>falam por si.</em></h2>
+    <div class="ap-track__grid">
+      <div class="ap-figure">
+        <span class="ap-figure__num">340+</span>
+        <span class="ap-figure__label">Transações de M&amp;A concluídas</span>
+      </div>
+      <div class="ap-figure">
+        <span class="ap-figure__num">12</span>
+        <span class="ap-figure__label">IPOs e ofertas públicas</span>
+      </div>
+      <div class="ap-figure">
+        <span class="ap-figure__num">87%</span>
+        <span class="ap-figure__label">Taxa de êxito em arbitragens</span>
+      </div>
+      <div class="ap-figure">
+        <span class="ap-figure__num">3</span>
+        <span class="ap-figure__label">Escritórios no Brasil</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Partners ──────────────────────────────────────────────── -->
+<section id="parceiros" class="ap-partners">
+  <div class="ap-inner">
+    <p class="ap-eyebrow">Liderança</p>
+    <h2 class="ap-section-title">Sócios Fundadores</h2>
+    <div class="ap-partners__grid">
+      <div class="ap-partner">
+        <div class="ap-partner__photo ap-partner__photo--1" role="img" aria-label="Dr. Rodrigo Almeida"></div>
+        <div class="ap-partner__info">
+          <h3 class="ap-partner__name">Dr. Rodrigo Almeida</h3>
+          <p class="ap-partner__role">Sócio Fundador · M&amp;A e Mercado de Capitais</p>
+          <p class="ap-partner__bio">Ex-diretor jurídico do Banco Nacional, professor da FGV Direito e árbitro do CAM-CCBC. Liderou mais de 80 transações M&A nos últimos 15 anos.</p>
+        </div>
+      </div>
+      <div class="ap-partner">
+        <div class="ap-partner__photo ap-partner__photo--2" role="img" aria-label="Dra. Fernanda Rios"></div>
+        <div class="ap-partner__info">
+          <h3 class="ap-partner__name">Dra. Fernanda Rios</h3>
+          <p class="ap-partner__role">Sócia · Contencioso e Arbitragem</p>
+          <p class="ap-partner__bio">Reconhecida pela Chambers Brasil por 8 anos consecutivos. Especialista em disputas societárias e arbitragens internacionais de alto valor.</p>
+        </div>
+      </div>
+      <div class="ap-partner">
+        <div class="ap-partner__photo ap-partner__photo--3" role="img" aria-label="Dr. Carlos Mendes"></div>
+        <div class="ap-partner__info">
+          <h3 class="ap-partner__name">Dr. Carlos Mendes</h3>
+          <p class="ap-partner__role">Sócio · Regulatório e Private Equity</p>
+          <p class="ap-partner__bio">Doutorando em Direito Econômico pela USP, ex-assessor da CVM. Referência em estruturação de fundos e compliance regulatório.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────────────── -->
+<section id="contato" class="ap-contact">
+  <div class="ap-inner ap-contact__inner">
+    <div class="ap-contact__text">
+      <p class="ap-eyebrow ap-eyebrow--light">Entre em Contato</p>
+      <h2 class="ap-contact__title">
+        Pronto para<br>
+        <em>a próxima transação?</em>
+      </h2>
+      <p class="ap-contact__body">
+        Nossos sócios estão disponíveis para uma conversa inicial sem compromisso.
+        Compartilhe o seu desafio e identificaremos juntos o melhor caminho.
+      </p>
+      <a href="mailto:contato@apexlaw.com.br" class="ap-btn ap-btn--primary ap-contact__btn">
+        Falar com um sócio →
+      </a>
+    </div>
+    <div class="ap-contact__offices">
+      <div class="ap-office">
+        <p class="ap-office__city">São Paulo</p>
+        <p class="ap-office__addr">Av. Brigadeiro Faria Lima, 3.477<br>Itaim Bibi · CEP 04538-133</p>
+      </div>
+      <div class="ap-office">
+        <p class="ap-office__city">Rio de Janeiro</p>
+        <p class="ap-office__addr">Praia de Botafogo, 228<br>Botafogo · CEP 22250-906</p>
+      </div>
+      <div class="ap-office">
+        <p class="ap-office__city">Brasília</p>
+        <p class="ap-office__addr">SHS Quadra 6, Bloco C<br>Asa Sul · CEP 70322-915</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer class="ap-footer">
+  <div class="ap-inner ap-footer__inner">
+    <div class="ap-footer__brand">
+      <span class="ap-footer__logo">APEX LAW GROUP</span>
+      <small class="ap-footer__copy">© MMXXVI · Apex Advogados Associados · OAB/SP 00000</small>
+    </div>
+    <a routerLink="/landing-pages" class="ap-footer__back">← Galeria</a>
+  </div>
+</footer>

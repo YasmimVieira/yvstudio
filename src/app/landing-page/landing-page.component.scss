@@ -121,12 +121,52 @@
     @media (max-width: 580px) {
       grid-template-columns: 1fr;
     }
+
+    &--duo {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 780px;
+
+      @media (max-width: 580px) {
+        grid-template-columns: 1fr;
+        max-width: none;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__ver-mais {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--luster-accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.2s ease, gap 0.2s ease;
+
+    &:hover {
+      opacity: 0.75;
+      gap: 0.75rem;
+    }
   }
 }
 
 .lp-work-card {
   display: flex;
   flex-direction: column;
+
+  &--coming-soon {
+    opacity: 0.55;
+    cursor: default;
+    pointer-events: none;
+  }
 
   &__image {
     height: 260px;
@@ -159,6 +199,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    &--neapolitan {
+      background: #F5F0EB;
+      overflow: hidden;
     }
   }
 
@@ -307,6 +352,68 @@
     height: 22px;
     background: rgba(245, 245, 245, 0.04);
     border: 1px solid rgba(245, 245, 245, 0.07);
+  }
+}
+
+// ── Neapolitan mini preview ───────────────────────────────────
+.lp-work-card__np-preview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-np-mini {
+  &__header {
+    height: 22px;
+    background: #1C1917;
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.75rem;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__line {
+    height: 7px;
+    background: #1C1917;
+    border-radius: 1px;
+    width: 90%;
+    opacity: 0.6;
+
+    &--accent {
+      width: 35%;
+      height: 4px;
+      background: #B91C1C;
+      opacity: 0.8;
+    }
+
+    &--mid { width: 70%; opacity: 0.4; }
+  }
+
+  &__cta {
+    margin-top: 6px;
+    height: 12px;
+    width: 50%;
+    background: #B91C1C;
+    opacity: 0.85;
+  }
+
+  &__image {
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 65%, #D97706 0%, #92400E 40%, #451A03 70%, #1A0800 100%);
+    border-radius: 2px;
   }
 }
 
