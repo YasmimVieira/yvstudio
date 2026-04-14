@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yvstudio.com.br/sitemap.xml

@@ -468,3 +468,47 @@
     transform: translateX(4px);
   }
 }
+
+// ── Serviços ──────────────────────────────────────────────
+.lp-servicos {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    list-style: none;
+    padding: 0;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.lp-servico-item {
+  padding: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0, 229, 255, 0.25);
+    background: rgba(0, 229, 255, 0.02);
+  }
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--luster-off-white);
+    margin: 0 0 0.75rem;
+  }
+
+  &__desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--luster-muted, rgba(255, 255, 255, 0.55));
+    margin: 0;
+  }
+}

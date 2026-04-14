@@ -3,12 +3,14 @@ import {
   Component,
   AfterViewInit,
   OnDestroy,
+  OnInit,
   HostListener,
   Inject,
   PLATFORM_ID,
   signal,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -19,14 +21,29 @@ import { RouterLink } from '@angular/router';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
-export class LandingPageComponent implements AfterViewInit, OnDestroy {
+export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   menuOpen = signal(false);
   activeSection = signal('');
 
   private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'sobre', 'hero'];
   private heroMouseHandlers: (() => void)[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    private meta: Meta,
+    private titleService: Title,
+  ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('YV Studio | Criação de Sites, Desenvolvimento de Software e Landing Pages');
+
+    this.meta.updateTag({ name: 'description', content: 'YV Studio — Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e produtos SaaS de alto padrão. Frontend sofisticado com performance impecável.' });
+    this.meta.updateTag({ property: 'og:title', content: 'YV Studio | Criação de Sites, Desenvolvimento de Software e Landing Pages' });
+    this.meta.updateTag({ property: 'og:description', content: 'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS. Frontend sofisticado com design de alto padrão.' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://yvstudio.dev/' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'YV Studio | Criação de Sites, Software e Landing Pages' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS de alto padrão.' });
+  }
 
   toggleMenu(): void {
     this.menuOpen.update(v => !v);
