@@ -87,16 +87,26 @@
 
     @if (isVisible('outros')) {
       <app-page-card
-        title="Agency / Portfolio"
+        title="The Kinetic"
         category="Agência · Portfólio"
-        description="Identidade visual para estúdios criativos e agências digitais. Foco em apresentação de trabalhos e captação de clientes."
-        status="coming-soon">
+        description="Identidade ousada para agências e estúdios criativos. Design editorial escuro com acento ciano, grid de portfólio e formulário de contato."
+        status="available"
+        link="/landing-pages/the-kinetic">
         <div class="lp-agency-preview" aria-hidden="true">
-          <div class="lp-agency-preview__circle"></div>
-          <div class="lp-agency-preview__lines">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="lp-agency-preview__nav">
+            <div class="lp-agency-preview__logo"></div>
+            <div class="lp-agency-preview__cta"></div>
+          </div>
+          <div class="lp-agency-preview__body">
+            <div class="lp-agency-preview__eyebrow"></div>
+            <div class="lp-agency-preview__title"></div>
+            <div class="lp-agency-preview__title lp-agency-preview__title--accent"></div>
+            <div class="lp-agency-preview__sub"></div>
+            <div class="lp-agency-preview__sub lp-agency-preview__sub--short"></div>
+            <div class="lp-agency-preview__actions">
+              <div class="lp-agency-preview__btn lp-agency-preview__btn--filled"></div>
+              <div class="lp-agency-preview__btn"></div>
+            </div>
           </div>
         </div>
       </app-page-card>
@@ -104,12 +114,22 @@
 
     @if (isVisible('vendas')) {
       <app-page-card
-        title="Product Launch"
+        title="ArchitectSaaS"
         category="Produto · SaaS · Vendas"
-        description="Conversão e urgência para lançamentos de produtos digitais. Estrutura otimizada para capturar leads e gerar vendas."
-        status="coming-soon">
+        description="Landing page de lançamento para produtos SaaS. Fundo lavanda, dashboard em CSS, seção de preços em 3 planos e CTA final dark."
+        status="available"
+        link="/landing-pages/architect-saas">
         <div class="lp-product-preview" aria-hidden="true">
-          <div class="lp-product-preview__badge">LAUNCH</div>
+          <div class="lp-product-preview__nav">
+            <div class="lp-product-preview__logo"></div>
+            <div class="lp-product-preview__cta"></div>
+          </div>
+          <div class="lp-product-preview__body">
+            <div class="lp-product-preview__badge-pill">LANÇAMENTO</div>
+            <div class="lp-product-preview__title"></div>
+            <div class="lp-product-preview__title lp-product-preview__title--accent"></div>
+            <div class="lp-product-preview__sub"></div>
+          </div>
         </div>
       </app-page-card>
     }

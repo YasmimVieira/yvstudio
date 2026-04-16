@@ -36,4 +36,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./landing-pages/marmoraria/marmoraria.component').then(m => m.MarmorariaComponent),
   },
+  {
+    path: 'landing-pages/architect-saas',
+    loadComponent: () =>
+      import('./landing-pages/architect-saas/architect-saas.component').then(m => m.ArchitectSaasComponent),
+  },
+  {
+    path: 'landing-pages/the-kinetic',
+    loadComponent: () =>
+      import('./landing-pages/the-kinetic/the-kinetic.component').then(m => m.TheKineticComponent),
+  },
 ];

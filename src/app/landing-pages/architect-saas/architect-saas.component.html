@@ -1,0 +1,294 @@
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<nav class="arc-nav" [class.is-open]="menuOpen()">
+  <div class="arc-nav__inner">
+    <a routerLink="/landing-pages" class="arc-nav__back">← Galeria</a>
+    <a href="#hero" class="arc-nav__logo">ArchitectSaaS</a>
+
+    <div class="arc-nav__links" role="list">
+      <a href="#funcionalidades" role="listitem" class="arc-nav__link" (click)="closeMenu()">Funcionalidades</a>
+      <a href="#precos"          role="listitem" class="arc-nav__link" (click)="closeMenu()">Preços</a>
+      <a href="#depoimento"      role="listitem" class="arc-nav__link" (click)="closeMenu()">Depoimentos</a>
+      <a href="#precos" (click)="closeMenu()">
+        <luster-button>Começar Grátis</luster-button>
+      </a>
+    </div>
+
+    <button
+      class="arc-nav__hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="arc-nav__mobile" aria-label="Navegação mobile">
+    <a href="#funcionalidades" class="arc-nav__mobile-link" (click)="closeMenu()">Funcionalidades</a>
+    <a href="#precos"          class="arc-nav__mobile-link" (click)="closeMenu()">Preços</a>
+    <a href="#depoimento"      class="arc-nav__mobile-link" (click)="closeMenu()">Depoimentos</a>
+    <a href="#precos"          class="arc-nav__mobile-link" (click)="closeMenu()">Começar Grátis</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="arc-hero">
+  <div class="arc-inner arc-hero__inner">
+    <div class="arc-hero__content">
+      <span class="arc-hero__badge">IMPLANTAÇÃO RÁPIDA</span>
+      <h1 class="arc-hero__title">
+        Construa.<br>
+        Escale.<br>
+        <span class="arc-accent">Perfeito.</span>
+      </h1>
+      <p class="arc-hero__body">
+        ArchitectSaaS impulsiona a ambição da sua equipe. Sistema de precisão
+        em camadas projetado para aplicações de alta performance — do MVP ao enterprise.
+      </p>
+      <div class="arc-hero__actions">
+        <a href="#precos"><luster-button>Começar a Construir</luster-button></a>
+        <a href="#funcionalidades"><luster-button variant="secondary">Ver Documentação</luster-button></a>
+      </div>
+    </div>
+
+    <div class="arc-hero__dashboard" aria-hidden="true">
+      <div class="arc-dashboard">
+        <div class="arc-dashboard__header">
+          <span class="arc-dashboard__tab arc-dashboard__tab--active">Vista Geral</span>
+          <span class="arc-dashboard__tab">Análises</span>
+          <span class="arc-dashboard__tab">Relatórios</span>
+        </div>
+        <div class="arc-dashboard__body">
+          <div class="arc-dashboard__row arc-dashboard__row--head">
+            <div class="arc-dashboard__cell arc-dashboard__cell--name">Nome</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--status">Status</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">Usuários</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">Latência</div>
+          </div>
+          <div class="arc-dashboard__row">
+            <div class="arc-dashboard__cell arc-dashboard__cell--name">
+              <div class="arc-dashboard__dot arc-dashboard__dot--green"></div>Pipeline Alpha
+            </div>
+            <div class="arc-dashboard__cell">
+              <span class="arc-dashboard__badge arc-dashboard__badge--ok">Ativo</span>
+            </div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">2.4k</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num arc-dashboard__cell--fast">18ms</div>
+          </div>
+          <div class="arc-dashboard__row">
+            <div class="arc-dashboard__cell arc-dashboard__cell--name">
+              <div class="arc-dashboard__dot arc-dashboard__dot--green"></div>API Core
+            </div>
+            <div class="arc-dashboard__cell">
+              <span class="arc-dashboard__badge arc-dashboard__badge--ok">Ativo</span>
+            </div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">8.1k</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num arc-dashboard__cell--fast">9ms</div>
+          </div>
+          <div class="arc-dashboard__row">
+            <div class="arc-dashboard__cell arc-dashboard__cell--name">
+              <div class="arc-dashboard__dot arc-dashboard__dot--yellow"></div>Worker Beta
+            </div>
+            <div class="arc-dashboard__cell">
+              <span class="arc-dashboard__badge arc-dashboard__badge--warn">Buildando</span>
+            </div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">412</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">—</div>
+          </div>
+          <div class="arc-dashboard__row">
+            <div class="arc-dashboard__cell arc-dashboard__cell--name">
+              <div class="arc-dashboard__dot arc-dashboard__dot--green"></div>Auth Layer
+            </div>
+            <div class="arc-dashboard__cell">
+              <span class="arc-dashboard__badge arc-dashboard__badge--ok">Ativo</span>
+            </div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num">5.7k</div>
+            <div class="arc-dashboard__cell arc-dashboard__cell--num arc-dashboard__cell--fast">12ms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Funcionalidades ─────────────────────────────────────────── -->
+<section id="funcionalidades" class="arc-features">
+  <div class="arc-inner">
+    <p class="arc-eyebrow">FUNCIONALIDADES PRINCIPAIS</p>
+    <h2 class="arc-section-title">Precisão em cada camada.</h2>
+
+    <div class="arc-features__grid">
+
+      <article class="arc-feature">
+        <div class="arc-feature__content">
+          <h3 class="arc-feature__title">Fundação Estrutural</h3>
+          <p class="arc-feature__desc">
+            Projete com confiança sobre uma arquitetura modular e testada,
+            pronta para escalar do MVP ao enterprise sem refatoração.
+          </p>
+        </div>
+        <div class="arc-feature__visual arc-feature__visual--chart" aria-hidden="true">
+          <div class="arc-donut">
+            <div class="arc-donut__hole"></div>
+          </div>
+          <div class="arc-donut__legend">
+            <div class="arc-donut__item"><span class="arc-donut__dot arc-donut__dot--blue"></span>Core</div>
+            <div class="arc-donut__item"><span class="arc-donut__dot arc-donut__dot--red"></span>API</div>
+            <div class="arc-donut__item"><span class="arc-donut__dot arc-donut__dot--gray"></span>Workers</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="arc-feature">
+        <div class="arc-feature__content">
+          <h3 class="arc-feature__title">Velocidade Vetorial</h3>
+          <p class="arc-feature__desc">
+            Engine de alta performance com tempo de resposta abaixo de 50ms,
+            mesmo sob carga máxima. Benchmarks publicados e auditáveis.
+          </p>
+        </div>
+        <div class="arc-feature__visual arc-feature__visual--speed" aria-hidden="true">
+          <div class="arc-bars">
+            <div class="arc-bar arc-bar--1"><span class="arc-bar__val">9ms</span></div>
+            <div class="arc-bar arc-bar--2"><span class="arc-bar__val">18ms</span></div>
+            <div class="arc-bar arc-bar--3"><span class="arc-bar__val">34ms</span></div>
+            <div class="arc-bar arc-bar--4"><span class="arc-bar__val">12ms</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="arc-feature">
+        <div class="arc-feature__content">
+          <h3 class="arc-feature__title">Camada Criptografada</h3>
+          <p class="arc-feature__desc">
+            Segurança em cada nível da stack. Criptografia de ponta a ponta
+            e conformidade com LGPD, SOC 2 e ISO 27001.
+          </p>
+        </div>
+        <div class="arc-feature__visual arc-feature__visual--encrypt" aria-hidden="true">
+          <div class="arc-code">
+            <div class="arc-code__line"><span class="arc-code__kw">encrypt</span><span class="arc-code__str">(payload)</span></div>
+            <div class="arc-code__line"><span class="arc-code__kw">sign</span><span class="arc-code__str">(token, key)</span></div>
+            <div class="arc-code__line arc-code__line--ok">✓ AES-256-GCM</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="arc-feature">
+        <div class="arc-feature__content">
+          <h3 class="arc-feature__title">Integração Perfeita</h3>
+          <p class="arc-feature__desc">
+            Conecte-se a qualquer ferramenta do seu stack com nossa biblioteca
+            de mais de 200 integrações nativas e API aberta com SDK.
+          </p>
+        </div>
+        <div class="arc-feature__visual arc-feature__visual--grid" aria-hidden="true">
+          <div class="arc-grid-icons">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="arc-grid-icon"></div>
+            }
+          </div>
+          <div class="arc-grid-line"></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Depoimento ─────────────────────────────────────────────── -->
+<section id="depoimento" class="arc-testimonial">
+  <div class="arc-inner">
+    <p class="arc-eyebrow">DEPOIMENTOS</p>
+
+    <figure class="arc-testimonial__card">
+      <blockquote class="arc-testimonial__quote">
+        "ArchitectSaaS transformou completamente a forma como gerenciamos
+        nossos pipelines de dados. O sistema de camadas estruturais é uma
+        obra-prima de engenharia."
+      </blockquote>
+      <figcaption class="arc-testimonial__author">
+        <div class="arc-testimonial__avatar" aria-hidden="true"></div>
+        <div>
+          <strong class="arc-testimonial__name">Alex Smith</strong>
+          <span class="arc-testimonial__role">CTO, DataCore</span>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Preços ─────────────────────────────────────────────────── -->
+<section id="precos" class="arc-pricing">
+  <div class="arc-inner">
+    <p class="arc-eyebrow">PLANOS</p>
+    <h2 class="arc-section-title">Preços simples e escaláveis.</h2>
+
+    <div class="arc-pricing__grid">
+      @for (plan of plans; track plan.name) {
+        <article class="arc-plan" [class.arc-plan--highlight]="plan.highlight">
+          @if (plan.highlight) {
+            <span class="arc-plan__badge">Mais Popular</span>
+          }
+          <h3 class="arc-plan__name">{{ plan.name }}</h3>
+          <p class="arc-plan__price">
+            <strong>${{ plan.price }}</strong><span>/mês</span>
+          </p>
+          <p class="arc-plan__desc">{{ plan.desc }}</p>
+          <ul class="arc-plan__features" role="list">
+            @for (feat of plan.features; track feat) {
+              <li class="arc-plan__feature">
+                <span class="arc-plan__check" aria-hidden="true">✓</span>{{ feat }}
+              </li>
+            }
+          </ul>
+          <div class="arc-plan__cta">
+            @if (plan.highlight) {
+              <luster-button>{{ plan.cta }}</luster-button>
+            } @else {
+              <luster-button variant="secondary">{{ plan.cta }}</luster-button>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Final ──────────────────────────────────────────────── -->
+<section class="arc-cta">
+  <div class="arc-inner arc-cta__inner">
+    <h2 class="arc-cta__title">Pronto para construir o futuro?</h2>
+    <p class="arc-cta__body">
+      Junte-se a mais de 10.000 engenheiros, devs e designers que constroem
+      produtos de alta performance com o ArchitectSaaS.
+    </p>
+    <div class="arc-cta__actions">
+      <a href="#precos"><luster-button>Começar a Construir</luster-button></a>
+      <a href="#depoimento"><luster-button variant="secondary">Falar com Especialista</luster-button></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer class="arc-footer">
+  <div class="arc-inner arc-footer__inner">
+    <div class="arc-footer__brand">
+      <a href="#hero" class="arc-footer__logo">ArchitectSaaS</a>
+      <small class="arc-footer__copy">© MMXXVI ArchitectSaaS · Todos os direitos reservados</small>
+    </div>
+
+    <nav class="arc-footer__nav" aria-label="Navegação do rodapé">
+      <a href="#funcionalidades" class="arc-footer__link">Funcionalidades</a>
+      <a href="#precos"          class="arc-footer__link">Preços</a>
+      <a href="#depoimento"      class="arc-footer__link">Depoimentos</a>
+    </nav>
+
+    <div class="arc-footer__legal">
+      <a href="#" class="arc-footer__legal-link">Política de Privacidade</a>
+      <span aria-hidden="true">|</span>
+      <a href="#" class="arc-footer__legal-link">Termos</a>
+    </div>
+
+    <a routerLink="/landing-pages" class="arc-footer__back">← Galeria</a>
+  </div>
+</footer>

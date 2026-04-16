@@ -1,7 +1,7 @@
 <!-- ── Navigation ────────────────────────────────────────────── -->
 <nav class="np-nav" [class.is-open]="menuOpen()">
   <div class="np-nav__inner">
-    <a routerLink="/landing-pages" class="np-nav__back" (click)="closeMenu()">← Gallery</a>
+    <a routerLink="/landing-pages" class="np-nav__back" (click)="closeMenu()">← Galeria</a>
 
     <a href="#" class="np-nav__logo">The Artisanal Messenger</a>
 
@@ -15,14 +15,14 @@
       class="np-nav__hamburger"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen()"
-      aria-label="Open menu">
+      aria-label="Abrir menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
 
-  <nav class="np-nav__mobile" aria-label="Mobile navigation">
+  <nav class="np-nav__mobile" aria-label="Navegação mobile">
     <a href="#heritage" class="np-nav__mobile-link" (click)="closeMenu()">Heritage</a>
     <a href="#maestro"  class="np-nav__mobile-link" (click)="closeMenu()">Maestro</a>
     <a href="#reserve"  class="np-nav__mobile-link" (click)="closeMenu()">Reserve</a>

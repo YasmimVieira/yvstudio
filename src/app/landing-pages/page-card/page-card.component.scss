@@ -161,12 +161,10 @@
 .lp-agency-preview {
   width: 100%;
   height: 100%;
-  background: linear-gradient(150deg, #060606 0%, #0d0d0d 100%);
+  background: #050505;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  overflow: hidden;
   position: relative;
 
   &::before {
@@ -174,36 +172,90 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(245, 245, 245, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245, 245, 245, 0.02) 1px, transparent 1px);
-    background-size: 36px 36px;
+      linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
   }
 
-  &__circle {
-    width: 80px;
-    height: 80px;
-    border: 1px solid rgba(245, 245, 245, 0.1);
-    border-radius: 50%;
+  &__nav {
+    height: 22px;
+    background: rgba(5, 5, 5, 0.97);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
     position: relative;
     z-index: 1;
   }
 
-  &__lines {
+  &__logo {
+    height: 4px;
+    width: 42px;
+    background: rgba(240, 240, 240, 0.55);
+    border-radius: 1px;
+  }
+
+  &__cta {
+    margin-left: auto;
+    height: 8px;
+    width: 34px;
+    background: rgba(0, 229, 255, 0.5);
+  }
+
+  &__body {
+    flex: 1;
+    padding: 0.875rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    width: 110px;
+    gap: 5px;
+    justify-content: center;
     position: relative;
     z-index: 1;
+  }
 
-    span {
-      display: block;
-      height: 1px;
-      background: rgba(245, 245, 245, 0.1);
+  &__eyebrow {
+    height: 3px;
+    width: 42%;
+    background: rgba(0, 229, 255, 0.45);
+    margin-bottom: 4px;
+  }
 
-      &:nth-child(1) { width: 100%; }
-      &:nth-child(2) { width: 70%; }
-      &:nth-child(3) { width: 45%; }
+  &__title {
+    height: 10px;
+    width: 78%;
+    background: rgba(240, 240, 240, 0.55);
+
+    &--accent {
+      width: 50%;
+      background: rgba(0, 229, 255, 0.65);
+    }
+  }
+
+  &__sub {
+    height: 3px;
+    width: 65%;
+    background: rgba(240, 240, 240, 0.18);
+    margin-top: 4px;
+
+    &--short { width: 48%; }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  &__btn {
+    height: 9px;
+    width: 42px;
+    border: 1px solid rgba(0, 229, 255, 0.35);
+
+    &--filled {
+      background: rgba(0, 229, 255, 0.55);
+      border-color: transparent;
     }
   }
 }
@@ -211,34 +263,76 @@
 .lp-product-preview {
   width: 100%;
   height: 100%;
-  background: linear-gradient(160deg, #050d1a 0%, #091529 50%, #0d1c35 100%);
-  position: relative;
-  overflow: hidden;
+  background: #eef0ff;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+  &__nav {
+    height: 22px;
+    background: rgba(238, 240, 255, 0.97);
+    border-bottom: 1px solid rgba(26, 26, 46, 0.09);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
   }
 
-  &__badge {
-    position: relative;
-    z-index: 1;
-    border: 1px solid rgba(0, 229, 255, 0.3);
-    padding: 0.5rem 1.25rem;
+  &__logo {
+    height: 4px;
+    width: 40px;
+    background: rgba(26, 26, 46, 0.45);
+    border-radius: 1px;
+  }
+
+  &__cta {
+    margin-left: auto;
+    height: 8px;
+    width: 32px;
+    background: rgba(229, 62, 62, 0.55);
+    border-radius: 2px;
+  }
+
+  &__body {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  &__badge-pill {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(76, 95, 213, 0.75);
     font-family: var(--luster-font-mono);
-    font-size: 0.625rem;
-    letter-spacing: 0.14em;
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--luster-accent);
-    background: rgba(0, 229, 255, 0.04);
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    height: 10px;
+    width: 80%;
+    background: rgba(26, 26, 46, 0.5);
+
+    &--accent {
+      width: 45%;
+      background: rgba(229, 62, 62, 0.6);
+    }
+  }
+
+  &__sub {
+    height: 3px;
+    width: 68%;
+    background: rgba(26, 26, 46, 0.18);
+    margin-top: 4px;
   }
 }
 

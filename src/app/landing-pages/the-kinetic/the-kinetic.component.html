@@ -1,0 +1,280 @@
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<nav class="tk-nav" [class.is-open]="menuOpen()">
+  <div class="tk-nav__inner">
+    <a routerLink="/landing-pages" class="tk-nav__back">← Galeria</a>
+    <a href="#hero" class="tk-nav__logo">THE KINETIC</a>
+
+    <div class="tk-nav__links" role="list">
+      <a href="#services"     role="listitem" class="tk-nav__link" (click)="closeMenu()">Serviços</a>
+      <a href="#portfolio"    role="listitem" class="tk-nav__link" (click)="closeMenu()">Portfólio</a>
+      <a href="#testimonials" role="listitem" class="tk-nav__link" (click)="closeMenu()">Depoimentos</a>
+      <a href="#contact" (click)="closeMenu()">
+        <luster-button>Iniciar Projeto</luster-button>
+      </a>
+    </div>
+
+    <button
+      class="tk-nav__hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="tk-nav__mobile" aria-label="Navegação mobile">
+    <a href="#services"     class="tk-nav__mobile-link" (click)="closeMenu()">Serviços</a>
+    <a href="#portfolio"    class="tk-nav__mobile-link" (click)="closeMenu()">Portfólio</a>
+    <a href="#testimonials" class="tk-nav__mobile-link" (click)="closeMenu()">Depoimentos</a>
+    <a href="#contact"      class="tk-nav__mobile-link" (click)="closeMenu()">Iniciar Projeto</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="tk-hero">
+  <div class="tk-inner tk-hero__inner">
+    <div class="tk-hero__content">
+      <p class="tk-hero__eyebrow">NOSSA AGÊNCIA KINETIC</p>
+      <h1 class="tk-hero__title">
+        ALÉM DO <mark class="tk-mark">KINETIC</mark><br>
+        DESIGN DIGITAL.
+      </h1>
+      <p class="tk-hero__body">
+        Criamos experiências digitais de alto impacto para marcas que se recusam
+        a se perder no ruído. Modernas, editoriais e ousadas sem apologia.
+      </p>
+      <div class="tk-hero__actions">
+        <a href="#contact"><luster-button>Fale Conosco</luster-button></a>
+        <a href="#portfolio"><luster-button variant="secondary">Ver Trabalhos</luster-button></a>
+      </div>
+    </div>
+
+    <div class="tk-hero__visual" aria-hidden="true">
+      <div class="tk-hero__visual-inner">
+        <div class="tk-hero__visual-grid"></div>
+        <div class="tk-hero__visual-line tk-hero__visual-line--h"></div>
+        <div class="tk-hero__visual-line tk-hero__visual-line--v"></div>
+        <div class="tk-hero__visual-node tk-hero__visual-node--a"></div>
+        <div class="tk-hero__visual-node tk-hero__visual-node--b"></div>
+        <div class="tk-hero__visual-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Serviços ───────────────────────────────────────────────── -->
+<section id="services" class="tk-services">
+  <div class="tk-inner">
+    <p class="tk-eyebrow">NOSSOS SERVIÇOS</p>
+    <h2 class="tk-section-title">CRIANDO IMPACTO</h2>
+
+    <div class="tk-services__grid">
+
+      <article class="tk-service-card">
+        <div class="tk-service-card__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <rect x="1.75" y="4.75" width="22.5" height="16.5" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M1.75 8.5h22.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8.5 13l-3 3 3 3M17.5 13l3 3-3 3M12 20l2-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="tk-service-card__title">Web Design</h3>
+        <p class="tk-service-card__desc">
+          Interfaces perfeitas ao pixel e experiências web imersivas que cativam
+          desde o primeiro scroll e convertem em cada ponto de contato.
+        </p>
+      </article>
+
+      <article class="tk-service-card">
+        <div class="tk-service-card__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 2.5l2.8 5.6 6.2 0.9-4.5 4.4 1.1 6.1L13 16.6l-5.6 3 1.1-6.1-4.5-4.4 6.2-0.9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="tk-service-card__title">Branding</h3>
+        <p class="tk-service-card__desc">
+          Identidades visuais ousadas que definem a presença da sua marca em
+          todos os meios e comunicam sem precisar dizer uma palavra.
+        </p>
+      </article>
+
+      <article class="tk-service-card">
+        <div class="tk-service-card__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M3.5 19.5l5.5-7 5 4.5 5-8.5 4 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="23" cy="8.5" r="2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="tk-service-card__title">Marketing</h3>
+        <p class="tk-service-card__desc">
+          Campanhas baseadas em dados e conteúdo editorial que amplificam o
+          alcance, aceleram o crescimento e constroem lealdade duradoura.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Portfólio ──────────────────────────────────────────────── -->
+<section id="portfolio" class="tk-portfolio">
+  <div class="tk-inner">
+    <p class="tk-eyebrow">TRABALHOS SELECIONADOS</p>
+
+    <ul class="tk-portfolio__grid" role="list">
+
+      <li class="tk-reel">
+        <div class="tk-reel__media tk-reel__media--neon"
+             role="img" aria-label="Neon Archive — projeto de branding"></div>
+        <div class="tk-reel__info">
+          <span class="tk-reel__cat">Branding · Design</span>
+          <h3 class="tk-reel__title">NEON ARCHIVE</h3>
+        </div>
+      </li>
+
+      <li class="tk-reel">
+        <div class="tk-reel__media tk-reel__media--synth"
+             role="img" aria-label="Synth Labs — projeto de produto e tecnologia"></div>
+        <div class="tk-reel__info">
+          <span class="tk-reel__cat">Produto · Tecnologia</span>
+          <h3 class="tk-reel__title">SYNTH LABS</h3>
+        </div>
+      </li>
+
+      <li class="tk-reel">
+        <div class="tk-reel__media tk-reel__media--mode"
+             role="img" aria-label="Mode Editorial — projeto de moda e editorial"></div>
+        <div class="tk-reel__info">
+          <span class="tk-reel__cat">Moda · Editorial</span>
+          <h3 class="tk-reel__title">MODE EDITORIAL</h3>
+        </div>
+      </li>
+
+      <li class="tk-reel">
+        <div class="tk-reel__media tk-reel__media--kinetic"
+             role="img" aria-label="Kinetic Core — projeto digital e web"></div>
+        <div class="tk-reel__info">
+          <span class="tk-reel__cat">Digital · Web</span>
+          <h3 class="tk-reel__title">KINETIC CORE</h3>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ── Depoimentos ───────────────────────────────────────────── -->
+<section id="testimonials" class="tk-testimonials">
+  <div class="tk-inner">
+    <p class="tk-eyebrow">VOZES DE CONFIANÇA</p>
+  </div>
+
+  <div class="tk-inner tk-testimonials__inner">
+
+    <div class="tk-testimonials__lead">
+      <p class="tk-testimonials__sub">
+        Não acredite só na nossa palavra. Construímos parcerias de longo prazo
+        com times dedicados e entregamos resultados extraordinários — sempre.
+      </p>
+      <div class="tk-testimonials__controls"
+           role="group" aria-label="Navegação de depoimentos">
+        <button class="tk-testimonials__arrow" (click)="prev()" aria-label="Depoimento anterior">←</button>
+        <button class="tk-testimonials__arrow" (click)="next()" aria-label="Próximo depoimento">→</button>
+      </div>
+    </div>
+
+    <figure class="tk-testimonials__card">
+      <blockquote class="tk-testimonials__quote">
+        <p>{{ testimonials[activeIdx()].quote }}</p>
+      </blockquote>
+      <figcaption class="tk-testimonials__author">
+        <div class="tk-testimonials__avatar" aria-hidden="true"></div>
+        <div>
+          <strong class="tk-testimonials__name">{{ testimonials[activeIdx()].author }}</strong>
+          <span class="tk-testimonials__role">{{ testimonials[activeIdx()].role }}</span>
+        </div>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ── Contato ────────────────────────────────────────────────── -->
+<section id="contact" class="tk-contact">
+  <div class="tk-inner tk-contact__grid">
+
+    <div class="tk-contact__header">
+      <p class="tk-eyebrow">ENTRE EM CONTATO</p>
+      <h2 class="tk-section-title">
+        INICIE A<br>
+        <mark class="tk-mark">EVOLUÇÃO</mark>
+      </h2>
+
+      <div class="tk-contact__info">
+        <div class="tk-contact__info-item">
+          <span class="tk-contact__info-label">✉ Nos encontre</span>
+          <a href="mailto:hello@thekinetic.agency" class="tk-contact__info-value">
+            hello&#64;thekinetic.agency
+          </a>
+        </div>
+        <div class="tk-contact__info-item">
+          <span class="tk-contact__info-label">📍 Nos visite</span>
+          <address class="tk-contact__info-value">
+            Creative Studio, Suite 503<br>
+            Los Angeles, CA 90210
+          </address>
+        </div>
+      </div>
+    </div>
+
+    <form class="tk-form" (submit)="$event.preventDefault()" novalidate aria-label="Formulário de contato">
+      <div class="tk-form__row">
+        <label class="tk-form__field">
+          <span class="tk-form__label">Nome</span>
+          <input type="text" class="tk-form__input" placeholder="João" autocomplete="given-name">
+        </label>
+        <label class="tk-form__field">
+          <span class="tk-form__label">Sobrenome</span>
+          <input type="text" class="tk-form__input" placeholder="Silva" autocomplete="family-name">
+        </label>
+      </div>
+      <label class="tk-form__field">
+        <span class="tk-form__label">E-mail</span>
+        <input type="email" class="tk-form__input" placeholder="hello@email.com" autocomplete="email">
+      </label>
+      <label class="tk-form__field">
+        <span class="tk-form__label">Seu Site</span>
+        <input type="url" class="tk-form__input" placeholder="https://seusite.com" autocomplete="url">
+      </label>
+      <label class="tk-form__field">
+        <span class="tk-form__label">Mensagem</span>
+        <textarea class="tk-form__input tk-form__textarea" rows="4" placeholder="Fale-nos sobre seu projeto..."></textarea>
+      </label>
+      <div class="tk-form__submit">
+        <luster-button>Enviar Mensagem →</luster-button>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ── Rodapé ────────────────────────────────────────────────── -->
+<footer class="tk-footer">
+  <div class="tk-inner tk-footer__inner">
+    <a href="#hero" class="tk-footer__logo">THE KINETIC</a>
+
+    <nav class="tk-footer__nav" aria-label="Navegação do rodapé">
+      <a href="#services"     class="tk-footer__link">Serviços</a>
+      <a href="#portfolio"    class="tk-footer__link">Portfólio</a>
+      <a href="#testimonials" class="tk-footer__link">Depoimentos</a>
+    </nav>
+
+    <div class="tk-footer__legal">
+      <a href="#" class="tk-footer__legal-link">Política de Privacidade</a>
+      <span aria-hidden="true">|</span>
+      <a href="#" class="tk-footer__legal-link">Termos</a>
+    </div>
+
+    <a routerLink="/landing-pages" class="tk-footer__back">← Galeria</a>
+  </div>
+</footer>
