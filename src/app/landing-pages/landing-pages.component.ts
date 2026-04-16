@@ -11,7 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PageCardComponent } from './page-card/page-card.component';
 
-export type PageFilter = 'todos' | 'advocacia' | 'consultorios' | 'vendas' | 'outros';
+export type PageFilter = 'todos' | 'advocacia' | 'consultorios' | 'vendas' | 'construcao' | 'outros';
 
 @Component({
   selector: 'app-landing-pages',
@@ -30,6 +30,7 @@ export class LandingPagesComponent implements AfterViewInit, OnDestroy {
     { id: 'advocacia',    label: 'Advocacia'          },
     { id: 'consultorios', label: 'Consultórios'       },
     { id: 'vendas',       label: 'Vendas & Marketing' },
+    { id: 'construcao',   label: 'Construção'         },
     { id: 'outros',       label: 'Outros'             },
   ];
 

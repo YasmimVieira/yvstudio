@@ -12,6 +12,14 @@
   background: var(--vl-bg);
   color: var(--vl-text);
   font-family: 'Inter', sans-serif;
+
+  // Luster DS token overrides — Vantage Legal gold palette
+  --dc-primary:                    #c9a84b;
+  --dc-primary-dim:                #b08f35;
+  --dc-on-primary:                 #080808;
+  --dc-btn-primary-shadow:         0 4px 18px rgba(201, 168, 75, 0.25);
+  --dc-btn-primary-shadow-hover:   0 6px 28px rgba(201, 168, 75, 0.4);
+  --dc-btn-primary-gradient-hover: linear-gradient(135deg, #d9b85c 0%, #c9a84b 100%);
 }
 
 // ── Layout ────────────────────────────────────────────────────
@@ -43,18 +51,9 @@
   em { color: var(--vl-gold); font-style: normal; }
 }
 
-.vl-btn {
-  display: inline-block;
-  padding: 0.875rem 2rem;
-  background: var(--vl-gold);
-  color: var(--vl-bg);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.vl-hero__cta, .vl-cta__btn {
+  display: inline-flex;
   text-decoration: none;
-  transition: opacity 0.2s;
-  &:hover { opacity: 0.82; }
 }
 
 // ── Nav ───────────────────────────────────────────────────────

@@ -31,4 +31,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./landing-pages/apex-law/apex-law.component').then(m => m.ApexLawComponent),
   },
+  {
+    path: 'landing-pages/marmoraria',
+    loadComponent: () =>
+      import('./landing-pages/marmoraria/marmoraria.component').then(m => m.MarmorariaComponent),
+  },
 ];

@@ -10,6 +10,18 @@
   --border: rgba(200, 149, 38, 0.18);
   --muted: #706860;
   --text: #f0ede8;
+
+  /* Luster DS token overrides — KazaPlan gold palette */
+  --dc-primary:                    #c89526;
+  --dc-primary-dim:                #9d7520;
+  --dc-on-primary:                 #000;
+  --dc-btn-primary-shadow:         0 4px 18px rgba(200, 149, 38, 0.3);
+  --dc-btn-primary-shadow-hover:   0 6px 26px rgba(200, 149, 38, 0.45);
+  --dc-btn-primary-gradient-hover: linear-gradient(135deg, #d9a530 0%, #c89526 100%);
+  --dc-border-strong:              rgba(200, 149, 38, 0.35);
+  --dc-border-hover:               rgba(200, 149, 38, 0.6);
+  --dc-on-surface:                 #f0ede8;
+  --dc-hover-tint-icon:            rgba(200, 149, 38, 0.08);
 }
 
 /* ── Shared ────────────────────────────────────────────────── */
@@ -26,18 +38,18 @@
 .kp-sub { font-size: .9375rem; line-height: 1.75; color: var(--muted); max-width: 600px; margin-top: .75rem; }
 .kp-section { padding: 6rem 0; }
 
-/* ── Buttons ───────────────────────────────────────────────── */
-.kp-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: .75rem 1.75rem; font-size: .8125rem; font-weight: 600;
-  letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
-  transition: opacity .2s, transform .2s; white-space: nowrap;
+/* ── Button link wrappers (luster-button handles visuals) ─── */
+.kp-hero__actions a,
+.kp-nav__demo {
+  display: inline-flex;
+  text-decoration: none;
 }
-.kp-btn:hover { opacity: .85; transform: translateY(-1px); }
-.kp-btn--gold    { background: var(--gold); color: #000; }
-.kp-btn--outline { border: 1px solid var(--border); color: var(--gold); }
-.kp-btn--ghost   { border: 1px solid rgba(240,237,232,.15); color: var(--text); }
-.kp-btn--full    { width: 100%; margin-top: auto; }
+.kp-plan__cta-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  margin-top: auto;
+}
 
 /* ── Nav ───────────────────────────────────────────────────── */
 .kp-nav {

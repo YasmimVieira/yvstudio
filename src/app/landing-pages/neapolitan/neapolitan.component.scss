@@ -9,6 +9,14 @@
   --np-border:      rgba(28, 25, 23, 0.1);
   --np-display:     'Playfair Display', Georgia, serif;
   --np-sans:        'Inter', sans-serif;
+
+  // Luster DS token overrides — Neapolitan crimson palette
+  --dc-primary:                    #B91C1C;
+  --dc-primary-dim:                #991B1B;
+  --dc-on-primary:                 #fff;
+  --dc-btn-primary-shadow:         0 4px 18px rgba(185, 28, 28, 0.35);
+  --dc-btn-primary-shadow-hover:   0 6px 24px rgba(185, 28, 28, 0.5);
+  --dc-btn-primary-gradient-hover: linear-gradient(135deg, #c91f1f 0%, #991B1B 100%);
 }
 
 // Reset global dark-theme for this component
@@ -80,24 +88,13 @@
   }
 }
 
-.np-cta {
+.np-cta, .np-cta-btn {
   display: inline-flex;
-  align-items: center;
-  padding: 0.875rem 2.5rem;
-  background: var(--np-red);
-  color: #fff;
-  font-family: var(--np-sans);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    background: #991B1B;
-    transform: translateY(-1px);
-  }
 }
 
 // ── Navigation ────────────────────────────────────────────────
@@ -653,25 +650,6 @@
   }
 }
 
-.np-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 1rem 3rem;
-  background: var(--np-red);
-  color: #fff;
-  font-family: var(--np-sans);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    background: #991B1B;
-    transform: translateY(-1px);
-  }
-}
 
 // ── Footer ────────────────────────────────────────────────────
 .np-footer {

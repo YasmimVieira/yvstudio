@@ -10,7 +10,7 @@
       <a href="#precos"    role="listitem" class="kp-nav__link" (click)="closeMenu()">Preços</a>
     </div>
 
-    <a href="#precos" class="kp-btn kp-btn--outline">Ver Demonstração</a>
+    <a href="#precos" class="kp-nav__demo"><luster-button variant="secondary" size="sm">Ver Demonstração</luster-button></a>
 
     <button class="kp-nav__hamburger" (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
@@ -41,8 +41,8 @@
         todas as etapas da sua obra em tempo real.
       </p>
       <div class="kp-hero__actions">
-        <a href="#precos"    class="kp-btn kp-btn--gold">Começar Agora</a>
-        <a href="#funcional" class="kp-btn kp-btn--ghost">Ver Demonstração</a>
+        <a href="#precos"><luster-button>Começar Agora</luster-button></a>
+        <a href="#funcional"><luster-button variant="secondary">Ver Demonstração</luster-button></a>
       </div>
     </div>
 
@@ -277,7 +277,7 @@
             <li class="kp-plan__feature">Portal do Cliente</li>
             <li class="kp-plan__feature">Atualizações manuais</li>
           </ul>
-          <a href="#" class="kp-btn kp-btn--outline kp-btn--full">Solicitar Agora</a>
+          <a href="#" class="kp-plan__cta-link"><luster-button variant="secondary" full-width>Solicitar Agora</luster-button></a>
         </div>
       </luster-card>
 
@@ -296,7 +296,7 @@
             <li class="kp-plan__feature">Follow-up Agendado</li>
             <li class="kp-plan__feature">Suporte Prioritário</li>
           </ul>
-          <a href="#" class="kp-btn kp-btn--gold kp-btn--full">Solicitar Agora</a>
+          <a href="#" class="kp-plan__cta-link"><luster-button full-width>Solicitar Agora</luster-button></a>
         </div>
       </luster-card>
     </div>

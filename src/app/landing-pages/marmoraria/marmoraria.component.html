@@ -1,0 +1,253 @@
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<nav class="mm-nav" [class.is-open]="menuOpen()">
+  <div class="mm-nav__inner">
+    <a routerLink="/landing-pages" class="mm-nav__back">← Galeria</a>
+    <a href="#" class="mm-nav__logo">PETRA MARMORARIA</a>
+    <div class="mm-nav__links" role="list">
+      <a href="#materiais" role="listitem" class="mm-nav__link" (click)="closeMenu()">Materiais</a>
+      <a href="#projetos"  role="listitem" class="mm-nav__link" (click)="closeMenu()">Projetos</a>
+      <a href="#contato"   role="listitem" class="mm-nav__link mm-nav__link--cta" (click)="closeMenu()">Orçamento</a>
+    </div>
+    <button class="mm-nav__hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mm-nav__mobile" aria-label="Menu mobile">
+    <a href="#materiais" class="mm-nav__mobile-link" (click)="closeMenu()">Materiais</a>
+    <a href="#projetos"  class="mm-nav__mobile-link" (click)="closeMenu()">Projetos</a>
+    <a href="#contato"   class="mm-nav__mobile-link" (click)="closeMenu()">Orçamento</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="mm-hero">
+  <div class="mm-inner mm-hero__inner">
+    <div class="mm-hero__content">
+      <p class="mm-hero__eyebrow">Mármore · Granito · Quartzito</p>
+      <h1 class="mm-hero__title">
+        A Eternidade do<br>
+        <em>Mármore</em><br>
+        na sua Casa.
+      </h1>
+      <p class="mm-hero__body">
+        Superfícies que atravessam gerações. Cada peça é selecionada
+        nas melhores pedreiras do mundo e lapidada com precisão milimétrica
+        pelos nossos mestres artesãos.
+      </p>
+      <a href="#contato" class="mm-hero__cta"><luster-button size="lg">Solicitar orçamento</luster-button></a>
+    </div>
+    <figure class="mm-hero__image" aria-label="Mármore Calacatta em cozinha contemporânea">
+      <div class="mm-hero__image-slab" aria-hidden="true">
+        <div class="mm-slab-vein mm-slab-vein--1"></div>
+        <div class="mm-slab-vein mm-slab-vein--2"></div>
+        <div class="mm-slab-vein mm-slab-vein--3"></div>
+      </div>
+    </figure>
+  </div>
+  <div class="mm-hero__strip" aria-hidden="true">
+    <span>Mármore Italiano</span>
+    <span class="mm-dot" aria-hidden="true">·</span>
+    <span>Granito Nacional</span>
+    <span class="mm-dot" aria-hidden="true">·</span>
+    <span>Quartzito Premium</span>
+    <span class="mm-dot" aria-hidden="true">·</span>
+    <span>Porcelanato</span>
+    <span class="mm-dot" aria-hidden="true">·</span>
+    <span>Silestone</span>
+  </div>
+</section>
+
+<!-- ── Craft ─────────────────────────────────────────────────── -->
+<section class="mm-craft">
+  <div class="mm-inner mm-craft__inner">
+    <figure class="mm-craft__image" role="img" aria-label="Artesão lapidando mármore">
+      <div class="mm-craft__photo" aria-hidden="true">
+        <div class="mm-craft__photo-overlay"></div>
+      </div>
+    </figure>
+    <div class="mm-craft__content">
+      <p class="mm-eyebrow">Tradição &amp; Técnica</p>
+      <h2 class="mm-section-title">
+        Mestres na<br>
+        <em>Arte do Mármore.</em>
+      </h2>
+      <p class="mm-body">
+        Há mais de 30 anos transformamos pedras brutas em obras de arquitetura.
+        Nossa equipe de mestres artesãos domina técnicas tradicionais italianas
+        adaptadas às exigências do design contemporâneo brasileiro.
+      </p>
+      <p class="mm-body">
+        Cada projeto começa com uma visita técnica gratuita. Medimos, orientamos
+        sobre os materiais mais adequados e entregamos um orçamento detalhado
+        sem surpresas.
+      </p>
+      <div class="mm-craft__badges">
+        <div class="mm-badge">
+          <span class="mm-badge__num">30+</span>
+          <span class="mm-badge__label">Anos de ofício</span>
+        </div>
+        <div class="mm-badge">
+          <span class="mm-badge__num">4.800+</span>
+          <span class="mm-badge__label">Projetos entregues</span>
+        </div>
+        <div class="mm-badge">
+          <span class="mm-badge__num">100%</span>
+          <span class="mm-badge__label">Satisfação garantida</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Materials ─────────────────────────────────────────────── -->
+<section id="materiais" class="mm-materials">
+  <div class="mm-inner">
+    <p class="mm-eyebrow mm-eyebrow--center">Curadoria de Pedras</p>
+    <h2 class="mm-section-title mm-section-title--center">Mármores<br><em>Nobres.</em></h2>
+    <div class="mm-materials__grid">
+
+      <div class="mm-material">
+        <div class="mm-material__slab mm-material__slab--calacatta" aria-hidden="true">
+          <div class="mm-slab-vein mm-slab-vein--1"></div>
+          <div class="mm-slab-vein mm-slab-vein--2"></div>
+        </div>
+        <div class="mm-material__info">
+          <h3 class="mm-material__name">Calacatta Oro</h3>
+          <p class="mm-material__origin">Itália · Carrara</p>
+          <p class="mm-material__desc">O mais nobre dos mármores brancos. Veios dourados sobre fundo branco puro, ideal para bancadas e revestimentos de prestígio.</p>
+        </div>
+      </div>
+
+      <div class="mm-material">
+        <div class="mm-material__slab mm-material__slab--nero" aria-hidden="true">
+          <div class="mm-slab-vein mm-slab-vein--white-1"></div>
+          <div class="mm-slab-vein mm-slab-vein--white-2"></div>
+        </div>
+        <div class="mm-material__info">
+          <h3 class="mm-material__name">Nero Marquina</h3>
+          <p class="mm-material__origin">Espanha · País Basco</p>
+          <p class="mm-material__desc">Preto profundo com veios brancos nítidos. Presença imponente em banheiros, fachadas e pisos de ambientes de alto padrão.</p>
+        </div>
+      </div>
+
+      <div class="mm-material">
+        <div class="mm-material__slab mm-material__slab--travertino" aria-hidden="true">
+          <div class="mm-slab-travertino-lines"></div>
+        </div>
+        <div class="mm-material__info">
+          <h3 class="mm-material__name">Travertino Romano</h3>
+          <p class="mm-material__origin">Itália · Tivoli</p>
+          <p class="mm-material__desc">Textura orgânica e tom quente bege-marfim. Escolha atemporal para pisos, painéis e elementos decorativos de interiores sofisticados.</p>
+        </div>
+      </div>
+
+      <div class="mm-material">
+        <div class="mm-material__slab mm-material__slab--verde" aria-hidden="true">
+          <div class="mm-slab-vein mm-slab-vein--dark-1"></div>
+          <div class="mm-slab-vein mm-slab-vein--dark-2"></div>
+        </div>
+        <div class="mm-material__info">
+          <h3 class="mm-material__name">Verde Ubatuba</h3>
+          <p class="mm-material__origin">Brasil · Minas Gerais</p>
+          <p class="mm-material__desc">Granito brasileiro com cristais de ouro e pontos dourados sobre verde-escuro. Resistência superior para áreas externas e cozinhas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ──────────────────────────────────────────────── -->
+<section id="projetos" class="mm-projects">
+  <div class="mm-inner">
+    <p class="mm-eyebrow">Portfólio</p>
+    <h2 class="mm-section-title">Projetos<br><em>em Destaque.</em></h2>
+    <div class="mm-projects__grid">
+      <div class="mm-project mm-project--wide">
+        <div class="mm-project__image mm-project__image--kitchen" aria-hidden="true"></div>
+        <div class="mm-project__caption">
+          <p class="mm-project__type">Cozinha · Calacatta Oro</p>
+          <h3 class="mm-project__name">Residência Alto de Pinheiros</h3>
+        </div>
+      </div>
+      <div class="mm-project">
+        <div class="mm-project__image mm-project__image--bath" aria-hidden="true"></div>
+        <div class="mm-project__caption">
+          <p class="mm-project__type">Banheiro · Nero Marquina</p>
+          <h3 class="mm-project__name">Cobertura Itaim Bibi</h3>
+        </div>
+      </div>
+      <div class="mm-project">
+        <div class="mm-project__image mm-project__image--floor" aria-hidden="true"></div>
+        <div class="mm-project__caption">
+          <p class="mm-project__type">Piso · Travertino Romano</p>
+          <h3 class="mm-project__name">Lobby Comercial Brooklin</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA / Contact ─────────────────────────────────────────── -->
+<section id="contato" class="mm-cta">
+  <div class="mm-inner mm-cta__inner">
+    <div class="mm-cta__text">
+      <p class="mm-eyebrow">Entre em Contato</p>
+      <h2 class="mm-cta__title">
+        Traga sua Visão<br>
+        <em>para a Realidade.</em>
+      </h2>
+      <p class="mm-cta__body">
+        Envie os detalhes do seu projeto — metragem, ambiente e preferência de material.
+        Nossa equipe retorna em até 24 horas com uma proposta personalizada.
+      </p>
+      <div class="mm-cta__info">
+        <div class="mm-info-item">
+          <span class="mm-info-item__label">Showroom</span>
+          <span class="mm-info-item__value">R. das Pedras, 1.240 · São Paulo</span>
+        </div>
+        <div class="mm-info-item">
+          <span class="mm-info-item__label">Horário</span>
+          <span class="mm-info-item__value">Seg–Sex 8h–18h · Sáb 9h–14h</span>
+        </div>
+        <div class="mm-info-item">
+          <span class="mm-info-item__label">WhatsApp</span>
+          <span class="mm-info-item__value">+55 (11) 99000-0000</span>
+        </div>
+      </div>
+    </div>
+    <form class="mm-cta__form" (submit)="$event.preventDefault()" aria-label="Formulário de orçamento">
+      <div class="mm-form-group">
+        <luster-input label="Nome completo" type="text" placeholder="Seu nome" name="nome"></luster-input>
+      </div>
+      <div class="mm-form-group">
+        <luster-input label="Telefone / WhatsApp" type="tel" placeholder="(11) 99000-0000" name="tel"></luster-input>
+      </div>
+      <div class="mm-form-group">
+        <label class="mm-form-label" for="mm-ambiente">Ambiente</label>
+        <select class="mm-form-input" id="mm-ambiente">
+          <option value="" disabled selected>Selecione o ambiente</option>
+          <option>Cozinha</option>
+          <option>Banheiro</option>
+          <option>Piso</option>
+          <option>Fachada</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="mm-form-group">
+        <label class="mm-form-label" for="mm-msg">Detalhes do projeto</label>
+        <textarea class="mm-form-input mm-form-input--textarea" id="mm-msg" rows="4" placeholder="Descreva o ambiente, metragem aproximada e preferência de material..."></textarea>
+      </div>
+      <luster-button type="submit" full-width>Solicitar orçamento →</luster-button>
+    </form>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer class="mm-footer">
+  <div class="mm-inner mm-footer__inner">
+    <span class="mm-footer__logo">PETRA MARMORARIA</span>
+    <small class="mm-footer__copy">© MMXXVI · Petra Mármores e Granitos Ltda · Todos os direitos reservados</small>
+    <a routerLink="/landing-pages" class="mm-footer__back">← Galeria</a>
+  </div>
+</footer>

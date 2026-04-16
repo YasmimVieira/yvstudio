@@ -1,4 +1,5 @@
 import {
+  CUSTOM_ELEMENTS_SCHEMA,
   Component,
   AfterViewInit,
   OnDestroy,
@@ -13,6 +14,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-neapolitan',
   standalone: true,
   imports: [RouterLink],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './neapolitan.component.html',
   styleUrl: './neapolitan.component.scss',
 })

@@ -14,6 +14,18 @@
   background: var(--ap-bg);
   color: var(--ap-text);
   font-family: 'Inter', sans-serif;
+
+  // Luster DS token overrides — Apex Law steel-blue palette
+  --dc-primary:                    #4a7fa0;
+  --dc-primary-dim:                #3a6a88;
+  --dc-on-primary:                 #e2e9f0;
+  --dc-btn-primary-shadow:         0 4px 18px rgba(74, 127, 160, 0.3);
+  --dc-btn-primary-shadow-hover:   0 6px 24px rgba(74, 127, 160, 0.45);
+  --dc-btn-primary-gradient-hover: linear-gradient(135deg, #5890b2 0%, #4a7fa0 100%);
+  --dc-border-strong:              rgba(74, 127, 160, 0.35);
+  --dc-border-hover:               rgba(74, 127, 160, 0.6);
+  --dc-on-surface:                 var(--ap-text);
+  --dc-hover-tint-icon:            var(--ap-blue-d);
 }
 
 // ── Layout ────────────────────────────────────────────────────
@@ -55,26 +67,10 @@
   & + & { margin-top: 1rem; }
 }
 
-.ap-btn {
-  display: inline-block;
-  padding: 0.875rem 2rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+.ap-hero__actions a,
+.ap-contact__btn {
+  display: inline-flex;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-
-  &--primary {
-    background: var(--ap-blue);
-    color: var(--ap-bg);
-    &:hover { background: lighten(#4a7fa0, 8%); }
-  }
-
-  &--ghost {
-    border: 1px solid rgba(74, 127, 160, 0.35);
-    color: var(--ap-blue);
-    &:hover { border-color: var(--ap-blue); background: var(--ap-blue-d); }
-  }
 }
 
 // ── Nav ───────────────────────────────────────────────────────

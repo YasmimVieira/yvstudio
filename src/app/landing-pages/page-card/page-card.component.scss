@@ -541,3 +541,110 @@
     &--short { width: 44px; }
   }
 }
+
+// ── Marmoraria preview (light cream) ─────────────────────────
+.lp-mm-preview {
+  width: 100%;
+  height: 100%;
+  background: #f7f4f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__nav {
+    height: 22px;
+    background: #f7f4f0;
+    border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__eyebrow {
+    height: 3px;
+    width: 45%;
+    background: rgba(139, 115, 85, 0.5);
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    height: 10px;
+    width: 85%;
+    background: rgba(26, 24, 20, 0.45);
+
+    &--em {
+      width: 60%;
+      background: rgba(139, 115, 85, 0.55);
+    }
+  }
+
+  &__sub {
+    height: 3px;
+    width: 75%;
+    background: rgba(26, 24, 20, 0.18);
+    margin-top: 3px;
+
+    &--short { width: 55%; }
+  }
+
+  &__btn {
+    height: 11px;
+    width: 50%;
+    background: rgba(139, 115, 85, 0.6);
+    margin-top: 8px;
+  }
+
+  &__slab {
+    height: 100%;
+    background: linear-gradient(135deg, #f0ece6 0%, #e8e2d8 40%, #ddd5c8 70%, #d4cab9 100%);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__vein {
+    position: absolute;
+    background: rgba(139, 115, 85, 0.22);
+    transform-origin: top left;
+
+    &--1 {
+      width: 1px;
+      height: 160%;
+      top: -10%;
+      left: 30%;
+      transform: rotate(-20deg);
+      background: linear-gradient(180deg, transparent 0%, rgba(120, 95, 65, 0.3) 30%, rgba(120, 95, 65, 0.15) 70%, transparent 100%);
+    }
+
+    &--2 {
+      width: 2px;
+      height: 140%;
+      top: -5%;
+      left: 55%;
+      transform: rotate(-18deg);
+      background: linear-gradient(180deg, transparent 0%, rgba(100, 80, 55, 0.2) 25%, rgba(100, 80, 55, 0.35) 55%, rgba(100, 80, 55, 0.1) 85%, transparent 100%);
+    }
+
+    &--3 {
+      width: 1px;
+      height: 120%;
+      top: 0%;
+      left: 72%;
+      transform: rotate(-22deg);
+      background: linear-gradient(180deg, transparent 0%, rgba(139, 115, 85, 0.18) 40%, rgba(139, 115, 85, 0.25) 65%, transparent 100%);
+    }
+  }
+}
