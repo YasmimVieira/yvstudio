@@ -24,6 +24,7 @@
 
   <nav class="lp-nav__mobile" id="mobile-nav" aria-label="Navegação mobile">
     <a href="#sobre" class="lp-nav__mobile-link" (click)="closeMenu()">O que somos</a>
+    <a href="#processo" class="lp-nav__mobile-link" (click)="closeMenu()">Como trabalhamos</a>
     <a href="#produtos" class="lp-nav__mobile-link" (click)="closeMenu()">Produtos</a>
     <a href="#projetos" class="lp-nav__mobile-link" (click)="closeMenu()">Projetos</a>
     <a href="#contatos" class="lp-nav__mobile-link" (click)="closeMenu()">Contatos</a>
@@ -97,6 +98,66 @@
       <blockquote class="lp-sobre__quote">
         Simplicidade é o último grau da sofisticação.
       </blockquote>
+    </div>
+  </div>
+</section>
+
+<hr class="lp-divider">
+
+<!-- ── Como trabalhamos ───────────────────────────────────── -->
+<section id="processo" class="lp-section lp-process">
+  <div class="lp-inner">
+    <header class="lp-sobre__header">
+      <p class="lp-meta">COMO TRABALHAMOS</p>
+      <h2 class="lp-section__title">O PROCESSO</h2>
+    </header>
+
+    <div class="lp-process__stage">
+      <!-- Zigzag SVG path -->
+      <svg class="lp-process__svg" viewBox="0 0 1000 960" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Ghost track -->
+        <path class="lp-process__track"
+          d="M 500 0 C 500 60,250 60,250 120 C 250 180,750 180,750 360 C 750 420,250 420,250 600 C 250 660,750 660,750 840 C 750 900,500 900,500 960"
+          fill="none"/>
+        <!-- Animated fill -->
+        <path class="lp-process__fill"
+          d="M 500 0 C 500 60,250 60,250 120 C 250 180,750 180,750 360 C 750 420,250 420,250 600 C 250 660,750 660,750 840 C 750 900,500 900,500 960"
+          fill="none"/>
+        <!-- Waypoint dots -->
+        <circle class="lp-process__dot lp-process__dot--1" cx="250" cy="120" r="5"/>
+        <circle class="lp-process__dot lp-process__dot--2" cx="750" cy="360" r="5"/>
+        <circle class="lp-process__dot lp-process__dot--3" cx="250" cy="600" r="5"/>
+        <circle class="lp-process__dot lp-process__dot--4" cx="750" cy="840" r="5"/>
+        <!-- Tracer that rides the path -->
+        <circle class="lp-process__tracer" cx="500" cy="0" r="7"/>
+      </svg>
+
+      <!-- Step cards aligned to the waypoints -->
+      <div class="lp-process__grid">
+        <article class="lp-step lp-step--1">
+          <span class="lp-step__num">01</span>
+          <h3 class="lp-step__title">Briefing</h3>
+          <p class="lp-step__desc">Enxergamos a necessidade e estudamos a empresa — seu mercado, tom de voz e objetivo. Sem atalhos.</p>
+        </article>
+
+        <article class="lp-step lp-step--2">
+          <span class="lp-step__num">02</span>
+          <h3 class="lp-step__title">Prototipação e Orçamento</h3>
+          <p class="lp-step__desc">Apresentamos um protótipo fiel ao design final e um preço fixo, sem surpresas no meio do caminho.</p>
+        </article>
+
+        <article class="lp-step lp-step--3">
+          <span class="lp-step__num">03</span>
+          <h3 class="lp-step__title">Desenvolvimento</h3>
+          <p class="lp-step__desc">2 dias para landing pages, 3 dias para sites institucionais e demanda sob medida para projetos SaaS.</p>
+        </article>
+
+        <article class="lp-step lp-step--4">
+          <span class="lp-step__num">04</span>
+          <h3 class="lp-step__title">Entrega</h3>
+          <p class="lp-step__desc">Link entregue após confirmação de pagamento, com 1 mês de manutenção incluso para ajustes pós-lançamento.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>

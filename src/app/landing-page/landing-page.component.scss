@@ -866,3 +866,111 @@
     margin: 0;
   }
 }
+
+// ── Processo / Como trabalhamos ───────────────────────────────
+.lp-process__stage {
+  position: relative;
+  height: 960px;
+  margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+}
+
+.lp-process__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.lp-process__track {
+  stroke: rgba(0, 229, 255, 0.12);
+  stroke-width: 2;
+}
+
+.lp-process__fill {
+  stroke: var(--luster-accent, #00e5ff);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.lp-process__dot {
+  fill: var(--luster-accent, #00e5ff);
+  opacity: 0;
+  filter: drop-shadow(0 0 4px rgba(0, 229, 255, 0.7));
+}
+
+.lp-process__tracer {
+  fill: var(--luster-accent, #00e5ff);
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.9));
+}
+
+.lp-process__grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 240px);
+
+  @media (max-width: 768px) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.lp-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &--1 { grid-column: 1; grid-row: 1; padding: 1.5rem 3.5rem 1.5rem 0; }
+  &--2 { grid-column: 2; grid-row: 2; padding: 1.5rem 0 1.5rem 3.5rem; }
+  &--3 { grid-column: 1; grid-row: 3; padding: 1.5rem 3.5rem 1.5rem 0; }
+  &--4 { grid-column: 2; grid-row: 4; padding: 1.5rem 0 1.5rem 3.5rem; }
+
+  @media (max-width: 768px) {
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem !important;
+    border-left: 2px solid var(--luster-accent, #00e5ff);
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.lp-step__num {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--luster-accent, #00e5ff);
+  font-family: var(--font-mono, 'Courier New', monospace);
+  margin-bottom: 0.5rem;
+}
+
+.lp-step__title {
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  color: var(--luster-off-white, #f5f5f5);
+  margin: 0 0 0.75rem;
+  line-height: 1.25;
+}
+
+.lp-step__desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--luster-slate, rgba(255, 255, 255, 0.6));
+  margin: 0;
+  max-width: 28ch;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}

@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   menuOpen = signal(false);
   activeSection = signal('');
 
-  private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'produtos', 'sobre', 'hero'];
+  private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'produtos', 'processo', 'sobre', 'hero'];
   private heroMouseHandlers: (() => void)[] = [];
 
   constructor(
@@ -62,6 +62,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.initScrollAnimations(gsap, ScrollTrigger);
     this.initHeroParallax(gsap);
+    await this.initProcessAnimation(gsap, ScrollTrigger);
   }
 
   ngOnDestroy(): void {
@@ -142,6 +143,76 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     gsap.from('.lp-footer', {
       opacity: 0, y: 20, duration: 0.8, ease: 'power2.out',
       scrollTrigger: { trigger: '.lp-footer', start: 'top 98%', once: true },
+    });
+  }
+
+  // ── Process zigzag animation ─────────────────────────────────
+  private async initProcessAnimation(gsap: any, ScrollTrigger: any): Promise<void> {
+    const fillPath = document.querySelector<SVGPathElement>('.lp-process__fill');
+    const tracerEl = document.querySelector<SVGCircleElement>('.lp-process__tracer');
+    if (!fillPath || !tracerEl) return;
+
+    const { MotionPathPlugin } = await import('gsap/MotionPathPlugin');
+    gsap.registerPlugin(MotionPathPlugin);
+
+    // Measure path and set up stroke-dash
+    const pathLen = fillPath.getTotalLength();
+    gsap.set(fillPath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
+    gsap.set(tracerEl, { opacity: 0 });
+
+    // Single timeline scrubbed to scroll
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.lp-process__stage',
+        start: 'top 75%',
+        end: 'bottom 25%',
+        scrub: 1,
+      },
+    });
+
+    // Path draws as you scroll
+    tl.to(fillPath, { strokeDashoffset: 0, ease: 'none', duration: 1 }, 0);
+
+    // Tracer rides along path using MotionPath
+    tl.fromTo(
+      tracerEl,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        motionPath: {
+          path: '.lp-process__fill',
+          align: '.lp-process__fill',
+          autoRotate: false,
+          alignOrigin: [0.5, 0.5],
+          start: 0,
+          end: 1,
+        },
+        ease: 'none',
+        duration: 1,
+      },
+      0,
+    );
+
+    // Waypoint dots appear as path reaches each waypoint
+    const dots = document.querySelectorAll<SVGCircleElement>('.lp-process__dot');
+    const dotFractions = [0.22, 0.44, 0.67, 0.89]; // approx. path-length fractions for each waypoint
+    dots.forEach((dot, i) => {
+      tl.to(dot, { opacity: 1, duration: 0.01, ease: 'none' }, dotFractions[i]);
+    });
+
+    // Step cards fade in as the path reaches each waypoint
+    document.querySelectorAll<HTMLElement>('.lp-step').forEach((step, i) => {
+      gsap.from(step, {
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: step,
+          start: 'top 85%',
+          once: true,
+        },
+      });
     });
   }
 
