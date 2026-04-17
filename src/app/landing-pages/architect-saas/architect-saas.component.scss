@@ -28,6 +28,13 @@
   --dc-border-strong:              rgba(229, 62, 62, 0.4);
   --dc-border-hover:               rgba(229, 62, 62, 0.6);
   --dc-hover-tint-icon:            var(--arc-accent-d);
+  // SharedNavComponent theme
+  --nav-bg:        rgba(238,240,255,.95);
+  --nav-border:    rgba(26,26,46,.09);
+  --nav-text:      #1a1a2e;
+  --nav-muted:     #6b7280;
+  --nav-mobile-bg: #eef0ff;
+  --nav-accent:    #e53e3e;
 }
 
 // ── Layout ────────────────────────────────────────────────────
@@ -65,97 +72,6 @@
   text-decoration: none;
 }
 
-// ── Nav ───────────────────────────────────────────────────────
-.arc-nav {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 100;
-  background: rgba(238, 240, 255, 0.94);
-  border-bottom: 1px solid var(--arc-border);
-  backdrop-filter: blur(14px);
-
-  &__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 8%;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    @media (max-width: 768px) { padding: 0 1.5rem; }
-  }
-
-  &__back {
-    font-family: var(--arc-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--arc-muted);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.2s;
-    &:hover { color: var(--arc-navy); }
-  }
-
-  &__logo {
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--arc-navy);
-    text-decoration: none;
-    margin-right: auto;
-    transition: color 0.2s;
-    &:hover { color: var(--arc-blue); }
-  }
-
-  &__links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    @media (max-width: 900px) { display: none; }
-  }
-
-  &__link {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--arc-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    &:hover { color: var(--arc-navy); }
-  }
-
-  &__hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    @media (max-width: 900px) { display: flex; }
-    span { display: block; width: 20px; height: 1.5px; background: var(--arc-navy); }
-  }
-
-  &__mobile {
-    display: none;
-    flex-direction: column;
-    padding: 1rem 1.5rem 1.5rem;
-    gap: 1.25rem;
-    border-top: 1px solid var(--arc-border);
-    background: var(--arc-bg);
-  }
-
-  &.is-open &__mobile {
-    @media (max-width: 900px) { display: flex; }
-  }
-
-  &__mobile-link {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--arc-navy);
-    text-decoration: none;
-  }
-}
 
 // ── Hero ──────────────────────────────────────────────────────
 .arc-hero {

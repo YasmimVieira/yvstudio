@@ -29,6 +29,13 @@
   --dc-border-faint:               rgba(139, 115, 85, 0.28);
   --dc-focus-ring:                 rgba(139, 115, 85, 0.18);
   --dc-btn-primary-shadow-press:   0 2px 8px rgba(139, 115, 85, 0.2);
+  // SharedNavComponent theme
+  --nav-bg:        rgba(247,244,240,.95);
+  --nav-border:    rgba(26,24,20,.1);
+  --nav-text:      #1a1814;
+  --nav-muted:     rgba(26,24,20,.5);
+  --nav-mobile-bg: #f7f4f0;
+  --nav-accent:    #8b7355;
 }
 
 // ── Layout ────────────────────────────────────────────────────
@@ -77,105 +84,6 @@
   text-decoration: none;
 }
 
-// ── Nav ───────────────────────────────────────────────────────
-.mm-nav {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 100;
-  background: rgba(247, 244, 240, 0.94);
-  border-bottom: 1px solid var(--mm-border);
-  backdrop-filter: blur(14px);
-
-  &__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 8%;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    @media (max-width: 768px) { padding: 0 1.5rem; }
-  }
-
-  &__back {
-    font-family: var(--mm-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mm-muted);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.2s;
-    &:hover { color: var(--mm-text); }
-  }
-
-  &__logo {
-    font-family: var(--mm-serif);
-    font-size: 0.9375rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--mm-text);
-    text-decoration: none;
-    margin-right: auto;
-  }
-
-  &__links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    @media (max-width: 768px) { display: none; }
-  }
-
-  &__link {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--mm-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    &:hover { color: var(--mm-text); }
-
-    &--cta {
-      padding: 0.45rem 1.25rem;
-      border: 1px solid var(--mm-text);
-      color: var(--mm-text);
-      font-weight: 600;
-      transition: background 0.2s, color 0.2s;
-      &:hover { background: var(--mm-text); color: var(--mm-bg); }
-    }
-  }
-
-  &__hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    @media (max-width: 768px) { display: flex; }
-    span { display: block; width: 20px; height: 1.5px; background: var(--mm-text); }
-  }
-
-  &__mobile {
-    display: none;
-    flex-direction: column;
-    padding: 1rem 1.5rem 1.5rem;
-    gap: 1.25rem;
-    border-top: 1px solid var(--mm-border);
-    background: var(--mm-bg);
-  }
-
-  &.is-open &__mobile {
-    @media (max-width: 768px) { display: flex; }
-  }
-
-  &__mobile-link {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--mm-text);
-    text-decoration: none;
-  }
-}
 
 // ── Hero ──────────────────────────────────────────────────────
 .mm-hero {
