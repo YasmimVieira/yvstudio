@@ -1,23 +1,8 @@
-<!-- ── Nav ─────────────────────────────────────────────────── -->
-<nav class="mm-nav" [class.is-open]="menuOpen()">
-  <div class="mm-nav__inner">
-    <a routerLink="/landing-pages" class="mm-nav__back">← Galeria</a>
-    <a href="#" class="mm-nav__logo">PETRA MARMORARIA</a>
-    <div class="mm-nav__links" role="list">
-      <a href="#materiais" role="listitem" class="mm-nav__link" (click)="closeMenu()">Materiais</a>
-      <a href="#projetos"  role="listitem" class="mm-nav__link" (click)="closeMenu()">Projetos</a>
-      <a href="#contato"   role="listitem" class="mm-nav__link mm-nav__link--cta" (click)="closeMenu()">Orçamento</a>
-    </div>
-    <button class="mm-nav__hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="mm-nav__mobile" aria-label="Menu mobile">
-    <a href="#materiais" class="mm-nav__mobile-link" (click)="closeMenu()">Materiais</a>
-    <a href="#projetos"  class="mm-nav__mobile-link" (click)="closeMenu()">Projetos</a>
-    <a href="#contato"   class="mm-nav__mobile-link" (click)="closeMenu()">Orçamento</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="PETRA MARMORARIA"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="mm-hero">

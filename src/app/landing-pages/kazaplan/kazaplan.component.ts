@@ -5,26 +5,29 @@ import {
   OnDestroy,
   Inject,
   PLATFORM_ID,
-  signal,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SharedNavComponent } from '../../shared/components/nav/nav.component';
+import { NavLink } from '../../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-kazaplan',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './kazaplan.component.html',
   styleUrl: './kazaplan.component.css',
 })
 export class KazaPlanComponent implements AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
+  readonly navLinks: NavLink[] = [
+    { label: 'Benefícios',       href: '#dores' },
+    { label: 'Funcionalidades',  href: '#funcional' },
+    { label: 'Preços',           href: '#precos' },
+    { label: 'Ver Demonstração', href: '#precos', isCta: true, ctaVariant: 'secondary', ctaSize: 'sm' },
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
-
-  toggleMenu(): void { this.menuOpen.update(v => !v); }
-  closeMenu(): void { this.menuOpen.set(false); }
 
   async ngAfterViewInit(): Promise<void> {
     if (!isPlatformBrowser(this.platformId)) return;
@@ -33,7 +36,6 @@ export class KazaPlanComponent implements AfterViewInit, OnDestroy {
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero entrance — set initial states first, then animate
     gsap.set(['.kp-hero__tag', '.kp-hero__sub', '.kp-hero__actions'], { opacity: 0, y: 20 });
     gsap.set('.kp-hero__title', { opacity: 0, y: 50 });
     gsap.set('.kp-hero__visual', { opacity: 0, x: 40 });
@@ -45,9 +47,7 @@ export class KazaPlanComponent implements AfterViewInit, OnDestroy {
       .to('.kp-hero__actions', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
       .to('.kp-hero__visual',  { opacity: 1, x: 0, duration: 1 },   '-=1.1');
 
-    // Scroll-triggered sections
-    const sections = document.querySelectorAll<Element>('.kp-scroll-anim');
-    sections.forEach(el => {
+    document.querySelectorAll<Element>('.kp-scroll-anim').forEach(el => {
       gsap.from(el, {
         y: 30, opacity: 0, duration: 0.8, ease: 'power2.out',
         scrollTrigger: { trigger: el, start: 'top 87%', once: true },

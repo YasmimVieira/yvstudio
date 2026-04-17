@@ -1,29 +1,8 @@
-<!-- ── Nav ───────────────────────────────────────────────────── -->
-<nav class="kp-nav" [class.is-open]="menuOpen()">
-  <div class="kp-nav__inner">
-    <a routerLink="/landing-pages" class="kp-nav__back">← Galeria</a>
-    <a href="#" class="kp-nav__logo">Kaza Plan</a>
-
-    <div class="kp-nav__links" role="list">
-      <a href="#dores"     role="listitem" class="kp-nav__link" (click)="closeMenu()">Benefícios</a>
-      <a href="#funcional" role="listitem" class="kp-nav__link" (click)="closeMenu()">Funcionalidades</a>
-      <a href="#precos"    role="listitem" class="kp-nav__link" (click)="closeMenu()">Preços</a>
-    </div>
-
-    <a href="#precos" class="kp-nav__demo"><luster-button variant="secondary" size="sm">Ver Demonstração</luster-button></a>
-
-    <button class="kp-nav__hamburger" (click)="toggleMenu()"
-      [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <nav class="kp-nav__mobile" aria-label="Menu mobile">
-    <a href="#dores"     class="kp-nav__mobile-link" (click)="closeMenu()">Benefícios</a>
-    <a href="#funcional" class="kp-nav__mobile-link" (click)="closeMenu()">Funcionalidades</a>
-    <a href="#precos"    class="kp-nav__mobile-link" (click)="closeMenu()">Preços</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="Kaza Plan"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="kp-hero">

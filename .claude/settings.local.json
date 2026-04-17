@@ -4,7 +4,9 @@
       "Bash(npx ng:*)",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(grep -E \"\\\\.\\(ts|html|scss\\)$\")"
+                                                                                                                                                                                                                                                                                                                                                                                              qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''                                                                                                                                    '      "Bash(grep -E \"\\\\.\\(ts|html|scss\\)$\")",
+      "Bash(grep -l \"menuOpen\\\\|toggleMenu\\\\|closeMenu\" \"c:/Users/vieir/Documents/estudos/yvstudio/src/app/landing-pages\"/*.ts \"c:/Users/vieir/Documents/estudos/yvstudio/src/app/landing-pages\"/*/*.ts)"
     ]
   }
 }
+ 

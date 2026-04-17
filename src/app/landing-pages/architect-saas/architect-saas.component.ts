@@ -5,21 +5,27 @@ import {
   OnDestroy,
   Inject,
   PLATFORM_ID,
-  signal,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SharedNavComponent } from '../../shared/components/nav/nav.component';
+import { NavLink } from '../../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-architect-saas',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './architect-saas.component.html',
   styleUrl: './architect-saas.component.scss',
 })
 export class ArchitectSaasComponent implements AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
+  readonly navLinks: NavLink[] = [
+    { label: 'Funcionalidades', href: '#funcionalidades' },
+    { label: 'Preços',          href: '#precos' },
+    { label: 'Depoimentos',     href: '#depoimento' },
+    { label: 'Começar Grátis',  href: '#precos', isCta: true },
+  ];
 
   readonly plans = [
     {
@@ -50,9 +56,6 @@ export class ArchitectSaasComponent implements AfterViewInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
-  toggleMenu(): void { this.menuOpen.update(v => !v); }
-  closeMenu(): void  { this.menuOpen.set(false); }
-
   async ngAfterViewInit(): Promise<void> {
     if (!isPlatformBrowser(this.platformId)) return;
 
@@ -61,10 +64,10 @@ export class ArchitectSaasComponent implements AfterViewInit, OnDestroy {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.timeline({ defaults: { ease: 'power3.out' } })
-      .from('.arc-hero__badge',   { y: 16, opacity: 0, duration: 0.6 })
-      .from('.arc-hero__title',   { y: 50, opacity: 0, duration: 1.0 }, '-=0.3')
-      .from('.arc-hero__body',    { y: 28, opacity: 0, duration: 0.8 }, '-=0.5')
-      .from('.arc-hero__actions', { y: 18, opacity: 0, duration: 0.6 }, '-=0.4')
+      .from('.arc-hero__badge',     { y: 16, opacity: 0, duration: 0.6 })
+      .from('.arc-hero__title',     { y: 50, opacity: 0, duration: 1.0 }, '-=0.3')
+      .from('.arc-hero__body',      { y: 28, opacity: 0, duration: 0.8 }, '-=0.5')
+      .from('.arc-hero__actions',   { y: 18, opacity: 0, duration: 0.6 }, '-=0.4')
       .from('.arc-hero__dashboard', { opacity: 0, y: 30, duration: 1.0 }, '-=0.8');
 
     gsap.from('.arc-feature', {

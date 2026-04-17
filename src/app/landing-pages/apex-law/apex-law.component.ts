@@ -5,26 +5,28 @@ import {
   OnDestroy,
   Inject,
   PLATFORM_ID,
-  signal,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SharedNavComponent } from '../../shared/components/nav/nav.component';
+import { NavLink } from '../../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-apex-law',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './apex-law.component.html',
   styleUrl: './apex-law.component.scss',
 })
 export class ApexLawComponent implements AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
+  readonly navLinks: NavLink[] = [
+    { label: 'Atuação',  href: '#areas' },
+    { label: 'Sócios',   href: '#parceiros' },
+    { label: 'Contato',  href: '#contato', isCta: true },
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
-
-  toggleMenu(): void { this.menuOpen.update(v => !v); }
-  closeMenu(): void  { this.menuOpen.set(false); }
 
   async ngAfterViewInit(): Promise<void> {
     if (!isPlatformBrowser(this.platformId)) return;

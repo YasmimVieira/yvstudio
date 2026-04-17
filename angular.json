@@ -35,6 +35,9 @@
               "node_modules/@luster-ui/ui/dist/luster/luster.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "scripts": [],
             "server": "src/main.server.ts",
             "outputMode": "server",

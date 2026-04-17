@@ -1,0 +1,17 @@
+// ── Breakpoints ───────────────────────────────────────────────
+$bp-lg:  900px;   // tablet landscape / 2-col grid
+$bp-md:  768px;   // tablet portrait / nav mobile
+$bp-sm:  580px;   // large phone
+$bp-xs:  480px;   // small phone
+
+// ── Typography ────────────────────────────────────────────────
+$font-sans:  'Inter', sans-serif;
+$font-mono:  'JetBrains Mono', 'Courier New', monospace;
+$font-serif: 'Playfair Display', Georgia, serif;
+
+// ── Spacing ───────────────────────────────────────────────────
+$section-pad:        7rem 0;
+$section-pad-mobile: 4rem 0;
+$inner-max:          1200px;
+$inner-pad-h:        8%;
+$inner-pad-mobile:   1.5rem;

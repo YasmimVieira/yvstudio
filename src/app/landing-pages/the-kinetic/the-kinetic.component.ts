@@ -9,18 +9,26 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SharedNavComponent } from '../../shared/components/nav/nav.component';
+import { NavLink } from '../../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-the-kinetic',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './the-kinetic.component.html',
   styleUrl: './the-kinetic.component.scss',
 })
 export class TheKineticComponent implements AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
   activeIdx = signal(0);
+
+  readonly navLinks: NavLink[] = [
+    { label: 'Serviços',        href: '#services' },
+    { label: 'Portfólio',       href: '#portfolio' },
+    { label: 'Depoimentos',     href: '#testimonials' },
+    { label: 'Iniciar Projeto', href: '#contact', isCta: true },
+  ];
 
   readonly testimonials = [
     {
@@ -41,9 +49,6 @@ export class TheKineticComponent implements AfterViewInit, OnDestroy {
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
-
-  toggleMenu(): void { this.menuOpen.update(v => !v); }
-  closeMenu(): void  { this.menuOpen.set(false); }
 
   prev(): void {
     this.activeIdx.update(i => (i - 1 + this.testimonials.length) % this.testimonials.length);

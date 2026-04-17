@@ -1,0 +1,108 @@
+@use 'variables' as v;
+
+// ── Responsive breakpoints ────────────────────────────────────
+@mixin tablet   { @media (max-width: #{v.$bp-lg}) { @content; } }
+@mixin mobile   { @media (max-width: #{v.$bp-md}) { @content; } }
+@mixin mobile-sm{ @media (max-width: #{v.$bp-sm}) { @content; } }
+@mixin mobile-xs{ @media (max-width: #{v.$bp-xs}) { @content; } }
+
+// ── Flex helpers ──────────────────────────────────────────────
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  @if $gap != 0 { gap: $gap; }
+}
+
+// ── Responsive grid ───────────────────────────────────────────
+@mixin grid-responsive(
+  $desktop: 3,
+  $tablet:  2,
+  $mobile:  1,
+  $gap:     1.5rem
+) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(#{$desktop}, 1fr);
+
+  @include tablet  { grid-template-columns: repeat(#{$tablet}, 1fr); }
+  @include mobile  { grid-template-columns: repeat(#{$mobile}, 1fr); }
+}
+
+// ── Section inner container ───────────────────────────────────
+@mixin inner-container(
+  $max-width: v.$inner-max,
+  $padding-h: v.$inner-pad-h
+) {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding-h;
+
+  @include mobile { padding: 0 v.$inner-pad-mobile; }
+}
+
+// ── Eyebrow / meta label ──────────────────────────────────────
+@mixin eyebrow($color: currentColor) {
+  font-family: var(--luster-font-mono, #{v.$font-mono});
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $color;
+  margin-bottom: 0.75rem;
+}
+
+// ── Hover color transition ────────────────────────────────────
+@mixin hover-color($from, $to, $dur: 0.2s) {
+  color: $from;
+  transition: color #{$dur} ease;
+  &:hover { color: $to; }
+}
+
+// ── Section heading ───────────────────────────────────────────
+@mixin section-title($min: 1.75rem, $fluid: 3.5vw, $max: 3rem) {
+  font-size: clamp(#{$min}, #{$fluid}, #{$max});
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+// ── Body copy ─────────────────────────────────────────────────
+@mixin body-copy($max: 520px) {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  max-width: $max;
+
+  & + & { margin-top: 1rem; }
+}
+
+// ── Card hover state ──────────────────────────────────────────
+@mixin card-hover($border-alpha: 0.25, $bg-alpha: 0.02, $accent: #00e5ff) {
+  transition: border-color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    border-color: rgba($accent, $border-alpha);
+    background: rgba($accent, $bg-alpha);
+  }
+}
+
+// ── Hero two-col grid ─────────────────────────────────────────
+@mixin hero-grid($gap: 4rem) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap;
+  align-items: center;
+
+  @include tablet { grid-template-columns: 1fr; gap: 3rem; }
+}

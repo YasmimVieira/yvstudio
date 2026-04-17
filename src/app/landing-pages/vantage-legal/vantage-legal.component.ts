@@ -5,31 +5,33 @@ import {
   OnDestroy,
   Inject,
   PLATFORM_ID,
-  signal,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SharedNavComponent } from '../../shared/components/nav/nav.component';
+import { NavLink } from '../../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-vantage-legal',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './vantage-legal.component.html',
   styleUrl: './vantage-legal.component.scss',
 })
 export class VantageLegalComponent implements AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
+  readonly navLinks: NavLink[] = [
+    { label: 'Atuação',   href: '#atuacao' },
+    { label: 'Equipe',    href: '#equipe' },
+    { label: 'Consultar', href: '#consulta', isCta: true },
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
-
-  toggleMenu(): void { this.menuOpen.update(v => !v); }
-  closeMenu(): void  { this.menuOpen.set(false); }
 
   async ngAfterViewInit(): Promise<void> {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    const { gsap }        = await import('gsap');
+    const { gsap }          = await import('gsap');
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 

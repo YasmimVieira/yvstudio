@@ -1,34 +1,8 @@
-<!-- ── Nav ─────────────────────────────────────────────────── -->
-<nav class="tk-nav" [class.is-open]="menuOpen()">
-  <div class="tk-nav__inner">
-    <a routerLink="/landing-pages" class="tk-nav__back">← Galeria</a>
-    <a href="#hero" class="tk-nav__logo">THE KINETIC</a>
-
-    <div class="tk-nav__links" role="list">
-      <a href="#services"     role="listitem" class="tk-nav__link" (click)="closeMenu()">Serviços</a>
-      <a href="#portfolio"    role="listitem" class="tk-nav__link" (click)="closeMenu()">Portfólio</a>
-      <a href="#testimonials" role="listitem" class="tk-nav__link" (click)="closeMenu()">Depoimentos</a>
-      <a href="#contact" (click)="closeMenu()">
-        <luster-button>Iniciar Projeto</luster-button>
-      </a>
-    </div>
-
-    <button
-      class="tk-nav__hamburger"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="menuOpen()"
-      aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <nav class="tk-nav__mobile" aria-label="Navegação mobile">
-    <a href="#services"     class="tk-nav__mobile-link" (click)="closeMenu()">Serviços</a>
-    <a href="#portfolio"    class="tk-nav__mobile-link" (click)="closeMenu()">Portfólio</a>
-    <a href="#testimonials" class="tk-nav__mobile-link" (click)="closeMenu()">Depoimentos</a>
-    <a href="#contact"      class="tk-nav__mobile-link" (click)="closeMenu()">Iniciar Projeto</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="THE KINETIC"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="tk-hero">

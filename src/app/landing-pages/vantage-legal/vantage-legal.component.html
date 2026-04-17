@@ -1,23 +1,8 @@
-<!-- ── Nav ─────────────────────────────────────────────────── -->
-<nav class="vl-nav" [class.is-open]="menuOpen()">
-  <div class="vl-nav__inner">
-    <a routerLink="/landing-pages" class="vl-nav__back">← Galeria</a>
-    <a href="#" class="vl-nav__logo">MONROE.LEGAL</a>
-    <div class="vl-nav__links" role="list">
-      <a href="#atuacao" role="listitem" class="vl-nav__link" (click)="closeMenu()">Atuação</a>
-      <a href="#equipe"  role="listitem" class="vl-nav__link" (click)="closeMenu()">Equipe</a>
-      <a href="#consulta" role="listitem" class="vl-nav__link vl-nav__link--cta" (click)="closeMenu()">Consultar</a>
-    </div>
-    <button class="vl-nav__hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="vl-nav__mobile" aria-label="Menu mobile">
-    <a href="#atuacao"  class="vl-nav__mobile-link" (click)="closeMenu()">Atuação</a>
-    <a href="#equipe"   class="vl-nav__mobile-link" (click)="closeMenu()">Equipe</a>
-    <a href="#consulta" class="vl-nav__mobile-link" (click)="closeMenu()">Consultar</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="MONROE.LEGAL"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="vl-hero">

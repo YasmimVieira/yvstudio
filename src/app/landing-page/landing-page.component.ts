@@ -12,18 +12,27 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { SharedNavComponent } from '../shared/components/nav/nav.component';
+import { NavLink } from '../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
   activeSection = signal('');
+
+  readonly navLinks: NavLink[] = [
+    { label: 'O que somos',      href: '#sobre',    activeId: 'sobre' },
+    { label: 'Como trabalhamos', href: '#processo',  activeId: 'processo' },
+    { label: 'Produtos',         href: '#produtos',  activeId: 'produtos' },
+    { label: 'Projetos',         href: '#projetos',  activeId: 'projetos' },
+    { label: 'Contatos',         href: '#contatos',  activeId: 'contatos' },
+  ];
 
   private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'produtos', 'processo', 'sobre', 'hero'];
   private heroMouseHandlers: (() => void)[] = [];
@@ -43,14 +52,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     this.meta.updateTag({ property: 'og:url', content: 'https://yvstudio.dev/' });
     this.meta.updateTag({ name: 'twitter:title', content: 'YV Studio | Criação de Sites, Software e Landing Pages' });
     this.meta.updateTag({ name: 'twitter:description', content: 'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS de alto padrão.' });
-  }
-
-  toggleMenu(): void {
-    this.menuOpen.update(v => !v);
-  }
-
-  closeMenu(): void {
-    this.menuOpen.set(false);
   }
 
   async ngAfterViewInit(): Promise<void> {

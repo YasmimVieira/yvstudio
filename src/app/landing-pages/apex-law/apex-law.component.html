@@ -1,26 +1,8 @@
-<!-- ── Nav ─────────────────────────────────────────────────── -->
-<nav class="ap-nav" [class.is-open]="menuOpen()">
-  <div class="ap-nav__inner">
-    <a routerLink="/landing-pages" class="ap-nav__back">← Galeria</a>
-    <a href="#" class="ap-nav__logo">
-      <span class="ap-nav__logo-apex">APEX</span>
-      <span class="ap-nav__logo-law">LAW GROUP</span>
-    </a>
-    <div class="ap-nav__links" role="list">
-      <a href="#areas"    role="listitem" class="ap-nav__link" (click)="closeMenu()">Atuação</a>
-      <a href="#parceiros" role="listitem" class="ap-nav__link" (click)="closeMenu()">Sócios</a>
-      <a href="#contato"  role="listitem" class="ap-nav__link ap-nav__link--cta" (click)="closeMenu()">Contato</a>
-    </div>
-    <button class="ap-nav__hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="ap-nav__mobile" aria-label="Menu mobile">
-    <a href="#areas"     class="ap-nav__mobile-link" (click)="closeMenu()">Atuação</a>
-    <a href="#parceiros" class="ap-nav__mobile-link" (click)="closeMenu()">Sócios</a>
-    <a href="#contato"   class="ap-nav__mobile-link" (click)="closeMenu()">Contato</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="APEX LAW GROUP"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="ap-hero">

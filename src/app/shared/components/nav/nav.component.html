@@ -1,0 +1,51 @@
+<nav class="lp-nav" [class.is-open]="menuOpen()">
+  <div class="lp-nav__inner" [class.lp-nav__inner--has-back]="!!backLink()">
+
+    @if (backLink()) {
+      <a [routerLink]="backLink()" class="lp-nav__back" (click)="closeMenu()">← Galeria</a>
+    }
+
+    <a [href]="logoHref()" class="lp-nav__logo">{{ logoText() }}</a>
+
+    <div class="lp-nav__links" role="list">
+      @for (link of links(); track link.href) {
+        @if (link.isCta) {
+          <a [href]="link.href" (click)="closeMenu()">
+            <luster-button
+              [attr.variant]="link.ctaVariant ?? 'primary'"
+              [attr.size]="link.ctaSize ?? 'sm'">
+              {{ link.label }}
+            </luster-button>
+          </a>
+        } @else {
+          <a
+            [href]="link.href"
+            role="listitem"
+            class="lp-nav__link"
+            [class.lp-nav__link--active]="link.activeId && activeSection() === link.activeId"
+            (click)="closeMenu()">
+            {{ link.label }}
+          </a>
+        }
+      }
+    </div>
+
+    <button
+      class="lp-nav__hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="lp-nav__mobile" aria-label="Navegação mobile">
+    @for (link of links(); track link.href) {
+      <a [href]="link.href" class="lp-nav__mobile-link" (click)="closeMenu()">
+        {{ link.label }}
+      </a>
+    }
+  </nav>
+</nav>

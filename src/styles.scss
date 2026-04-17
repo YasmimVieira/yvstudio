@@ -1,3 +1,6 @@
+@use 'styles/variables' as v;
+@use 'styles/mixins' as m;
+
 :root {
   --dc-surface:                   #000000;
   --dc-surface-container-lowest:  #000000;
@@ -157,6 +160,14 @@ a { text-decoration: none; color: inherit; }
 
 // ── Shared LP Navigation ─────────────────────────────────────
 .lp-nav {
+  // ── Themeable CSS vars (override in :host per landing page) ──
+  --nav-bg:        rgba(0, 0, 0, 0.72);
+  --nav-border:    var(--luster-divider);
+  --nav-text:      var(--luster-off-white);
+  --nav-muted:     var(--luster-slate);
+  --nav-accent:    var(--luster-accent);
+  --nav-mobile-bg: var(--luster-black);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -164,8 +175,8 @@ a { text-decoration: none; color: inherit; }
   z-index: 100;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.72);
-  border-bottom: 1px solid var(--luster-divider);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
 
   &__inner {
     max-width: 1280px;
@@ -173,11 +184,33 @@ a { text-decoration: none; color: inherit; }
     padding: 1.125rem 10%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem;
 
-    @media (max-width: 768px) {
-      padding: 1rem 1.5rem;
+    @include m.mobile { padding: 1rem 1.5rem; gap: 1rem; }
+
+    // When back link is present: logo centers between back and links
+    &--has-back {
+      .lp-nav__logo {
+        flex: 1;
+        text-align: center;
+      }
     }
+
+    // Without back link: push links to the right
+    &:not(&--has-back) .lp-nav__links {
+      margin-left: auto;
+    }
+  }
+
+  &__back {
+    font-family: var(--luster-font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--nav-muted);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+
+    &:hover { color: var(--nav-text); }
   }
 
   &__logo {
@@ -186,34 +219,30 @@ a { text-decoration: none; color: inherit; }
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--luster-off-white);
-    cursor: pointer;
+    color: var(--nav-text);
+    white-space: nowrap;
   }
 
   &__links {
     display: flex;
+    align-items: center;
     gap: 2.5rem;
 
-    @media (max-width: 768px) {
-      display: none;
-    }
+    @include m.mobile { display: none; }
   }
 
   &__link {
-    font-family: var(--luster-font-sans);
     font-size: 0.875rem;
     font-weight: 400;
-    color: var(--luster-slate);
-    cursor: pointer;
+    color: var(--nav-muted);
     transition: color 0.2s ease;
-    position: relative;
     padding-bottom: 2px;
 
-    &:hover { color: var(--luster-off-white); }
+    &:hover { color: var(--nav-text); }
 
     &--active {
-      color: var(--luster-off-white);
-      border-bottom: 1px solid var(--luster-accent);
+      color: var(--nav-text);
+      border-bottom: 1px solid var(--nav-accent);
     }
   }
 
@@ -228,11 +257,12 @@ a { text-decoration: none; color: inherit; }
     padding: 4px;
     width: 32px;
     height: 32px;
+    margin-left: auto;
 
     span {
       display: block;
       height: 1px;
-      background: var(--luster-off-white);
+      background: var(--nav-text);
       transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
       transform-origin: center;
 
@@ -241,9 +271,7 @@ a { text-decoration: none; color: inherit; }
       &:nth-child(3) { width: 50%; }
     }
 
-    @media (max-width: 768px) {
-      display: flex;
-    }
+    @include m.mobile { display: flex; }
   }
 
   &.is-open &__hamburger span {
@@ -256,26 +284,24 @@ a { text-decoration: none; color: inherit; }
     display: none;
     flex-direction: column;
     padding: 1.5rem;
-    border-top: 1px solid var(--luster-divider);
+    background: var(--nav-mobile-bg);
+    border-top: 1px solid var(--nav-border);
     gap: 0.25rem;
   }
 
   &.is-open &__mobile {
-    @media (max-width: 768px) {
-      display: flex;
-    }
+    @include m.mobile { display: flex; }
   }
 
   &__mobile-link {
-    font-family: var(--luster-font-sans);
     font-size: 1rem;
     font-weight: 400;
-    color: var(--luster-slate);
+    color: var(--nav-muted);
     padding: 0.875rem 0;
-    border-bottom: 1px solid var(--luster-divider);
+    border-bottom: 1px solid var(--nav-border);
     transition: color 0.2s ease;
 
-    &:hover { color: var(--luster-off-white); }
+    &:hover { color: var(--nav-text); }
   }
 }
 

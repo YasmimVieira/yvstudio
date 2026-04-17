@@ -1,34 +1,8 @@
-<!-- ── Nav ─────────────────────────────────────────────────── -->
-<nav class="arc-nav" [class.is-open]="menuOpen()">
-  <div class="arc-nav__inner">
-    <a routerLink="/landing-pages" class="arc-nav__back">← Galeria</a>
-    <a href="#hero" class="arc-nav__logo">ArchitectSaaS</a>
-
-    <div class="arc-nav__links" role="list">
-      <a href="#funcionalidades" role="listitem" class="arc-nav__link" (click)="closeMenu()">Funcionalidades</a>
-      <a href="#precos"          role="listitem" class="arc-nav__link" (click)="closeMenu()">Preços</a>
-      <a href="#depoimento"      role="listitem" class="arc-nav__link" (click)="closeMenu()">Depoimentos</a>
-      <a href="#precos" (click)="closeMenu()">
-        <luster-button>Começar Grátis</luster-button>
-      </a>
-    </div>
-
-    <button
-      class="arc-nav__hamburger"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="menuOpen()"
-      aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <nav class="arc-nav__mobile" aria-label="Navegação mobile">
-    <a href="#funcionalidades" class="arc-nav__mobile-link" (click)="closeMenu()">Funcionalidades</a>
-    <a href="#precos"          class="arc-nav__mobile-link" (click)="closeMenu()">Preços</a>
-    <a href="#depoimento"      class="arc-nav__mobile-link" (click)="closeMenu()">Depoimentos</a>
-    <a href="#precos"          class="arc-nav__mobile-link" (click)="closeMenu()">Começar Grátis</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="ArchitectSaaS"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="arc-hero">

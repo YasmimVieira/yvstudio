@@ -1,33 +1,8 @@
-<!-- ── Navigation ────────────────────────────────────────────── -->
-<nav class="np-nav" [class.is-open]="menuOpen()">
-  <div class="np-nav__inner">
-    <a routerLink="/landing-pages" class="np-nav__back" (click)="closeMenu()">← Galeria</a>
-
-    <a href="#" class="np-nav__logo">The Artisanal Messenger</a>
-
-    <div class="np-nav__links" role="list">
-      <a href="#heritage" role="listitem" class="np-nav__link" (click)="closeMenu()">Heritage</a>
-      <a href="#maestro"  role="listitem" class="np-nav__link" (click)="closeMenu()">Maestro</a>
-      <a href="#reserve"  role="listitem" class="np-nav__link np-nav__link--cta" (click)="closeMenu()">Reserve</a>
-    </div>
-
-    <button
-      class="np-nav__hamburger"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="menuOpen()"
-      aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-
-  <nav class="np-nav__mobile" aria-label="Navegação mobile">
-    <a href="#heritage" class="np-nav__mobile-link" (click)="closeMenu()">Heritage</a>
-    <a href="#maestro"  class="np-nav__mobile-link" (click)="closeMenu()">Maestro</a>
-    <a href="#reserve"  class="np-nav__mobile-link" (click)="closeMenu()">Reserve</a>
-  </nav>
-</nav>
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="The Artisanal Messenger"
+  [links]="navLinks">
+</app-shared-nav>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero" class="np-hero">
