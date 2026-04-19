@@ -1,0 +1,182 @@
+<app-shared-nav
+  backLink="/landing-pages"
+  logoText="APEX KINETIC"
+  [links]="navLinks">
+</app-shared-nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section id="hero" class="ak-hero">
+  <div class="ak-hero__bg" aria-hidden="true">
+    <div class="ak-hero__bg-glow"></div>
+    <div class="ak-hero__bg-athlete"></div>
+    <div class="ak-hero__bg-overlay"></div>
+  </div>
+
+  <div class="ak-inner ak-hero__inner">
+    <div class="ak-hero__content">
+      <p class="ak-hero__eyebrow">PERFORMANCE · SUPLEMENTAÇÃO</p>
+      <h1 class="ak-hero__title">
+        ALCANCE SEU<br>
+        <em class="ak-hero__title-em">ÁPICE</em>
+      </h1>
+      <p class="ak-hero__body">
+        Desenvolvido para alta performance e saúde extrema.<br>
+        Atinja resultados que você nunca achou serem possíveis<br>
+        com nossa tecnologia cinética exclusiva.
+      </p>
+      <div class="ak-hero__actions">
+        <a href="#cta"><luster-button>Compre Agora</luster-button></a>
+        <a href="#features"><luster-button variant="secondary">Saber Mais</luster-button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ───────────────────────────────────────────────── -->
+<section id="features" class="ak-features">
+  <div class="ak-inner">
+    <div class="ak-features__grid">
+
+      <article class="ak-feature-card ak-feature-card--dark">
+        <div class="ak-feature-card__icon ak-feature-card__icon--shield" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2.5L4.5 7v7c0 5.8 4.1 11.2 9.5 12.5C19.4 25.2 23.5 19.8 23.5 14V7L14 2.5z"
+              stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M9.5 14l3 3 6-6" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="ak-feature-card__title">PUREZA<br>GARANTIDA</h3>
+        <p class="ak-feature-card__desc">
+          Cada grama de nossos produtos passa por testes
+          laboratoriais rigorosos de terceiros para assegurar
+          100% de pureza e eficácia farmacêutica.
+        </p>
+        <div class="ak-feature-card__footer">
+          <span class="ak-feature-card__badge">PHARMACEUTICAL GRADE</span>
+          <div class="ak-feature-card__line"></div>
+        </div>
+      </article>
+
+      <article class="ak-feature-card ak-feature-card--dark">
+        <div class="ak-feature-card__icon ak-feature-card__icon--bolt" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M16 3L8 16h8l-4 9 12-15h-8l4-7z" stroke="currentColor" stroke-width="1.5"
+              stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="ak-feature-card__title">PERFORMANCE<br>MÁXIMA</h3>
+        <p class="ak-feature-card__desc">
+          Desenvolva força e resistência inalcançáveis com fórmulas
+          otimizadas para o metabolismo humano sob estresse intenso.
+        </p>
+        <div class="ak-feature-card__meter">
+          <span class="ak-feature-card__meter-label">INTENSIDADE</span>
+          <div class="ak-feature-card__meter-track">
+            <div class="ak-feature-card__meter-fill"></div>
+          </div>
+          <span class="ak-feature-card__meter-val">100%</span>
+        </div>
+      </article>
+
+      <article class="ak-feature-card ak-feature-card--dark">
+        <div class="ak-feature-card__icon ak-feature-card__icon--clock" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="10.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M14 8.5V14l3.5 3.5" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="ak-feature-card__title">RESULTADOS<br>RÁPIDOS</h3>
+        <p class="ak-feature-card__desc">
+          Não espere meses para ver a diferença. Nossa absorção
+          acelerada garante que o seu corpo receba o combustível
+          necessário no momento exato.
+        </p>
+        <a href="#testimonials" class="ak-feature-card__link">VER ESTUDOS DE CASO →</a>
+      </article>
+
+      <div class="ak-feature-card ak-feature-card--accent" aria-hidden="true">
+        <div class="ak-feature-card__runner"></div>
+        <p class="ak-feature-card__motto">NENHUM<br>PASSO<br>ATRÁS.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ───────────────────────────────────────────── -->
+<section id="testimonials" class="ak-testimonials">
+  <div class="ak-inner">
+    <div class="ak-testimonials__header">
+      <div>
+        <h2 class="ak-testimonials__title">
+          QUEM TREINA PESADO,<br>
+          <mark class="ak-mark">CONFIA.</mark>
+        </h2>
+        <p class="ak-testimonials__sub">
+          Mais de 50.000 atletas de elite confiam na Apex Kinetic para atingir o
+          topo de suas categorias.
+        </p>
+      </div>
+      <div class="ak-testimonials__controls" role="group" aria-label="Navegação de depoimentos">
+        <button class="ak-testimonials__arrow" (click)="prev()" aria-label="Depoimento anterior">←</button>
+        <button class="ak-testimonials__arrow" (click)="next()" aria-label="Próximo depoimento">→</button>
+      </div>
+    </div>
+
+    <div class="ak-testimonials__cards">
+      @for (t of testimonials; track $index) {
+        <figure class="ak-testimonial-card" [class.ak-testimonial-card--active]="activeIdx() === $index">
+          <div class="ak-testimonial-card__stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★★★★★</span>
+          </div>
+          <blockquote>
+            <p class="ak-testimonial-card__quote">"{{ t.quote }}"</p>
+          </blockquote>
+          <figcaption class="ak-testimonial-card__author">
+            <div class="ak-testimonial-card__avatar" aria-hidden="true"></div>
+            <div>
+              <strong class="ak-testimonial-card__name">{{ t.author }}</strong>
+              <span class="ak-testimonial-card__role">{{ t.role | uppercase }}</span>
+            </div>
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────── -->
+<section id="cta" class="ak-cta">
+  <div class="ak-inner ak-cta__inner">
+    <h2 class="ak-cta__title">
+      PRONTO PARA<br>
+      SER SUA MELHOR<br>
+      VERSÃO?
+    </h2>
+    <p class="ak-cta__body">
+      Não deixe para amanhã o corpo e a mente que você pode<br>
+      começar a construir hoje mesmo. Entre para o time Apex.
+    </p>
+    <a href="#hero" class="ak-cta__btn">QUERO COMEÇAR HOJE</a>
+  </div>
+</section>
+
+<!-- ── Rodapé ────────────────────────────────────────────────── -->
+<footer class="ak-footer">
+  <div class="ak-inner ak-footer__inner">
+    <a href="#hero" class="ak-footer__logo">APEX KINETIC</a>
+
+    <nav class="ak-footer__nav" aria-label="Navegação do rodapé">
+      <a href="#" class="ak-footer__link">Privacy</a>
+      <a href="#" class="ak-footer__link">Terms</a>
+      <a href="#" class="ak-footer__link">Contact</a>
+      <a href="#" class="ak-footer__link">Affiliates</a>
+    </nav>
+
+    <p class="ak-footer__copy">© 2026 APEX KINETIC. ENGINEERED FOR PERFORMANCE.</p>
+
+    <a routerLink="/landing-pages" class="ak-footer__back">← Galeria</a>
+  </div>
+</footer>

@@ -46,4 +46,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./landing-pages/the-kinetic/the-kinetic.component').then(m => m.TheKineticComponent),
   },
+  {
+    path: 'landing-pages/apex-kinetic',
+    loadComponent: () =>
+      import('./landing-pages/apex-kinetic/apex-kinetic.component').then(m => m.ApexKineticComponent),
+  },
+  {
+    path: 'landing-pages/serenity-mind',
+    loadComponent: () =>
+      import('./landing-pages/serenity-mind/serenity-mind.component').then(m => m.SerenityMindComponent),
+  },
 ];

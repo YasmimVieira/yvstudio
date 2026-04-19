@@ -974,3 +974,176 @@
     max-width: 100%;
   }
 }
+
+// ── Serenity Mind mini preview (home) ────────────────────────
+.lp-work-card__image--sm {
+  background: #faf9f6;
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-sm-mini {
+  position: absolute;
+  inset: 0;
+  display: flex;
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 22px;
+    background: rgba(250,249,246,0.97);
+    border-bottom: 1px solid rgba(45,45,45,0.07);
+    flex-shrink: 0;
+    z-index: 2;
+  }
+
+  &__body {
+    padding-top: 30px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    flex: 1;
+    z-index: 1;
+  }
+
+  &__title {
+    height: 9px;
+    width: 70%;
+    background: rgba(45,45,45,0.38);
+    border-radius: 1px;
+
+    &--em {
+      background: rgba(29,77,94,0.4);
+      width: 55%;
+    }
+
+    &--short { width: 40%; }
+  }
+
+  &__sub {
+    height: 3px;
+    width: 65%;
+    background: rgba(45,45,45,0.12);
+    margin-top: 2px;
+  }
+
+  &__btn {
+    margin-top: 8px;
+    height: 10px;
+    width: 40%;
+    background: rgba(29,77,94,0.45);
+    border-radius: 2px;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: 22px;
+    bottom: 0;
+    width: 40%;
+    background: linear-gradient(145deg, #e0d9ce 0%, #cfc5b5 60%, #bfb4a0 100%);
+    border-radius: 10px 0 0 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5%;
+      right: 10%;
+      width: 30%;
+      height: 45%;
+      background: linear-gradient(180deg, rgba(255,248,220,0.55) 0%, transparent 100%);
+      border-radius: 0 0 50% 50%;
+    }
+  }
+}
+
+// ── Apex Kinetic mini preview (home) ─────────────────────────
+.lp-work-card__image--ak {
+  background: #080808;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -5%;
+    top: 10%;
+    width: 55%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(200,255,0,0.14) 0%, transparent 70%);
+  }
+}
+
+.lp-ak-mini {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    height: 22px;
+    background: rgba(8,8,8,0.97);
+    border-bottom: 1px solid rgba(200,255,0,0.1);
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__eyebrow {
+    height: 3px;
+    width: 40%;
+    background: rgba(200,255,0,0.5);
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    height: 10px;
+    width: 75%;
+    background: rgba(242,242,242,0.45);
+    border-radius: 1px;
+
+    &--accent {
+      width: 55%;
+      background: rgba(200,255,0,0.55);
+    }
+  }
+
+  &__sub {
+    height: 3px;
+    width: 65%;
+    background: rgba(242,242,242,0.15);
+    margin-top: 2px;
+  }
+
+  &__btn {
+    margin-top: 8px;
+    height: 10px;
+    width: 38%;
+    background: rgba(200,255,0,0.5);
+    border-radius: 1px;
+  }
+
+  &__glow {
+    position: absolute;
+    right: 5%;
+    top: 15%;
+    width: 45%;
+    height: 65%;
+    background: radial-gradient(ellipse, rgba(200,255,0,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
