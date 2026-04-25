@@ -156,6 +156,17 @@ a { text-decoration: none; color: inherit; }
     opacity: 0.85;
     transform: translateY(-1px);
   }
+
+  &--wa {
+    background: #25d366;
+    color: #fff;
+    gap: 0.5rem;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  }
 }
 
 // ── Shared LP Navigation ─────────────────────────────────────

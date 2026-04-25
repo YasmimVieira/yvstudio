@@ -10,21 +10,57 @@ import {
   signal,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+
+declare function gtag(...args: any[]): void;
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { SharedNavComponent } from '../shared/components/nav/nav.component';
 import { NavLink } from '../shared/models/nav-link.model';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RouterLink, SharedNavComponent],
+  imports: [RouterLink, FormsModule, SharedNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   activeSection = signal('');
+
+  contactName = '';
+  contactPhone = '';
+  contactMessage = '';
+
+  trackWhatsApp(label: string): void {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        send_to: 'AW-17958466478',
+        event_category: 'whatsapp',
+        event_label: label,
+      });
+    }
+  }
+
+  trackSocial(label: string): void {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'click', {
+        send_to: 'AW-17958466478',
+        event_category: 'social',
+        event_label: label,
+      });
+    }
+  }
+
+  submitContact(): void {
+    this.trackWhatsApp('form');
+    const parts = ['Vim pelo seu site e gostaria de fazer um orçamento.'];
+    if (this.contactName)    parts.push(`\nNome: ${this.contactName}`);
+    if (this.contactPhone)   parts.push(`\nWhatsApp: ${this.contactPhone}`);
+    if (this.contactMessage) parts.push(`\nMensagem: ${this.contactMessage}`);
+    window.open(`https://wa.me/5511970385786?text=${encodeURIComponent(parts.join(''))}`, '_blank');
+  }
 
   readonly navLinks: NavLink[] = [
     { label: 'O que somos',      href: '#sobre',    activeId: 'sobre' },
@@ -80,13 +116,13 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     // Hero entrance (runs immediately on load)
     gsap.set('.lp-hero__title',      { y: 80, opacity: 0 });
     gsap.set('.lp-hero__subtitle',   { y: 30, opacity: 0 });
-    gsap.set('.lp-cta',              { y: 30, opacity: 0 });
+    gsap.set('.lp-hero__ctas',       { y: 30, opacity: 0 });
     gsap.set('.lp-hero__scroll-cue', { opacity: 0 });
 
     gsap.timeline({ defaults: { ease: 'power3.out' } })
       .to('.lp-hero__title',       { y: 0, opacity: 1, duration: 1.2 })
       .to('.lp-hero__subtitle',    { y: 0, opacity: 1, duration: 0.8 }, '-=0.7')
-      .to('.lp-cta',               { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+      .to('.lp-hero__ctas',        { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
       .to('.lp-hero__scroll-cue',  { opacity: 1, duration: 0.6 }, '-=0.2');
 
     // Dividers — expand from left
