@@ -316,6 +316,124 @@ a { text-decoration: none; color: inherit; }
   }
 }
 
+// ── Language dropdown ─────────────────────────────────────────
+.lp-lang-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: 1px solid var(--luster-divider);
+    border-radius: 4px;
+    padding: 0.28rem 0.55rem;
+    cursor: pointer;
+    font-family: var(--luster-font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--luster-slate);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+
+    svg { transition: transform 0.2s ease; }
+
+    &:hover {
+      color: var(--luster-off-white);
+      border-color: rgba(245, 245, 245, 0.18);
+    }
+  }
+
+  &.is-open &__trigger {
+    color: var(--luster-accent);
+    border-color: var(--luster-accent);
+
+    svg { transform: rotate(180deg); }
+  }
+
+  &__panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 148px;
+    background: rgba(10, 10, 10, 0.97);
+    border: 1px solid var(--luster-divider);
+    border-radius: 6px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    overflow: hidden;
+    z-index: 200;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  }
+
+  &.is-open &__panel { display: block; }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--luster-font-sans);
+    font-size: 0.8rem;
+    color: var(--luster-slate);
+    transition: color 0.15s ease, background 0.15s ease;
+    text-align: left;
+
+    & + & { border-top: 1px solid var(--luster-divider); }
+
+    &:hover {
+      color: var(--luster-off-white);
+      background: rgba(245, 245, 245, 0.04);
+    }
+
+    &.is-active { color: var(--luster-accent); }
+  }
+
+  &__code {
+    font-family: var(--luster-font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: inherit;
+    min-width: 18px;
+  }
+}
+
+// Mobile language switcher
+.lp-nav__mobile-lang {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--luster-divider);
+  margin-top: 0.25rem;
+}
+
+.lp-nav__mobile-lang-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.875rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--luster-divider);
+  cursor: pointer;
+  font-family: var(--luster-font-sans);
+  font-size: 1rem;
+  color: var(--nav-muted);
+  transition: color 0.2s ease;
+  text-align: left;
+
+  &:hover { color: var(--nav-text); }
+  &.is-active { color: var(--luster-accent); }
+}
+
 // ── Shared LP Footer ─────────────────────────────────────────
 .lp-footer {
   padding: 2.5rem 0;

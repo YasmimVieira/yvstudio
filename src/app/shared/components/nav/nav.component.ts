@@ -1,13 +1,14 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
+  HostListener,
   input,
   signal,
   inject,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavLink } from '../../models/nav-link.model';
-import { I18nService } from '../../../core/i18n/i18n.service';
+import { I18nService, Lang } from '../../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../../core/i18n/translate.pipe';
 
 @Component({
@@ -20,22 +21,27 @@ import { TranslatePipe } from '../../../core/i18n/translate.pipe';
 export class SharedNavComponent {
   readonly i18n = inject(I18nService);
 
-  /** Rota Angular para o link "← Galeria" (ex: '/landing-pages'). Omitir para esconder. */
-  backLink = input<string>('');
-
-  /** Texto do logotipo */
-  logoText = input.required<string>();
-
-  /** href do logotipo (padrão '#') */
-  logoHref = input<string>('#');
-
-  /** Links do menu. isCta=true renderiza luster-button. */
-  links = input<NavLink[]>([]);
-
-  /** Seção ativa (passada do componente pai via activeSection()) */
+  backLink      = input<string>('');
+  logoText      = input.required<string>();
+  logoHref      = input<string>('#');
+  links         = input<NavLink[]>([]);
   activeSection = input<string>('');
 
   readonly menuOpen = signal(false);
+  readonly langOpen = signal(false);
+
   toggleMenu(): void { this.menuOpen.update(v => !v); }
   closeMenu():  void { this.menuOpen.set(false); }
+
+  toggleLang(): void { this.langOpen.update(v => !v); }
+
+  setLang(lang: Lang): void {
+    this.i18n.setLang(lang);
+    this.langOpen.set(false);
+  }
+
+  @HostListener('document:click')
+  onDocumentClick(): void {
+    this.langOpen.set(false);
+  }
 }

@@ -3,32 +3,61 @@
     <a routerLink="/" class="lp-nav__logo" (click)="closeMenu()">YVSTUDIO</a>
 
     <div class="lp-nav__links" role="list">
-      <a routerLink="/" role="listitem" class="lp-nav__link" (click)="closeMenu()">← Início</a>
+      <a routerLink="/" role="listitem" class="lp-nav__link" (click)="closeMenu()">{{ 'nav.back' | translate }}</a>
+    </div>
+
+    <!-- Language dropdown -->
+    <div class="lp-lang-select" [class.is-open]="langOpen()" (click)="$event.stopPropagation()">
+      <button class="lp-lang-select__trigger" (click)="toggleLang()" type="button"
+              [attr.aria-expanded]="langOpen()" aria-haspopup="listbox">
+        {{ i18n.lang() === 'pt-BR' ? 'PT' : 'EN' }}
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+          <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="lp-lang-select__panel" role="listbox">
+        <button class="lp-lang-select__option" role="option"
+                [class.is-active]="i18n.lang() === 'pt-BR'"
+                (click)="setLang('pt-BR')" type="button">
+          <span class="lp-lang-select__code">PT</span>
+          Português
+        </button>
+        <button class="lp-lang-select__option" role="option"
+                [class.is-active]="i18n.lang() === 'en-US'"
+                (click)="setLang('en-US')" type="button">
+          <span class="lp-lang-select__code">EN</span>
+          English
+        </button>
+      </div>
     </div>
 
     <button
       class="lp-nav__hamburger"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen()"
-      aria-label="Abrir menu">
+      [attr.aria-label]="'nav.openMenu' | translate">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
 
-  <nav class="lp-nav__mobile" aria-label="Navegação mobile">
-    <a routerLink="/" class="lp-nav__mobile-link" (click)="closeMenu()">← Início</a>
+  <nav class="lp-nav__mobile" [attr.aria-label]="'nav.mobileNav' | translate">
+    <a routerLink="/" class="lp-nav__mobile-link" (click)="closeMenu()">{{ 'nav.back' | translate }}</a>
+    <div class="lp-nav__mobile-lang">
+      <button class="lp-nav__mobile-lang-btn" [class.is-active]="i18n.lang() === 'pt-BR'"
+              (click)="setLang('pt-BR'); closeMenu()" type="button">PT — Português</button>
+      <button class="lp-nav__mobile-lang-btn" [class.is-active]="i18n.lang() === 'en-US'"
+              (click)="setLang('en-US'); closeMenu()" type="button">EN — English</button>
+    </div>
   </nav>
 </nav>
 
 <header class="lp-gallery__header">
   <div class="lp-inner">
-    <p class="lp-meta lp-gallery__eyebrow">Landing Pages · Templates</p>
-    <h1 class="lp-section__title lp-gallery__title">PÁGINAS</h1>
-    <p class="lp-body-text lp-gallery__sub">
-      Designs editoriais construídos para converter e impressionar.
-    </p>
+    <p class="lp-meta lp-gallery__eyebrow">{{ 'gallery.eyebrow' | translate }}</p>
+    <h1 class="lp-section__title lp-gallery__title">{{ 'gallery.title' | translate }}</h1>
+    <p class="lp-body-text lp-gallery__sub">{{ 'gallery.subtitle' | translate }}</p>
   </div>
 </header>
 
@@ -36,8 +65,8 @@
 
 <main>
   <!-- Filter chips -->
-  <div class="lp-gallery__filters lp-inner" role="group" aria-label="Filtrar por segmento">
-    @for (f of filters; track f.id) {
+  <div class="lp-gallery__filters lp-inner" role="group" [attr.aria-label]="'gallery.filterLabel' | translate">
+    @for (f of filters(); track f.id) {
       <button
         class="lp-filter-chip"
         [class.lp-filter-chip--active]="activeFilter() === f.id"
@@ -48,13 +77,13 @@
     }
   </div>
 
-  <section class="lp-gallery__grid lp-inner" aria-label="Catálogo de landing pages">
+  <section class="lp-gallery__grid lp-inner" [attr.aria-label]="'gallery.catalogLabel' | translate">
 
     @if (isVisible('outros')) {
       <app-page-card
-        title="The Annual Neapolitan Pilgrimage"
-        category="Gastronomia · Eventos"
-        description="Uma jornada editorial pela arte da pizza napolitana. Design editorial e tipografia italiana para eventos gastronômicos de alto padrão."
+        [title]="'gallery.pages.neapolitan.title' | translate"
+        [category]="'gallery.pages.neapolitan.category' | translate"
+        [description]="'gallery.pages.neapolitan.description' | translate"
         status="available"
         link="/landing-pages/neapolitan-pilgrimage">
         <div class="lp-np-preview" aria-hidden="true">
@@ -87,9 +116,9 @@
 
     @if (isVisible('outros')) {
       <app-page-card
-        title="The Kinetic"
-        category="Agência · Portfólio"
-        description="Identidade ousada para agências e estúdios criativos. Design editorial escuro com acento ciano, grid de portfólio e formulário de contato."
+        [title]="'gallery.pages.theKinetic.title' | translate"
+        [category]="'gallery.pages.theKinetic.category' | translate"
+        [description]="'gallery.pages.theKinetic.description' | translate"
         status="available"
         link="/landing-pages/the-kinetic">
         <div class="lp-agency-preview" aria-hidden="true">
@@ -114,9 +143,9 @@
 
     @if (isVisible('vendas')) {
       <app-page-card
-        title="ArchitectSaaS"
-        category="Produto · SaaS · Vendas"
-        description="Landing page de lançamento para produtos SaaS. Fundo lavanda, dashboard em CSS, seção de preços em 3 planos e CTA final dark."
+        [title]="'gallery.pages.architectSaaS.title' | translate"
+        [category]="'gallery.pages.architectSaaS.category' | translate"
+        [description]="'gallery.pages.architectSaaS.description' | translate"
         status="available"
         link="/landing-pages/architect-saas">
         <div class="lp-product-preview" aria-hidden="true">
@@ -136,9 +165,9 @@
 
     @if (isVisible('vendas')) {
       <app-page-card
-        title="Apex Kinetic"
-        category="Marketing · Vendas · Fitness"
-        description="Landing page de alta conversão para suplementos e performance. Design dark com acento neon, seção de benefícios, depoimentos e CTA de impacto."
+        [title]="'gallery.pages.apexKinetic.title' | translate"
+        [category]="'gallery.pages.apexKinetic.category' | translate"
+        [description]="'gallery.pages.apexKinetic.description' | translate"
         status="available"
         link="/landing-pages/apex-kinetic">
         <div class="lp-ak-preview" aria-hidden="true">
@@ -163,9 +192,9 @@
 
     @if (isVisible('advocacia')) {
       <app-page-card
-        title="Monroe & Stone Legal"
-        category="Litigância · Advocacia"
-        description="Identidade agressiva para escritórios de litígio de alto valor. Design sombrio com acento dourado, tipografia impactante e retórica implacável."
+        [title]="'gallery.pages.monroeStone.title' | translate"
+        [category]="'gallery.pages.monroeStone.category' | translate"
+        [description]="'gallery.pages.monroeStone.description' | translate"
         status="available"
         link="/landing-pages/vantage-legal">
         <div class="lp-vl-preview" aria-hidden="true">
@@ -183,9 +212,9 @@
 
     @if (isVisible('advocacia')) {
       <app-page-card
-        title="Apex Law Group"
-        category="M&A · Advocacia Empresarial"
-        description="Identidade sofisticada para bancas de direito corporativo. Tipografia serif, grid estruturado e paleta navy/aço que transmite autoridade e precisão."
+        [title]="'gallery.pages.apexLaw.title' | translate"
+        [category]="'gallery.pages.apexLaw.category' | translate"
+        [description]="'gallery.pages.apexLaw.description' | translate"
         status="available"
         link="/landing-pages/apex-law">
         <div class="lp-apex-preview" aria-hidden="true">
@@ -208,9 +237,9 @@
 
     @if (isVisible('consultorios')) {
       <app-page-card
-        title="Serenity Mind"
-        category="Saúde Mental · Consultórios"
-        description="Landing page humanizada para clínicas de psicologia e bem-estar. Design claro e sereno com tipografia serif, depoimentos e CTA de agendamento."
+        [title]="'gallery.pages.serenityMind.title' | translate"
+        [category]="'gallery.pages.serenityMind.category' | translate"
+        [description]="'gallery.pages.serenityMind.description' | translate"
         status="available"
         link="/landing-pages/serenity-mind">
         <div class="lp-sm-preview" aria-hidden="true">
@@ -236,9 +265,9 @@
 
     @if (isVisible('construcao')) {
       <app-page-card
-        title="Petra Marmoraria"
-        category="Mármore · Construção"
-        description="Landing page premium para marmorarias e revestimentos de alto padrão. Tema claro com tipografia serif, veios de mármore em CSS e formulário de orçamento integrado."
+        [title]="'gallery.pages.petra.title' | translate"
+        [category]="'gallery.pages.petra.category' | translate"
+        [description]="'gallery.pages.petra.description' | translate"
         status="available"
         link="/landing-pages/marmoraria">
         <div class="lp-mm-preview" aria-hidden="true">
@@ -268,6 +297,6 @@
 <footer class="lp-footer">
   <div class="lp-inner lp-footer__inner">
     <a routerLink="/" class="lp-footer__logo">YVSTUDIO</a>
-    <small class="lp-meta">&copy; MMXXVI YVSTUDIO — TODOS OS DIREITOS RESERVADOS</small>
+    <small class="lp-meta">{{ 'footer.rights' | translate }}</small>
   </div>
 </footer>

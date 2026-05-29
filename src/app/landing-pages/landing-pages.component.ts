@@ -1,47 +1,62 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
+  HostListener,
   Inject,
   PLATFORM_ID,
   AfterViewInit,
   OnDestroy,
   signal,
+  computed,
+  inject,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PageCardComponent } from './page-card/page-card.component';
+import { I18nService, Lang } from '../core/i18n/i18n.service';
+import { TranslatePipe } from '../core/i18n/translate.pipe';
 
 export type PageFilter = 'todos' | 'advocacia' | 'consultorios' | 'vendas' | 'construcao' | 'outros';
 
 @Component({
   selector: 'app-landing-pages',
   standalone: true,
-  imports: [RouterLink, PageCardComponent],
+  imports: [RouterLink, PageCardComponent, TranslatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './landing-pages.component.html',
   styleUrl: './landing-pages.component.scss',
 })
 export class LandingPagesComponent implements AfterViewInit, OnDestroy {
-  menuOpen = signal(false);
+  readonly i18n = inject(I18nService);
+
+  menuOpen     = signal(false);
+  langOpen     = signal(false);
   activeFilter = signal<PageFilter>('todos');
 
-  readonly filters: { id: PageFilter; label: string }[] = [
-    { id: 'todos',        label: 'Todos'              },
-    { id: 'advocacia',    label: 'Advocacia'          },
-    { id: 'consultorios', label: 'Consultórios'       },
-    { id: 'vendas',       label: 'Vendas & Marketing' },
-    { id: 'construcao',   label: 'Construção'         },
-    { id: 'outros',       label: 'Outros'             },
-  ];
+  readonly filters = computed<{ id: PageFilter; label: string }[]>(() => [
+    { id: 'todos',        label: this.i18n.t('gallery.filters.todos')        },
+    { id: 'advocacia',    label: this.i18n.t('gallery.filters.advocacia')    },
+    { id: 'consultorios', label: this.i18n.t('gallery.filters.consultorios') },
+    { id: 'vendas',       label: this.i18n.t('gallery.filters.vendas')       },
+    { id: 'construcao',   label: this.i18n.t('gallery.filters.construcao')   },
+    { id: 'outros',       label: this.i18n.t('gallery.filters.outros')       },
+  ]);
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
-  toggleMenu(): void {
-    this.menuOpen.update(v => !v);
+  toggleMenu(): void { this.menuOpen.update(v => !v); }
+  closeMenu():  void { this.menuOpen.set(false); }
+
+  toggleLang(): void { this.langOpen.update(v => !v); }
+
+  setLang(lang: Lang): void {
+    this.i18n.setLang(lang);
+    this.langOpen.set(false);
   }
 
-  closeMenu(): void {
-    this.menuOpen.set(false);
+  @HostListener('document:click')
+  onDocumentClick(): void {
+    this.langOpen.set(false);
   }
 
   setFilter(id: PageFilter): void {
