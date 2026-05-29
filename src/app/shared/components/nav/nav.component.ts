@@ -3,18 +3,23 @@ import {
   Component,
   input,
   signal,
+  inject,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavLink } from '../../models/nav-link.model';
+import { I18nService } from '../../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../../core/i18n/translate.pipe';
 
 @Component({
   selector: 'app-shared-nav',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './nav.component.html',
 })
 export class SharedNavComponent {
+  readonly i18n = inject(I18nService);
+
   /** Rota Angular para o link "← Galeria" (ex: '/landing-pages'). Omitir para esconder. */
   backLink = input<string>('');
 

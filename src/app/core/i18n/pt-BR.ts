@@ -1,0 +1,208 @@
+export const ptBR = {
+  nav: {
+    about:    'O que somos',
+    process:  'Como trabalhamos',
+    products: 'Produtos',
+    projects: 'Projetos',
+    contact:  'Contatos',
+    openMenu: 'Abrir menu',
+    mobileNav: 'Navegação mobile',
+    gallery:  '← Galeria',
+    back:     '← Início',
+  },
+  hero: {
+    subtitle:    'Criação de sites, software e landing pages com design sofisticado',
+    cta1:        'Explorar projetos',
+    cta2:        'Solicitar orçamento',
+    scrollLabel: 'Rolar para o conteúdo',
+  },
+  services: {
+    eyebrow: 'O QUE FAZEMOS',
+    title:   'SERVIÇOS',
+    website: {
+      title: 'Criação de Sites',
+      desc:  'Sites institucionais, portfólios e aplicações web responsivas com design exclusivo e código de alta qualidade.',
+    },
+    landing: {
+      title: 'Landing Pages',
+      desc:  'Páginas de alta conversão para campanhas, lançamentos de produtos e captação de leads, otimizadas para performance.',
+    },
+    saas: {
+      title: 'Desenvolvimento SaaS',
+      desc:  'Produtos SaaS e aplicações web completas, do design ao código, com foco em escalabilidade e experiência do usuário.',
+    },
+    frontend: {
+      title: 'Frontend & Design System',
+      desc:  'Desenvolvimento frontend especializado em Angular, componentes reutilizáveis e design systems para equipes de produto.',
+    },
+  },
+  about: {
+    eyebrow: 'SOBRE NÓS',
+    title:   'O QUE SOMOS',
+    body:    'No YV Studio, não construímos apenas sites — curamos experiências digitais. Somos um estúdio de desenvolvimento frontend especializado em criação de sites, landing pages de alta conversão e produtos SaaS. Nascemos da intersecção entre o rigor técnico da engenharia de software e a fluidez do design de alto padrão. Nossa missão é elevar a presença digital de marcas que não aceitam o comum, entregando interfaces que são, ao mesmo tempo, obras de arte visuais e máquinas de performance impecável.',
+    quote:   'Simplicidade é o último grau da sofisticação.',
+  },
+  process: {
+    eyebrow: 'COMO TRABALHAMOS',
+    title:   'O PROCESSO',
+    step1: {
+      title: 'Briefing',
+      desc:  'Enxergamos a necessidade e estudamos a empresa — seu mercado, tom de voz e objetivo. Sem atalhos.',
+    },
+    step2: {
+      title: 'Prototipação e Orçamento',
+      desc:  'Apresentamos um protótipo fiel ao design final e um preço fixo, sem surpresas no meio do caminho.',
+    },
+    step3: {
+      title: 'Desenvolvimento',
+      desc:  '2 dias para landing pages, 3 dias para sites institucionais e demanda sob medida para projetos SaaS.',
+    },
+    step4: {
+      title: 'Entrega',
+      desc:  'Link entregue após confirmação de pagamento, com 1 mês de manutenção incluso para ajustes pós-lançamento.',
+    },
+  },
+  midCta: {
+    eyebrow:  'PRONTO PARA COMEÇAR?',
+    headline: 'Do briefing à entrega em dias — sem enrolação.',
+    btn:      'Falar agora no WhatsApp',
+  },
+  projects: {
+    eyebrow: 'LANDING PAGES',
+    title:   'PROJETOS',
+    edimar: {
+      tag:   'SITE · SERVIÇOS ELÉTRICOS',
+      badge: 'Entregue recente',
+      title: 'Edimar Eletricista',
+      year:  'Site institucional · 2025',
+    },
+    neapolitan: {
+      tag:   'LANDING PAGE · GASTRONOMIA',
+      title: 'Bella Napoli',
+      year:  'Landing page editorial · 2026',
+    },
+    impulso: {
+      tag:   'LANDING PAGE · MARKETING',
+      title: 'Impulso Marketing',
+      year:  'Landing page de performance · 2026',
+    },
+    mentePlena: {
+      tag:   'LANDING PAGE · CONSULTÓRIOS',
+      title: 'Clínica Mente Plena',
+      year:  'Landing page para clínicas · 2026',
+    },
+    costa: {
+      tag:   'LANDING PAGE · ADVOCACIA',
+      title: 'Costa & Associados',
+      year:  'Landing page para escritórios · 2026',
+    },
+    seeAll: 'Ver todos os projetos →',
+  },
+  products: {
+    eyebrow: 'O QUE CONSTRUÍMOS',
+    title:   'PRODUTOS',
+    kazaplan: {
+      tag:   'SAAS · PRODUTO',
+      badge: 'Em construção',
+      title: 'KazaPlan',
+      year:  'Design de produto & desenvolvimento · 2026',
+    },
+    luster: {
+      title: 'Luster DS',
+      year:  'Arquitetura de design system · 2026',
+    },
+  },
+  ecosystem: {
+    eyebrow:      'O ECOSSISTEMA',
+    title:        'CONEXÕES ESTRATÉGICAS',
+    ariaLabel:    'Diagrama do ecossistema YV Studio',
+    design:       { label: 'PENSANDO EM' },
+    luster:       { label: 'UMA SUITE' },
+    landingPages: { label: 'TODOS OS TIPOS DE' },
+    kazaplan:     { label: 'SAAS PARA CONSTRUTORAS' },
+  },
+  contact: {
+    eyebrow:          'VAMOS CONVERSAR',
+    title:            'CONTATOS',
+    name:             'Nome',
+    namePlaceholder:  'Seu nome completo',
+    phone:            'WhatsApp',
+    phonePlaceholder: '+55 (11) 99999-9999',
+    message:          'Mensagem',
+    msgPlaceholder:   'Conte sobre seu projeto...',
+    send:             'Enviar via WhatsApp',
+    waFloat:          'Conversar no WhatsApp',
+    formIntro:        'Vim pelo seu site e gostaria de fazer um orçamento.',
+    formName:         'Nome:',
+    formPhone:        'WhatsApp:',
+    formMessage:      'Mensagem:',
+  },
+  footer: {
+    rights: '© MMXXVI YVSTUDIO — TODOS OS DIREITOS RESERVADOS',
+  },
+  gallery: {
+    eyebrow:      'Landing Pages · Templates',
+    title:        'PÁGINAS',
+    subtitle:     'Designs editoriais construídos para converter e impressionar.',
+    filterLabel:  'Filtrar por segmento',
+    catalogLabel: 'Catálogo de landing pages',
+    filters: {
+      todos:        'Todos',
+      advocacia:    'Advocacia',
+      consultorios: 'Consultórios',
+      vendas:       'Vendas & Marketing',
+      construcao:   'Construção',
+      outros:       'Outros',
+    },
+    pages: {
+      neapolitan: {
+        title:       'The Annual Neapolitan Pilgrimage',
+        category:    'Gastronomia · Eventos',
+        description: 'Uma jornada editorial pela arte da pizza napolitana. Design editorial e tipografia italiana para eventos gastronômicos de alto padrão.',
+      },
+      theKinetic: {
+        title:       'The Kinetic',
+        category:    'Agência · Portfólio',
+        description: 'Identidade ousada para agências e estúdios criativos. Design editorial escuro com acento ciano, grid de portfólio e formulário de contato.',
+      },
+      architectSaaS: {
+        title:       'ArchitectSaaS',
+        category:    'Produto · SaaS · Vendas',
+        description: 'Landing page de lançamento para produtos SaaS. Fundo lavanda, dashboard em CSS, seção de preços em 3 planos e CTA final dark.',
+      },
+      apexKinetic: {
+        title:       'Apex Kinetic',
+        category:    'Marketing · Vendas · Fitness',
+        description: 'Landing page de alta conversão para suplementos e performance. Design dark com acento neon, seção de benefícios, depoimentos e CTA de impacto.',
+      },
+      monroeStone: {
+        title:       'Monroe & Stone Legal',
+        category:    'Litigância · Advocacia',
+        description: 'Identidade agressiva para escritórios de litígio de alto valor. Design sombrio com acento dourado, tipografia impactante e retórica implacável.',
+      },
+      apexLaw: {
+        title:       'Apex Law Group',
+        category:    'M&A · Advocacia Empresarial',
+        description: 'Identidade sofisticada para bancas de direito corporativo. Tipografia serif, grid estruturado e paleta navy/aço que transmite autoridade e precisão.',
+      },
+      serenityMind: {
+        title:       'Serenity Mind',
+        category:    'Saúde Mental · Consultórios',
+        description: 'Landing page humanizada para clínicas de psicologia e bem-estar. Design claro e sereno com tipografia serif, depoimentos e CTA de agendamento.',
+      },
+      petra: {
+        title:       'Petra Marmoraria',
+        category:    'Mármore · Construção',
+        description: 'Landing page premium para marmorarias e revestimentos de alto padrão. Tema claro com tipografia serif, veios de mármore em CSS e formulário de orçamento integrado.',
+      },
+    },
+  },
+  meta: {
+    title:       'YV Studio | Criação de Sites, Desenvolvimento de Software e Landing Pages',
+    description: 'YV Studio — Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e produtos SaaS de alto padrão. Frontend sofisticado com performance impecável.',
+    ogTitle:     'YV Studio | Criação de Sites, Desenvolvimento de Software e Landing Pages',
+    ogDesc:      'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS. Frontend sofisticado com design de alto padrão.',
+    twTitle:     'YV Studio | Criação de Sites, Software e Landing Pages',
+    twDesc:      'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS de alto padrão.',
+  },
+};

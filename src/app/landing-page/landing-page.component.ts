@@ -3,11 +3,13 @@ import {
   Component,
   AfterViewInit,
   OnDestroy,
-  OnInit,
   HostListener,
   Inject,
   PLATFORM_ID,
   signal,
+  computed,
+  effect,
+  inject,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -17,21 +19,33 @@ import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SharedNavComponent } from '../shared/components/nav/nav.component';
 import { NavLink } from '../shared/models/nav-link.model';
+import { I18nService } from '../core/i18n/i18n.service';
+import { TranslatePipe } from '../core/i18n/translate.pipe';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RouterLink, FormsModule, SharedNavComponent],
+  imports: [RouterLink, FormsModule, SharedNavComponent, TranslatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
-export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class LandingPageComponent implements AfterViewInit, OnDestroy {
+  readonly i18n = inject(I18nService);
+
   activeSection = signal('');
 
   contactName = '';
   contactPhone = '';
   contactMessage = '';
+
+  readonly navLinks = computed<NavLink[]>(() => [
+    { label: this.i18n.t('nav.about'),    href: '#sobre',    activeId: 'sobre' },
+    { label: this.i18n.t('nav.process'),  href: '#processo', activeId: 'processo' },
+    { label: this.i18n.t('nav.products'), href: '#produtos', activeId: 'produtos' },
+    { label: this.i18n.t('nav.projects'), href: '#projetos', activeId: 'projetos' },
+    { label: this.i18n.t('nav.contact'),  href: '#contatos', activeId: 'contatos' },
+  ]);
 
   trackWhatsApp(label: string): void {
     if (typeof gtag !== 'undefined') {
@@ -55,20 +69,12 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   submitContact(): void {
     this.trackWhatsApp('form');
-    const parts = ['Vim pelo seu site e gostaria de fazer um orçamento.'];
-    if (this.contactName)    parts.push(`\nNome: ${this.contactName}`);
-    if (this.contactPhone)   parts.push(`\nWhatsApp: ${this.contactPhone}`);
-    if (this.contactMessage) parts.push(`\nMensagem: ${this.contactMessage}`);
+    const parts = [this.i18n.t('contact.formIntro')];
+    if (this.contactName)    parts.push(`\n${this.i18n.t('contact.formName')} ${this.contactName}`);
+    if (this.contactPhone)   parts.push(`\n${this.i18n.t('contact.formPhone')} ${this.contactPhone}`);
+    if (this.contactMessage) parts.push(`\n${this.i18n.t('contact.formMessage')} ${this.contactMessage}`);
     window.open(`https://wa.me/5511970385786?text=${encodeURIComponent(parts.join(''))}`, '_blank');
   }
-
-  readonly navLinks: NavLink[] = [
-    { label: 'O que somos',      href: '#sobre',    activeId: 'sobre' },
-    { label: 'Como trabalhamos', href: '#processo',  activeId: 'processo' },
-    { label: 'Produtos',         href: '#produtos',  activeId: 'produtos' },
-    { label: 'Projetos',         href: '#projetos',  activeId: 'projetos' },
-    { label: 'Contatos',         href: '#contatos',  activeId: 'contatos' },
-  ];
 
   private readonly sectionOrder = ['contatos', 'ecosystem', 'projetos', 'produtos', 'processo', 'sobre', 'hero'];
   private heroMouseHandlers: (() => void)[] = [];
@@ -77,17 +83,16 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: object,
     private meta: Meta,
     private titleService: Title,
-  ) {}
-
-  ngOnInit(): void {
-    this.titleService.setTitle('YV Studio | Criação de Sites, Desenvolvimento de Software e Landing Pages');
-
-    this.meta.updateTag({ name: 'description', content: 'YV Studio — Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e produtos SaaS de alto padrão. Frontend sofisticado com performance impecável.' });
-    this.meta.updateTag({ property: 'og:title', content: 'YV Studio | Criação de Sites, Desenvolvimento de Software e Landing Pages' });
-    this.meta.updateTag({ property: 'og:description', content: 'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS. Frontend sofisticado com design de alto padrão.' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://yvstudio.dev/' });
-    this.meta.updateTag({ name: 'twitter:title', content: 'YV Studio | Criação de Sites, Software e Landing Pages' });
-    this.meta.updateTag({ name: 'twitter:description', content: 'Estúdio especializado em criação de sites, desenvolvimento de software, landing pages e SaaS de alto padrão.' });
+  ) {
+    effect(() => {
+      this.titleService.setTitle(this.i18n.t('meta.title'));
+      this.meta.updateTag({ name: 'description', content: this.i18n.t('meta.description') });
+      this.meta.updateTag({ property: 'og:title', content: this.i18n.t('meta.ogTitle') });
+      this.meta.updateTag({ property: 'og:description', content: this.i18n.t('meta.ogDesc') });
+      this.meta.updateTag({ property: 'og:url', content: 'https://yvstudio.dev/' });
+      this.meta.updateTag({ name: 'twitter:title', content: this.i18n.t('meta.twTitle') });
+      this.meta.updateTag({ name: 'twitter:description', content: this.i18n.t('meta.twDesc') });
+    });
   }
 
   async ngAfterViewInit(): Promise<void> {

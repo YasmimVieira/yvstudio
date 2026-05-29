@@ -1,7 +1,7 @@
 <app-shared-nav
   logoText="YVSTUDIO"
   logoHref="/"
-  [links]="navLinks"
+  [links]="navLinks()"
   [activeSection]="activeSection()">
 </app-shared-nav>
 
@@ -12,18 +12,18 @@
       YV<br>
       <span class="lp-hero__title-gradient">STUDIO</span>
     </h1>
-    <p class="lp-hero__subtitle">Criação de sites, software e landing pages com design sofisticado</p>
+    <p class="lp-hero__subtitle">{{ 'hero.subtitle' | translate }}</p>
     <div class="lp-hero__ctas">
-      <a href="#projetos" class="lp-cta">Explorar projetos</a>
+      <a href="#projetos" class="lp-cta">{{ 'hero.cta1' | translate }}</a>
       <a href="https://wa.me/5511970385786?text=Vim%20pelo%20seu%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
          target="_blank" rel="noopener noreferrer"
          class="lp-cta lp-cta--wa"
          (click)="trackWhatsApp('hero')">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Solicitar orçamento
+        {{ 'hero.cta2' | translate }}
       </a>
     </div>
-    <a href="#sobre" class="lp-hero__scroll-cue" aria-label="Rolar para o conteúdo">
+    <a href="#sobre" class="lp-hero__scroll-cue" [attr.aria-label]="'hero.scrollLabel' | translate">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -33,28 +33,28 @@
 
 <hr class="lp-divider">
 
-<section id="servicos" class="lp-section lp-servicos" aria-label="Serviços">
+<section id="servicos" class="lp-section lp-servicos" [attr.aria-label]="'services.title' | translate">
   <div class="lp-inner">
     <header class="lp-sobre__header">
-      <p class="lp-meta">O QUE FAZEMOS</p>
-      <h2 class="lp-section__title">SERVIÇOS</h2>
+      <p class="lp-meta">{{ 'services.eyebrow' | translate }}</p>
+      <h2 class="lp-section__title">{{ 'services.title' | translate }}</h2>
     </header>
     <ul class="lp-servicos__grid" role="list">
       <li class="lp-servico-item">
-        <h3 class="lp-servico-item__title">Criação de Sites</h3>
-        <p class="lp-servico-item__desc">Sites institucionais, portfólios e aplicações web responsivas com design exclusivo e código de alta qualidade.</p>
+        <h3 class="lp-servico-item__title">{{ 'services.website.title' | translate }}</h3>
+        <p class="lp-servico-item__desc">{{ 'services.website.desc' | translate }}</p>
       </li>
       <li class="lp-servico-item">
-        <h3 class="lp-servico-item__title">Landing Pages</h3>
-        <p class="lp-servico-item__desc">Páginas de alta conversão para campanhas, lançamentos de produtos e captação de leads, otimizadas para performance.</p>
+        <h3 class="lp-servico-item__title">{{ 'services.landing.title' | translate }}</h3>
+        <p class="lp-servico-item__desc">{{ 'services.landing.desc' | translate }}</p>
       </li>
       <li class="lp-servico-item">
-        <h3 class="lp-servico-item__title">Desenvolvimento SaaS</h3>
-        <p class="lp-servico-item__desc">Produtos SaaS e aplicações web completas, do design ao código, com foco em escalabilidade e experiência do usuário.</p>
+        <h3 class="lp-servico-item__title">{{ 'services.saas.title' | translate }}</h3>
+        <p class="lp-servico-item__desc">{{ 'services.saas.desc' | translate }}</p>
       </li>
       <li class="lp-servico-item">
-        <h3 class="lp-servico-item__title">Frontend &amp; Design System</h3>
-        <p class="lp-servico-item__desc">Desenvolvimento frontend especializado em Angular, componentes reutilizáveis e design systems para equipes de produto.</p>
+        <h3 class="lp-servico-item__title">{{ 'services.frontend.title' | translate }}</h3>
+        <p class="lp-servico-item__desc">{{ 'services.frontend.desc' | translate }}</p>
       </li>
     </ul>
   </div>
@@ -65,22 +65,12 @@
 <section id="sobre" class="lp-section lp-sobre">
   <div class="lp-inner">
     <header class="lp-sobre__header">
-      <p class="lp-meta">SOBRE NÓS</p>
-      <h2 class="lp-section__title">O QUE SOMOS</h2>
+      <p class="lp-meta">{{ 'about.eyebrow' | translate }}</p>
+      <h2 class="lp-section__title">{{ 'about.title' | translate }}</h2>
     </header>
     <div class="lp-sobre__body">
-      <p class="lp-body-text">
-        No YV Studio, não construímos apenas sites — curamos experiências digitais.
-        Somos um estúdio de desenvolvimento frontend especializado em criação de sites,
-        landing pages de alta conversão e produtos SaaS. Nascemos da intersecção entre
-        o rigor técnico da engenharia de software e a fluidez do design de alto padrão.
-        Nossa missão é elevar a presença digital de marcas que não aceitam o comum,
-        entregando interfaces que são, ao mesmo tempo, obras de arte visuais e
-        máquinas de performance impecável.
-      </p>
-      <blockquote class="lp-sobre__quote">
-        Simplicidade é o último grau da sofisticação.
-      </blockquote>
+      <p class="lp-body-text">{{ 'about.body' | translate }}</p>
+      <blockquote class="lp-sobre__quote">{{ 'about.quote' | translate }}</blockquote>
     </div>
   </div>
 </section>
@@ -91,8 +81,8 @@
 <section id="processo" class="lp-section lp-process">
   <div class="lp-inner">
     <header class="lp-sobre__header">
-      <p class="lp-meta">COMO TRABALHAMOS</p>
-      <h2 class="lp-section__title">O PROCESSO</h2>
+      <p class="lp-meta">{{ 'process.eyebrow' | translate }}</p>
+      <h2 class="lp-section__title">{{ 'process.title' | translate }}</h2>
     </header>
 
     <div class="lp-process__stage">
@@ -119,26 +109,26 @@
       <div class="lp-process__grid">
         <article class="lp-step lp-step--1">
           <span class="lp-step__num">01</span>
-          <h3 class="lp-step__title">Briefing</h3>
-          <p class="lp-step__desc">Enxergamos a necessidade e estudamos a empresa — seu mercado, tom de voz e objetivo. Sem atalhos.</p>
+          <h3 class="lp-step__title">{{ 'process.step1.title' | translate }}</h3>
+          <p class="lp-step__desc">{{ 'process.step1.desc' | translate }}</p>
         </article>
 
         <article class="lp-step lp-step--2">
           <span class="lp-step__num">02</span>
-          <h3 class="lp-step__title">Prototipação e Orçamento</h3>
-          <p class="lp-step__desc">Apresentamos um protótipo fiel ao design final e um preço fixo, sem surpresas no meio do caminho.</p>
+          <h3 class="lp-step__title">{{ 'process.step2.title' | translate }}</h3>
+          <p class="lp-step__desc">{{ 'process.step2.desc' | translate }}</p>
         </article>
 
         <article class="lp-step lp-step--3">
           <span class="lp-step__num">03</span>
-          <h3 class="lp-step__title">Desenvolvimento</h3>
-          <p class="lp-step__desc">2 dias para landing pages, 3 dias para sites institucionais e demanda sob medida para projetos SaaS.</p>
+          <h3 class="lp-step__title">{{ 'process.step3.title' | translate }}</h3>
+          <p class="lp-step__desc">{{ 'process.step3.desc' | translate }}</p>
         </article>
 
         <article class="lp-step lp-step--4">
           <span class="lp-step__num">04</span>
-          <h3 class="lp-step__title">Entrega</h3>
-          <p class="lp-step__desc">Link entregue após confirmação de pagamento, com 1 mês de manutenção incluso para ajustes pós-lançamento.</p>
+          <h3 class="lp-step__title">{{ 'process.step4.title' | translate }}</h3>
+          <p class="lp-step__desc">{{ 'process.step4.desc' | translate }}</p>
         </article>
       </div>
     </div>
@@ -150,15 +140,15 @@
 <section class="lp-mid-cta">
   <div class="lp-inner lp-mid-cta__inner">
     <div class="lp-mid-cta__content">
-      <p class="lp-mid-cta__eyebrow lp-meta">PRONTO PARA COMEÇAR?</p>
-      <h2 class="lp-mid-cta__headline">Do briefing à entrega em dias — sem enrolação.</h2>
+      <p class="lp-mid-cta__eyebrow lp-meta">{{ 'midCta.eyebrow' | translate }}</p>
+      <h2 class="lp-mid-cta__headline">{{ 'midCta.headline' | translate }}</h2>
     </div>
     <a href="https://wa.me/5511970385786?text=Vim%20pelo%20seu%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
        target="_blank" rel="noopener noreferrer"
        class="lp-cta lp-cta--wa lp-mid-cta__btn"
        (click)="trackWhatsApp('mid-cta')">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Falar agora no WhatsApp
+      {{ 'midCta.btn' | translate }}
     </a>
   </div>
 </section>
@@ -169,8 +159,8 @@
   <div class="lp-inner">
     <header class="lp-section__header">
       <div>
-        <p class="lp-meta">LANDING PAGES</p>
-        <h2 class="lp-section__title">PROJETOS</h2>
+        <p class="lp-meta">{{ 'projects.eyebrow' | translate }}</p>
+        <h2 class="lp-section__title">{{ 'projects.title' | translate }}</h2>
       </div>
     </header>
 
@@ -178,8 +168,8 @@
       <luster-card variant="default" padding="none" hoverable>
         <a href="https://edimareletricista.com.br" target="_blank" rel="noopener noreferrer" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--edimar">
-            <span class="lp-label lp-label--muted lp-work-card__tag">SITE · SERVIÇOS ELÉTRICOS</span>
-            <luster-badge variant="success" size="sm" class="lp-work-card__status-badge">Entregue recente</luster-badge>
+            <span class="lp-label lp-label--muted lp-work-card__tag">{{ 'projects.edimar.tag' | translate }}</span>
+            <luster-badge variant="success" size="sm" class="lp-work-card__status-badge">{{ 'projects.edimar.badge' | translate }}</luster-badge>
             <div class="lp-edimar-mini" aria-hidden="true">
               <div class="lp-edimar-mini__nav"></div>
               <div class="lp-edimar-mini__body">
@@ -193,8 +183,8 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Edimar Eletricista</h3>
-            <p class="lp-meta">Site institucional · 2025</p>
+            <h3 class="lp-work-card__title">{{ 'projects.edimar.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'projects.edimar.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
@@ -202,7 +192,7 @@
       <luster-card variant="default" padding="none" hoverable>
         <a routerLink="/landing-pages/neapolitan-pilgrimage" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--neapolitan">
-            <span class="lp-label lp-label--muted lp-work-card__tag">LANDING PAGE · GASTRONOMIA</span>
+            <span class="lp-label lp-label--muted lp-work-card__tag">{{ 'projects.neapolitan.tag' | translate }}</span>
             <div class="lp-work-card__np-preview" aria-hidden="true">
               <div class="lp-np-mini__header"></div>
               <div class="lp-np-mini__body">
@@ -217,8 +207,8 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Bella Napoli</h3>
-            <p class="lp-meta">Landing page editorial · 2026</p>
+            <h3 class="lp-work-card__title">{{ 'projects.neapolitan.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'projects.neapolitan.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
@@ -226,7 +216,7 @@
       <luster-card variant="default" padding="none" hoverable>
         <a routerLink="/landing-pages/apex-kinetic" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--ak">
-            <span class="lp-label lp-label--muted lp-work-card__tag">LANDING PAGE · MARKETING</span>
+            <span class="lp-label lp-label--muted lp-work-card__tag">{{ 'projects.impulso.tag' | translate }}</span>
             <div class="lp-ak-mini" aria-hidden="true">
               <div class="lp-ak-mini__nav"></div>
               <div class="lp-ak-mini__body">
@@ -240,8 +230,8 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Impulso Marketing</h3>
-            <p class="lp-meta">Landing page de performance · 2026</p>
+            <h3 class="lp-work-card__title">{{ 'projects.impulso.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'projects.impulso.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
@@ -249,7 +239,7 @@
       <luster-card variant="default" padding="none" hoverable>
         <a routerLink="/landing-pages/serenity-mind" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--sm">
-            <span class="lp-label lp-label--muted lp-work-card__tag">LANDING PAGE · CONSULTÓRIOS</span>
+            <span class="lp-label lp-label--muted lp-work-card__tag">{{ 'projects.mentePlena.tag' | translate }}</span>
             <div class="lp-sm-mini" aria-hidden="true">
               <div class="lp-sm-mini__nav"></div>
               <div class="lp-sm-mini__body">
@@ -263,8 +253,8 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Clínica Mente Plena</h3>
-            <p class="lp-meta">Landing page para clínicas · 2026</p>
+            <h3 class="lp-work-card__title">{{ 'projects.mentePlena.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'projects.mentePlena.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
@@ -272,7 +262,7 @@
       <luster-card variant="default" padding="none" hoverable>
         <a routerLink="/landing-pages/apex-law" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--ap">
-            <span class="lp-label lp-label--muted lp-work-card__tag">LANDING PAGE · ADVOCACIA</span>
+            <span class="lp-label lp-label--muted lp-work-card__tag">{{ 'projects.costa.tag' | translate }}</span>
             <div class="lp-ap-mini" aria-hidden="true">
               <div class="lp-ap-mini__nav"></div>
               <div class="lp-ap-mini__body">
@@ -286,15 +276,15 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Costa &amp; Associados</h3>
-            <p class="lp-meta">Landing page para escritórios · 2026</p>
+            <h3 class="lp-work-card__title">{{ 'projects.costa.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'projects.costa.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
     </div>
 
     <div class="lp-works__footer">
-      <a routerLink="/landing-pages" class="lp-works__ver-mais">Ver todos os projetos →</a>
+      <a routerLink="/landing-pages" class="lp-works__ver-mais">{{ 'projects.seeAll' | translate }}</a>
     </div>
   </div>
 </section>
@@ -305,8 +295,8 @@
   <div class="lp-inner">
     <header class="lp-section__header">
       <div>
-        <p class="lp-meta">O QUE CONSTRUÍMOS</p>
-        <h2 class="lp-section__title">PRODUTOS</h2>
+        <p class="lp-meta">{{ 'products.eyebrow' | translate }}</p>
+        <h2 class="lp-section__title">{{ 'products.title' | translate }}</h2>
       </div>
     </header>
 
@@ -314,8 +304,8 @@
       <luster-card variant="default" padding="none" hoverable>
         <a routerLink="/landing-pages/kazaplan" class="lp-work-card">
           <div class="lp-work-card__image lp-work-card__image--vittacore">
-            <span class="lp-label lp-label--accent lp-work-card__tag">SAAS · PRODUTO</span>
-            <luster-badge variant="warning" size="sm" class="lp-work-card__status-badge">Em construção</luster-badge>
+            <span class="lp-label lp-label--accent lp-work-card__tag">{{ 'products.kazaplan.tag' | translate }}</span>
+            <luster-badge variant="warning" size="sm" class="lp-work-card__status-badge">{{ 'products.kazaplan.badge' | translate }}</luster-badge>
             <div class="lp-work-card__dashboard" aria-hidden="true">
               <div class="lp-dash-grid">
                 <div class="lp-dash-cell lp-dash-cell--wide"></div>
@@ -328,8 +318,8 @@
             </div>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">KazaPlan</h3>
-            <p class="lp-meta">Design de produto &amp; desenvolvimento · 2026</p>
+            <h3 class="lp-work-card__title">{{ 'products.kazaplan.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'products.kazaplan.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
@@ -345,8 +335,8 @@
             <span class="lp-work-card__brand" aria-hidden="true">LUSTER</span>
           </div>
           <div class="lp-work-card__info">
-            <h3 class="lp-work-card__title">Luster DS</h3>
-            <p class="lp-meta">Arquitetura de design system · 2026</p>
+            <h3 class="lp-work-card__title">{{ 'products.luster.title' | translate }}</h3>
+            <p class="lp-meta">{{ 'products.luster.year' | translate }}</p>
           </div>
         </a>
       </luster-card>
@@ -358,10 +348,10 @@
 
 <section id="ecosystem" class="lp-section lp-ecosystem">
   <div class="lp-inner">
-    <p class="lp-meta lp-ecosystem__meta">O ECOSSISTEMA</p>
-    <h2 class="lp-section__title lp-section__title--center">CONEXÕES ESTRATÉGICAS</h2>
+    <p class="lp-meta lp-ecosystem__meta">{{ 'ecosystem.eyebrow' | translate }}</p>
+    <h2 class="lp-section__title lp-section__title--center">{{ 'ecosystem.title' | translate }}</h2>
 
-    <figure class="lp-graph" aria-label="Diagrama do ecossistema YV Studio">
+    <figure class="lp-graph" [attr.aria-label]="'ecosystem.ariaLabel' | translate">
       <svg class="lp-graph__svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <line x1="400" y1="200" x2="130" y2="100" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 7" stroke-opacity="0.45"/>
         <line x1="400" y1="200" x2="670" y2="100" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 7" stroke-opacity="0.45"/>
@@ -374,22 +364,22 @@
       </div>
 
       <div class="lp-graph__node lp-graph__node--tl">
-        <p class="lp-graph__node-label">PENSANDO EM</p>
+        <p class="lp-graph__node-label">{{ 'ecosystem.design.label' | translate }}</p>
         <div class="lp-graph__node-box">DESIGN</div>
       </div>
 
       <div class="lp-graph__node lp-graph__node--tr">
-        <p class="lp-graph__node-label">UMA SUITE</p>
+        <p class="lp-graph__node-label">{{ 'ecosystem.luster.label' | translate }}</p>
         <div class="lp-graph__node-box">LUSTER</div>
       </div>
 
       <div class="lp-graph__node lp-graph__node--bl">
-        <p class="lp-graph__node-label">TODOS OS TIPOS DE</p>
+        <p class="lp-graph__node-label">{{ 'ecosystem.landingPages.label' | translate }}</p>
         <div class="lp-graph__node-box">LANDING PAGES</div>
       </div>
 
       <div class="lp-graph__node lp-graph__node--br">
-        <p class="lp-graph__node-label">SAAS PARA CONSTRUTORAS</p>
+        <p class="lp-graph__node-label">{{ 'ecosystem.kazaplan.label' | translate }}</p>
         <div class="lp-graph__node-box">KAZAPLAN</div>
       </div>
     </figure>
@@ -402,38 +392,40 @@
   <div class="lp-inner">
     <header class="lp-section__header">
       <div>
-        <p class="lp-meta">VAMOS CONVERSAR</p>
-        <h2 class="lp-section__title">CONTATOS</h2>
+        <p class="lp-meta">{{ 'contact.eyebrow' | translate }}</p>
+        <h2 class="lp-section__title">{{ 'contact.title' | translate }}</h2>
       </div>
     </header>
 
     <form class="lp-contact-form" (ngSubmit)="submitContact()">
       <div class="lp-contact-form__row">
         <div class="lp-contact-form__group">
-          <label class="lp-contact-form__label" for="contact-name">Nome</label>
+          <label class="lp-contact-form__label" for="contact-name">{{ 'contact.name' | translate }}</label>
           <input id="contact-name" type="text" [(ngModel)]="contactName" name="contactName"
-                 class="lp-contact-form__input" placeholder="Seu nome completo" required>
+                 class="lp-contact-form__input"
+                 [placeholder]="'contact.namePlaceholder' | translate" required>
         </div>
         <div class="lp-contact-form__group">
-          <label class="lp-contact-form__label" for="contact-phone">WhatsApp</label>
+          <label class="lp-contact-form__label" for="contact-phone">{{ 'contact.phone' | translate }}</label>
           <input id="contact-phone" type="tel" [(ngModel)]="contactPhone" name="contactPhone"
-                 class="lp-contact-form__input" placeholder="+55 (11) 99999-9999">
+                 class="lp-contact-form__input"
+                 [placeholder]="'contact.phonePlaceholder' | translate">
         </div>
       </div>
       <div class="lp-contact-form__group">
-        <label class="lp-contact-form__label" for="contact-message">Mensagem</label>
+        <label class="lp-contact-form__label" for="contact-message">{{ 'contact.message' | translate }}</label>
         <textarea id="contact-message" [(ngModel)]="contactMessage" name="contactMessage"
                   class="lp-contact-form__textarea" rows="4"
-                  placeholder="Conte sobre seu projeto..."></textarea>
+                  [placeholder]="'contact.msgPlaceholder' | translate"></textarea>
       </div>
       <button type="submit" class="lp-cta lp-cta--wa">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Enviar via WhatsApp
+        {{ 'contact.send' | translate }}
       </button>
     </form>
 
     <div class="lp-contatos__grid">
-      <a href="https://linkedin.com/in/YasmimVieira" target="_blank" rel="noopener noreferrer" class="lp-contact-card"
+      <a href="https://www.linkedin.com/in/yasmim-barbosa/" target="_blank" rel="noopener noreferrer" class="lp-contact-card"
          (click)="trackSocial('linkedin')">
         <p class="lp-label lp-label--accent lp-contact-card__platform">LinkedIn</p>
         <p class="lp-contact-card__handle">YasmimVieira</p>
@@ -466,7 +458,7 @@
 <a href="https://wa.me/5511970385786?text=Vim%20pelo%20seu%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
    target="_blank" rel="noopener noreferrer"
    class="lp-wa-float"
-   aria-label="Conversar no WhatsApp"
+   [attr.aria-label]="'contact.waFloat' | translate"
    (click)="trackWhatsApp('float')">
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
@@ -474,6 +466,6 @@
 <footer class="lp-footer">
   <div class="lp-inner lp-footer__inner">
     <a href="/" class="lp-footer__logo">YVSTUDIO CNPJ 63.711.099/0001-50</a>
-    <small class="lp-meta">&copy; MMXXVI YVSTUDIO — TODOS OS DIREITOS RESERVADOS</small>
+    <small class="lp-meta">{{ 'footer.rights' | translate }}</small>
   </div>
 </footer>

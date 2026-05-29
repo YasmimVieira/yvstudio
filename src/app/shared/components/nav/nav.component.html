@@ -2,7 +2,7 @@
   <div class="lp-nav__inner" [class.lp-nav__inner--has-back]="!!backLink()">
 
     @if (backLink()) {
-      <a [routerLink]="backLink()" class="lp-nav__back" (click)="closeMenu()">← Galeria</a>
+      <a [routerLink]="backLink()" class="lp-nav__back" (click)="closeMenu()">{{ 'nav.gallery' | translate }}</a>
     }
 
     <a [href]="logoHref()" class="lp-nav__logo">{{ logoText() }}</a>
@@ -30,22 +30,45 @@
       }
     </div>
 
+    <div class="lp-nav__lang" aria-label="Language selector">
+      <button
+        class="lp-nav__lang-btn"
+        [class.lp-nav__lang-btn--active]="i18n.lang() === 'pt-BR'"
+        (click)="i18n.setLang('pt-BR')">PT</button>
+      <span class="lp-nav__lang-sep" aria-hidden="true">|</span>
+      <button
+        class="lp-nav__lang-btn"
+        [class.lp-nav__lang-btn--active]="i18n.lang() === 'en-US'"
+        (click)="i18n.setLang('en-US')">EN</button>
+    </div>
+
     <button
       class="lp-nav__hamburger"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen()"
-      aria-label="Abrir menu">
+      [attr.aria-label]="'nav.openMenu' | translate">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
 
-  <nav class="lp-nav__mobile" aria-label="Navegação mobile">
+  <nav class="lp-nav__mobile" [attr.aria-label]="'nav.mobileNav' | translate">
     @for (link of links(); track link.href) {
       <a [href]="link.href" class="lp-nav__mobile-link" (click)="closeMenu()">
         {{ link.label }}
       </a>
     }
+    <div class="lp-nav__mobile-lang">
+      <button
+        class="lp-nav__lang-btn"
+        [class.lp-nav__lang-btn--active]="i18n.lang() === 'pt-BR'"
+        (click)="i18n.setLang('pt-BR'); closeMenu()">PT</button>
+      <span class="lp-nav__lang-sep" aria-hidden="true">|</span>
+      <button
+        class="lp-nav__lang-btn"
+        [class.lp-nav__lang-btn--active]="i18n.lang() === 'en-US'"
+        (click)="i18n.setLang('en-US'); closeMenu()">EN</button>
+    </div>
   </nav>
 </nav>
